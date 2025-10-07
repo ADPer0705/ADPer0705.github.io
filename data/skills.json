@@ -1,0 +1,17 @@
+{
+  "Languages": [
+    "Python",
+    "Rust",
+    "Bash"
+  ],
+  "Tools & Platforms": [
+    "Docker",
+    "Debian",
+    "Neovim"
+  ],
+  "Core Concepts": [
+    "Machine Learning",
+    "Cybersecurity",
+    "System Design"
+  ]
+}

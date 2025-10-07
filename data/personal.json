@@ -1,0 +1,27 @@
+{
+  "name": "Anay Dhaval Pandya",
+  "preferred_name": "ADPer",
+  "role": "CSE Student (Cybersecurity)",
+  "location": "Gujarat, India",
+  "bio": "Tech geek exploring AI/ML, cybersecurity, and futuristic interfaces.",
+  "personality_traits": [
+    "ENFP",
+    "creative",
+    "curious",
+    "tech-geek"
+  ],
+  "theme": {
+    "colors": [
+      "#0f111a",
+      "#1a1f2a",
+      "#61dafb",
+      "#ffffff"
+    ],
+    "fonts": [
+      "Roboto",
+      "JetBrains Mono",
+      "Monospace for code snippets"
+    ],
+    "layout": "single-page or multi-section with smooth scrolling and interactive elements"
+  }
+}

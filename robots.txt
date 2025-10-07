@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://adper0705.github.io/profile/sitemap.xml
+
+# Disallow data files (they're just for the JS, not for crawling)
+Disallow: /data/

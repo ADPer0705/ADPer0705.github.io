@@ -1,0 +1,18 @@
+[
+  {
+    "title": "CreepyCritter",
+    "description": "Python-based modular cybersecurity tool with keylogging, credential fetching, and exfiltration via Discord/Telegram.",
+    "link": "https://github.com/ADPer/creepycritter",
+    "tags": ["Python", "Cybersecurity", "CLI"],
+    "status": "Completed",
+    "image": "assets/images/creepycritter.png"
+  },
+  {
+    "title": "Sempropos",
+    "description": "AI tool to enhance UNIX command-line help by suggesting workflows and executing them upon confirmation.",
+    "link": "https://github.com/ADPer/sempropos",
+    "tags": ["Python", "NLP", "Shell"],
+    "status": "In Progress",
+    "image": "assets/images/sempropos.png"
+  }
+]

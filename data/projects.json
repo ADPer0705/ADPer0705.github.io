@@ -14,5 +14,53 @@
     "tags": ["Python", "NLP", "Shell"],
     "status": "In Progress",
     "image": "assets/images/sempropos.png"
+  },
+  {
+    "title": "Custom Neovim IDE",
+    "description": "Building a modern, personalized IDE based on Neovim with custom plugins, configurations, and workflow optimizations.",
+    "link": "",
+    "tags": ["Neovim", "Lua", "Development Environment"],
+    "status": "In Progress",
+    "image": ""
+  },
+  {
+    "title": "Rock Paper Scissors CV Game",
+    "description": "Interactive game using computer vision where you play rock-paper-scissors through your webcam in real-time.",
+    "link": "",
+    "tags": ["Python", "Computer Vision", "OpenCV"],
+    "status": "Completed",
+    "image": ""
+  },
+  {
+    "title": "Tauri Desktop Application",
+    "description": "Cross-platform desktop application built with Tauri framework, combining Rust backend with modern web frontend.",
+    "link": "",
+    "tags": ["Tauri", "Rust", "Desktop App"],
+    "status": "Completed",
+    "image": ""
+  },
+  {
+    "title": "Bash Automation Scripts",
+    "description": "Collection of bash scripts for automating daily workflow—launching workspace, Spotify, and other applications on boot.",
+    "link": "",
+    "tags": ["Bash", "Automation", "Linux"],
+    "status": "Completed",
+    "image": ""
+  },
+  {
+    "title": "Offline ML Model Experiments",
+    "description": "Experimenting with running various machine learning models locally without internet dependency for privacy and performance.",
+    "link": "",
+    "tags": ["Machine Learning", "Python", "AI"],
+    "status": "In Progress",
+    "image": ""
+  },
+  {
+    "title": "RAG Deep Dive",
+    "description": "Exploration and implementation of Retrieval-Augmented Generation systems for enhanced AI applications.",
+    "link": "",
+    "tags": ["RAG", "AI", "NLP"],
+    "status": "In Progress",
+    "image": ""
   }
 ]

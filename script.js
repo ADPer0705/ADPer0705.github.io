@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loadData = async () => {
         try {
-            const files = ['personal.json', 'skills.json', 'projects.json', 'blogs.json', 'social.json'];
+            const files = ['personal.json', 'skills.json', 'experience.json', 'projects.json', 'certifications.json', 'blogs.json', 'social.json', 'profiles.json'];
             const responses = await Promise.all(files.map(file => fetch(`data/${file}`)));
-            const [personal, skills, projects, blogs, social] = await Promise.all(responses.map(res => res.json()));
-            profileData = { personal, skills, projects, blogs, social };
+            const [personal, skills, experience, projects, certifications, blogs, social, profiles] = await Promise.all(responses.map(res => res.json()));
+            profileData = { personal, skills, experience, projects, certifications, blogs, social, profiles };
         } catch (error) {
             console.error("System critical: Failed to load profile data.", error);
         }
@@ -30,13 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- RENDER FUNCTIONS ---
     const renderAll = () => {
-        const { personal, skills, projects, blogs, social } = profileData;
+        const { personal, skills, experience, projects, certifications, blogs, social, profiles } = profileData;
         document.getElementById('header-container').innerHTML = `
-            <h1 data-scramble>${personal.name}</h1><p>${personal.bio}</p>`;
+            <img src="${personal.profile_image}" alt="${personal.name}" class="profile-pic">
+            <div class="header-content">
+                <h1 data-scramble>${personal.name}</h1>
+                <p class="bio">${personal.bio.replace(/\n/g, '<br>')}</p>
+            </div>`;
+        document.getElementById('profiles-container').innerHTML = `
+            <h2 data-scramble>PUBLIC PROFILES</h2><div class="profiles-grid">${renderProfiles(profiles)}</div>`;
         document.getElementById('skills-container').innerHTML = `
             <h2 data-scramble>SKILLS MATRIX</h2>${renderSkills(skills)}`;
+        document.getElementById('experience-container').innerHTML = `
+            <h2 data-scramble>EXPERIENCE & ACTIVITIES</h2><div class="experience-grid">${renderExperience(experience)}</div>`;
         document.getElementById('projects-container').innerHTML = `
             <h2 data-scramble>PROJECT DOSSIERS</h2><div class="projects-grid">${renderProjects(projects)}</div>`;
+        document.getElementById('certifications-container').innerHTML = `
+            <h2 data-scramble>CERTIFICATIONS</h2><div class="certifications-grid">${renderCertifications(certifications)}</div>`;
         document.getElementById('blogs-container').innerHTML = `
             <h2 data-scramble>LOGS & WRITINGS</h2>${renderBlogs(blogs)}`;
         document.getElementById('footer-container').innerHTML = 
@@ -56,6 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return html;
     };
 
+    const renderExperience = (experience) => {
+        return experience.map(exp => `
+            <div class="experience-card">
+                <div class="exp-header">
+                    <img src="${exp.organization_logo}" alt="${exp.organization}" class="exp-logo">
+                    <div class="exp-title-info">
+                        <h3 data-scramble>${exp.role}</h3>
+                        <p class="exp-org">${exp.organization}</p>
+                        <p class="exp-period">${exp.period} | ${exp.location}</p>
+                    </div>
+                </div>
+                <div class="exp-body">
+                    <p class="exp-description">${exp.description}</p>
+                    <ul class="exp-highlights">
+                        ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>`).join('');
+    };
+
     const renderProjects = (projects) => {
         return projects.map(p => `
             <div class="project-card">
@@ -73,8 +103,42 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`).join('');
     };
 
+    const renderCertifications = (certifications) => {
+        return certifications.map(cert => `
+            <div class="certification-card">
+                <img src="${cert.image}" alt="${cert.name}" class="cert-image">
+                <div class="cert-details">
+                    <h3 data-scramble>${cert.name}</h3>
+                    <p class="cert-issuer">${cert.issuer}</p>
+                    <p class="cert-date">${cert.issue_date}</p>
+                </div>
+            </div>`).join('');
+    };
+
     const renderBlogs = (blogs) => {
         return blogs.map(b => `<p><a href="${b.link}">${b.title}</a> - <em>${b.summary}</em></p>`).join('');
+    };
+
+    const renderProfiles = (profiles) => {
+        return profiles.map(profile => {
+            if (profile.type === 'iframe') {
+                return `<div class="profile-item profile-iframe">
+                            <div class="profile-title" data-scramble>${profile.title ?? 'Profile'}</div>
+                            <div class="profile-embed">${profile.content}</div>
+                        </div>`;
+            } else if (profile.type === 'link') {
+                return `<div class="profile-item">
+                            <div class="profile-title" data-scramble>${profile.title ?? profile.displayText}</div>
+                            <a href="${profile.url}" target="_blank">${profile.displayText}</a>
+                        </div>`;
+            } else if (profile.type === 'email') {
+                return `<div class="profile-item">
+                            <div class="profile-title" data-scramble>Contact</div>
+                            <a href="mailto:${profile.address}">${profile.address}</a>
+                        </div>`;
+            }
+            return '';
+        }).join('');
     };
     
     // --- ANIMATION ENGINE ---

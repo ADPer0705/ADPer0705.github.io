@@ -1,0 +1,14 @@
+[
+  {
+    "method": "Email",
+    "icon": "assets/icons/email.svg",
+    "link": "mailto:your-email@example.com",
+    "cta": "Send a Message"
+  },
+  {
+    "method": "LinkedIn",
+    "icon": "assets/icons/linkedin.svg",
+    "link": "https://linkedin.com/in/dearanayji",
+    "cta": "Connect Professionally"
+  }
+]

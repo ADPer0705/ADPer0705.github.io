@@ -1,9 +1,12 @@
 {
   "name": "Anay Dhaval Pandya",
   "preferred_name": "ADPer",
+  "profile_image" : "assets/profile-pic.png",
   "role": "CSE Student (Cybersecurity)",
+  "institution": "National Forensic Sciences University, Gujarat",
   "location": "Gujarat, India",
-  "bio": "Tech geek exploring AI/ML, cybersecurity, and futuristic interfaces.",
+  "email": "dearanayji@gmail.com",
+  "bio": "I'm Anay Dhaval Pandya — a Computer Science student specializing in Cybersecurity at the National Forensic Sciences University, Gujarat. I explore the intersections of AI, systems engineering, and security, building tools that blend practicality with curiosity — whether it's automating workflows, designing intelligent assistants, or dissecting how systems break.\n\nWhen I'm not buried in terminal windows, I'm chasing the \"why\" behind the tech — from how networks trust, to how intelligence emerges in code. I draw a lot from the Stark principle: engineering that feels alive — intuitive, elegant, and human.\n\nLately, my focus has been on bridging human intent and machine execution — creating systems that understand context, not just commands.",
   "personality_traits": [
     "ENFP",
     "creative",

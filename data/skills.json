@@ -1,17 +1,35 @@
 {
   "Languages": [
     "Python",
+    "C",
+    "C++",
     "Rust",
     "Bash"
   ],
+  "AI/ML & Data": [
+    "Machine Learning",
+    "RAG (Retrieval-Augmented Generation)",
+    "Computer Vision",
+    "Offline ML Models",
+    "NLP"
+  ],
   "Tools & Platforms": [
     "Docker",
-    "Debian",
-    "Neovim"
+    "Neovim",
+    "Tauri",
+    "Git"
+  ],
+  "Operating Systems": [
+    "Debian (Daily Driver)",
+    "Kali Linux",
+    "Ubuntu",
+    "Arch Linux",
+    "WSL (Windows Subsystem for Linux)"
   ],
   "Core Concepts": [
-    "Machine Learning",
     "Cybersecurity",
-    "System Design"
+    "System Design",
+    "Automation & Scripting",
+    "Linux System Administration"
   ]
 }

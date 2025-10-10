@@ -1,0 +1,12 @@
+[
+  {
+    "type": "iframe",
+    "title": "TryHackMe",
+    "content": "<iframe src=\"https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2379879\" style='border:none;'></iframe>"
+  },
+  {
+    "type": "iframe",
+    "title": "Monkeytype",
+    "content": "<iframe src=\"https://monkeytype.com/profile/adper\" style='border:none;'></iframe>"
+  }
+]

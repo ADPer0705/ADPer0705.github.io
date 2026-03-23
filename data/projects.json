@@ -1,5 +1,13 @@
 [
   {
+    "title": "ReconWordsmith",
+    "description": "Contextual, AI-driven intelligent wordlist generator for security professionals. Automatically parses raw unstructured OSINT data to craft highly targeted local dictionary attacks.",
+    "link": "https://adper0705.github.io/wordsmith/",
+    "tags": ["React", "OSINT", "Security", "AI", "LLM"],
+    "status": "Completed",
+    "image": ""
+  },
+  {
     "title": "CreepyCritter",
     "description": "Python-based modular cybersecurity tool with keylogging, credential fetching, and exfiltration via Discord/Telegram.",
     "link": "https://github.com/ADPer/creepycritter",

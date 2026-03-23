@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ReconWordsmith — Contextual Wordlist Generator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #09090b;
+  --bg-surface: #18181b;
+  --bg-surface-hover: #27272a;
+  --border: #27272a;
+  --ring: #3f3f46;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --danger: #ef4444;
+  --success: #10b981;
+  --radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ring); }
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.header-info { display: flex; flex-direction: column; gap: 4px; }
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-icon {
+  background: var(--text);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.provider-badge {
+  display: inline-flex;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  margin-top: 8px;
+  width: fit-content;
+}
+.provider-badge span { color: var(--text); margin-left: 4px; font-weight: 500;}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius);
+}
+.btn-primary { background: var(--text); color: var(--bg); }
+.btn-primary:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-secondary { background: var(--bg-surface); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover:not(:disabled) { background: var(--bg-surface-hover); }
+
+.stepper {
+  display: flex;
+  margin-bottom: 32px;
+  gap: 12px;
+}
+.step {
+  flex: 1;
+  padding: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.step.active {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.step.done {
+  color: var(--text);
+  border-color: var(--ring);
+}
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  font-size: 12px;
+}
+.step.active .step-num { background: var(--accent); color: white; }
+
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  padding: 16px;
+  min-height: 200px;
+  resize: vertical;
+  line-height: 1.6;
+}
+textarea:focus { border-color: var(--accent); outline: none; }
+textarea::placeholder { color: #52525b; }
+
+.hint { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+.error { color: var(--danger); font-size: 13px; margin-top: 12px; padding: 12px; background: rgba(239, 68, 68, 0.1); border-radius: var(--radius); border: 1px solid rgba(239, 68, 68, 0.2); }
+.actions { display: flex; gap: 12px; margin-top: 24px; align-items: center; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 100;
+}
+.modal {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+  width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+.modal-header {
+  padding: 20px 24px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  position: sticky; top: 0; background: rgba(9,9,11,0.95); backdrop-filter: blur(8px); z-index: 10;
+}
+.modal-title { font-size: 18px; font-weight: 600; }
+.modal-close { color: var(--text-muted); font-size: 24px; line-height: 1; }
+.modal-close:hover { color: var(--text); }
+.modal-body { padding: 24px; }
+
+/* Providers */
+.provider-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px;
+}
+.provider-card {
+  padding: 16px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg-surface); cursor: pointer; text-align: center; transition: all 0.2s;
+}
+.provider-card:hover { border-color: var(--ring); }
+.provider-card.selected { border-color: var(--accent); background: rgba(59, 130, 246, 0.1); }
+.provider-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.provider-tier { font-size: 11px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+.tier-free { color: var(--success); } .tier-freemium { color: #f59e0b; } .tier-paid { color: var(--text-muted); }
+
+.field-group { margin-bottom: 20px; }
+.field-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+.input-control {
+  width: 100%; background: var(--bg); border: 1px solid var(--border);
+  color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  padding: 10px 12px; border-radius: 6px; transition: border-color 0.2s;
+}
+.input-control:focus { outline: none; border-color: var(--accent); }
+.input-row { display: flex; gap: 8px; }
+
+/* Tokens */
+.token-section { margin-bottom: 24px; }
+.token-header { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.token-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.token {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--bg);
+  border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 13px; font-family: 'JetBrains Mono', monospace;
+}
+.token button { color: var(--text-muted); font-size: 14px; }
+.token button:hover { color: var(--danger); }
+
+/* Stats */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card {
+  background: var(--bg-surface); border: 1px solid var(--border); padding: 20px;
+  border-radius: var(--radius); text-align: center;
+}
+.stat-value { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+.stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
+
+.output-preview {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-muted);
+  max-height: 400px; overflow-y: auto; column-count: 3; column-gap: 24px;
+}
+
+.spinner {
+  width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.toggle-group {
+  display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+// ── Mutation Engine ─────────────────────────────────────────────────────────
+
+const LEET_FULL={a:"4",e:"3",i:"1",o:"0",s:"5",t:"7",g:"9",b:"8",l:"1",z:"2"};
+const LEET_PART={a:"@",e:"3",i:"!",o:"0",s:"$",g:"9",b:"6"};
+const leet=(w,m)=>w.toLowerCase().split("").map(c=>m[c]||c).join("");
+const rev=w=>w.split("").reverse().join("");
+const title=w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();
+const camel=(a,b)=>a.toLowerCase()+title(b);
+const doubleW=w=>w+w;
+function partialLeet(w){const out=new Set(),lower=w.toLowerCase();for(let i=0;i<lower.length;i++)if(LEET_PART[lower[i]]){const a=lower.split("");a[i]=LEET_PART[lower[i]];out.add(a.join(""));}return[...out];}                                 
+const YEARS=Array.from({length:66},(_,i)=>String(1960+i));
+const SUFFIXES=["","1","2","3","12","21","7","69","99","00","01","007","13","77","88","111","123","1234","12345","123456","321","11","22","33","44","55","666","777","888","999","!","!!","@","#","$","%","&","*","?","!@#","@123","123!","!!123","2020","2021","2022","2023","2024","2025","2019","2018","2010","2000","1999","pass","pwd","login","admin","user","key","word","secure","safe","lock","786","420","911","101","000","100","1000","9999","x","xx","xyz","abc","qwerty","letmein"];
+const PREFIXES=["mr","mrs","ms","dr","the","old","new","big","dark","lord","0","1","@","!","_","#","$","my","its"];                                             
+const SEPS=["","_","-",".","@","+","~","#","!","*"];
+const KEYBOARD_WALKS=["qwerty","qwertyuiop","asdfgh","asdfghjkl","zxcvbn","1qaz","2wsx","3edc","qazwsx","qweasdzxc","1q2w3e","1q2w3e4r","q1w2e3r4"];            
+function dateVariants({day,month,year}){const dd=String(day).padStart(2,"0"),mm=String(month).padStart(2,"0"),d=String(day),m=String(month),yyyy=String(year),yy=yyyy.slice(-2);return[`${dd}${mm}${yy}`,`${dd}${mm}${yyyy}`,`${mm}${dd}${yy}`,`${mm}${dd}${yyyy}`,`${yyyy}${mm}${dd}`,`${yy}${mm}${dd}`,`${dd}${mm}`,`${mm}${dd}`,`${d}${m}${yy}`,`${d}${m}${yyyy}`,yy,yyyy,`${dd}-${mm}-${yyyy}`,`${mm}/${dd}/${yyyy}`,`${yyyy}-${mm}-${dd}`,`${dd}.${mm}.${yyyy}`,`${dd}${mm}${yy}!`,`${dd}${mm}${yyyy}!`,`${yyyy}${mm}`,`${mm}${yyyy}`,`${yy}${dd}${mm}`,`${yy}${mm}${dd}`];}                                                                               
+function mutateWord(raw){const w=raw.toLowerCase().trim();if(!w||w.length<2)return[];const bases=new Set([w,w.toUpperCase(),title(w),leet(w,LEET_FULL),leet(w,LEET_PART),rev(w),title(leet(w,LEET_FULL)),title(leet(w,LEET_PART)),rev(leet(w,LEET_FULL)),doubleW(w),doubleW(title(w)),w.toUpperCase()+w.toLowerCase(),w.toLowerCase()+w.toUpperCase(),...partialLeet(w)]);const out=new Set();bases.forEach(b=>{out.add(b);SUFFIXES.forEach(sf=>out.add(b+sf));PREFIXES.forEach(pf=>out.add(pf+b));[`*${b}*`,`[${b}]`,`(${b})`,`-${b}-`,`_${b}_`].forEach(v=>out.add(v));});bases.forEach(b=>YEARS.forEach(y=>{out.add(b+y);out.add(y+b);out.add(b+"_"+y);}));return[...out];}                                                                  
+function combineTokens(words){const out=new Set(),t=words.slice(0,10);for(let i=0;i<t.length;i++)for(let j=0;j<t.length;j++){if(i===j)continue;SEPS.forEach(s=>{out.add(t[i]+s+t[j]);out.add(title(t[i])+s+t[j]);out.add(t[i]+s+title(t[j]));out.add(title(t[i])+s+title(t[j]));out.add(camel(t[i],t[j]));});for(let k=0;k<Math.min(t.length,4);k++){if(k===i||k===j)continue;out.add(t[i]+t[j]+t[k]);out.add(t[i]+"_"+t[j]+"_"+t[k]);}}return[...out];}                                        
+
+function buildWordlist(tokens,minLen,maxLen){const all=new Set();const base=[...(tokens.names||[]),...(tokens.keywords||[]),...(tokens.usernames||[])];const nums=tokens.numbers||[];const dates=tokens.dates||[];base.forEach(w=>mutateWord(w).forEach(v=>all.add(v)));nums.forEach(n=>{all.add(n);all.add(n+"!");all.add(n+"#");base.forEach(w=>SEPS.forEach(s=>{all.add(w+s+n);all.add(n+s+w);all.add(title(w)+s+n);}));});dates.forEach(d=>dateVariants(d).forEach(v=>all.add(v)));dates.forEach(d=>dateVariants(d).forEach(dv=>{base.slice(0,6).forEach(w=>{SEPS.forEach(s=>{all.add(w+s+dv);all.add(dv+s+w);});all.add(title(w)+dv);all.add(dv+title(w));});}));combineTokens(base.map(w=>w.toLowerCase())).forEach(c=>{all.add(c);["1","123","!","2024","2025","01"].forEach(sf=>all.add(c+sf));});KEYBOARD_WALKS.forEach(kw=>{all.add(kw);SUFFIXES.slice(0,12).forEach(sf=>all.add(kw+sf));});return[...all].filter(w=>{const l=w.length;if(minLen!==null&&l<minLen)return false;if(maxLen!==null&&l>maxLen)return false;return true;}).sort();}                        
+
+// ── Providers & AI ──────────────────────────────────────────────────────────
+
+const PROVIDERS = [
+  { id:"groq", name:"Groq", tier:"free", apiType:"openai", baseUrl:"https://api.groq.com/openai/v1", keyPlaceholder:"gsk_...", keyUrl:"https://console.groq.com/keys", models:[ {id:"llama-3.3-70b-versatile",label:"Llama 3.3 70B"}, {id:"llama-3.1-8b-instant",label:"Llama 3.1 8B"} ] },
+  { id:"gemini", name:"Gemini", tier:"free", apiType:"gemini", baseUrl:"https://generativelanguage.googleapis.com", keyPlaceholder:"AIza...", keyUrl:"https://aistudio.google.com/app/apikey", models:[ {id:"gemini-2.0-flash",label:"Gemini 2.0 Flash"}, {id:"gemini-1.5-flash",label:"Gemini 1.5 Flash"} ] },
+  { id:"openai", name:"OpenAI", tier:"paid", apiType:"openai", baseUrl:"https://api.openai.com/v1", keyPlaceholder:"sk-...", keyUrl:"https://platform.openai.com/api-keys", models:[ {id:"gpt-4o-mini",label:"GPT-4o Mini"}, {id:"gpt-4o",label:"GPT-4o"} ] },
+  { id:"custom", name:"Custom", tier:"free", apiType:"openai", baseUrl:"", keyPlaceholder:"API Key (optional)", keyUrl:"", models:[], custom:true }
+];
+
+const SYSTEM_PROMPT=`You are an OSINT token extractor for security wordlist generation. Return ONLY raw JSON. Schema: {"names":["str"],"dates":[{"raw":"str","day":num,"month":num,"year":num}],"keywords":["str"],"usernames":["str"],"numbers":["str"]}`;
+
+async function callAI(cfg, userText) {
+  const {apiType, apiKey, model, baseUrl} = cfg;
+  if(apiType==="gemini") {
+    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{parts:[{text:`${SYSTEM_PROMPT}\n\nText:\n${userText}`}]}],generationConfig:{maxOutputTokens:1000}})});        
+    const d=await res.json();
+    if(d.error)throw new Error(d.error.message);
+    return d.candidates?.[0]?.content?.parts?.map(p=>p.text||"").join("")||"";
+  }
+  const base=(baseUrl||"https://api.openai.com/v1").replace(/\/$/,"");
+  const hdrs={"Content-Type":"application/json"};
+  if(apiKey) hdrs["Authorization"]=`Bearer ${apiKey}`;
+  const res=await fetch(`${base}/chat/completions`,{method:"POST",headers:hdrs,body:JSON.stringify({model,max_tokens:1000,messages:[{role:"system",content:SYSTEM_PROMPT},{role:"user",content:`Text:\n${userText}`}]})});
+  const d=await res.json();
+  if(d.error)throw new Error(d.error.message||JSON.stringify(d.error));
+  return d.choices?.[0]?.message?.content||"";
+}
+
+// ── App Components ──────────────────────────────────────────────────────────
+
+function SettingsModal({config, onSave, onClose}) {
+  const [selId, setSelId] = useState(config?.providerId || "groq");
+  const [apiKey, setApiKey] = useState(config?.apiKey || "");
+  const [model, setModel] = useState(config?.model || "");
+  const [customUrl, setCustomUrl] = useState(config?.baseUrl || "http://localhost:11434/v1");
+  const [showKey, setShowKey] = useState(false);
+
+  const prov = PROVIDERS.find(p=>p.id===selId) || PROVIDERS[0];
+  
+  const handleSelect = (id) => {
+    setSelId(id);
+    const p = PROVIDERS.find(x=>x.id===id);
+    setModel(p.models[0]?.id || "");
+  };
+
+  const effectModel = prov.custom ? model : model || prov.models[0]?.id || "";
+  const effectUrl = prov.custom ? customUrl : prov.baseUrl;
+
+  return (
+    <div className="modal-overlay" onClick={e=>e.target===e.currentTarget&&onClose()}>
+      <div className="modal">
+        <div className="modal-header">
+          <div className="modal-title">API Configuration</div>
+          <button className="modal-close" onClick={onClose}>×</button>
+        </div>
+        <div className="modal-body">
+          <div className="field-group">
+            <span className="field-label">AI Provider</span>
+            <div className="provider-grid">
+              {PROVIDERS.map(p=>(
+                <div key={p.id} className={`provider-card ${selId===p.id?'selected':''}`} onClick={()=>handleSelect(p.id)}>
+                  <div className="provider-name">{p.name}</div>
+                  <div className={`provider-tier tier-${p.tier}`}>{p.tier === 'free' ? 'Free' : p.tier === 'paid' ? 'Paid' : 'Custom'}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="field-group">
+            <span className="field-label">API Key {prov.keyUrl && <a href={prov.keyUrl} target="_blank" rel="noreferrer" style={{color:'var(--accent)',textDecoration:'none',marginLeft:'8px',fontWeight:'normal'}}>Get Key ↗</a>}</span>
+            <div className="input-row">
+              <input type={showKey?"text":"password"} className="input-control" value={apiKey} onChange={e=>setApiKey(e.target.value)} placeholder={prov.keyPlaceholder}/>
+              <button className="btn btn-secondary" onClick={()=>setShowKey(!showKey)}>{showKey?"Hide":"Show"}</button>
+            </div>
+          </div>
+
+          {!prov.custom ? (
+            <div className="field-group">
+              <span className="field-label">Model</span>
+              <select className="input-control" value={model||prov.models[0]?.id} onChange={e=>setModel(e.target.value)}>
+                {prov.models.map(m=><option key={m.id} value={m.id}>{m.label}</option>)}
+              </select>
+            </div>
+          ) : (
+            <>
+              <div className="field-group">
+                <span className="field-label">Base URL</span>
+                <input type="text" className="input-control" value={customUrl} onChange={e=>setCustomUrl(e.target.value)}/>
+              </div>
+              <div className="field-group">
+                <span className="field-label">Model Name</span>
+                <input type="text" className="input-control" value={model} onChange={e=>setModel(e.target.value)} placeholder="e.g. llama3"/>
+              </div>
+            </>
+          )}
+
+          <div className="actions" style={{justifyContent:"flex-end", marginTop:"32px"}}>
+            <button className="btn btn-secondary" onClick={onClose}>Cancel</button>
+            <button className="btn btn-primary" onClick={()=>{
+              onSave({providerId: selId, providerName: prov.name, apiType: prov.apiType, apiKey: apiKey.trim(), model: effectModel, baseUrl: effectUrl});
+              onClose();
+            }} disabled={!effectModel || (!apiKey.trim() && !prov.custom)}>Save Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [config, setConfig] = useState(()=>{try{return JSON.parse(localStorage.getItem("rw_cfg3"))}catch{return null}});
+  const [showCfg, setShowCfg] = useState(!config);
+  const [input, setInput] = useState("");
+  const [tokens, setTokens] = useState(null);
+  const [wordlist, setWordlist] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [step, setStep] = useState(1);
+  const [error, setError] = useState("");
+  
+  const [lenFilter, setLenFilter] = useState({active: false, min: 6, max: 32});
+
+  const saveConfig = cfg => { setConfig(cfg); localStorage.setItem("rw_cfg3", JSON.stringify(cfg)); };
+  
+  const analyze = async () => {
+    if(!input.trim()||!config) return;
+    setLoading(true); setError("");
+    try {
+      const text = await callAI(config, input);
+      const clean = text.replace(/```json|```/g,"").trim();
+      setTokens(JSON.parse(clean));
+      setStep(2);
+    } catch(e) { setError(`Extraction failed: ${e.message}`); }
+    setLoading(false);
+  };
+
+  const generate = () => {
+    setWordlist(buildWordlist(tokens, lenFilter.active?lenFilter.min:null, lenFilter.active?lenFilter.max:null));
+    setStep(3);
+  };
+
+  const download = () => {
+    const blob=new Blob([wordlist.join("\n")],{type:"text/plain"});
+    Object.assign(document.createElement("a"),{href:URL.createObjectURL(blob),download:"wordlist.txt"}).click();
+  };
+
+  const tokenCategories = [
+    {key:'names', label:'Names & Aliases'},
+    {key:'dates', label:'Dates', format: d=>d.raw},
+    {key:'keywords', label:'Keywords'},
+    {key:'usernames', label:'Usernames'},
+    {key:'numbers', label:'Numbers'}
+  ];
+
+  return (
+    <div className="app-container">
+      <div className="header">
+        <div className="header-info">
+          <div className="logo"><span className="logo-icon">⌖</span> ReconWordsmith</div>
+          <div className="subtitle">Contextual Dictionary Generator for Security Professionals</div>
+          {config && <div className="provider-badge">Connected to <span>{config.providerName}</span> ({config.model})</div>}
+        </div>
+        <button className="btn btn-secondary" onClick={()=>setShowCfg(true)}>Configuration</button>
+      </div>
+
+      <div className="stepper">
+        {['Input Intel', 'Review Tokens', 'Generate List'].map((title, i) => (
+          <div key={i} className={`step ${step === i+1 ? 'active' : step > i+1 ? 'done' : ''}`}>
+            <span className="step-num">{step > i+1 ? '✓' : i+1}</span> {title}
+          </div>
+        ))}
+      </div>
+
+      {step === 1 && (
+        <div className="panel">
+          <div className="panel-title">Raw Intelligence Input</div>
+          <textarea 
+            placeholder="Paste raw notes, profile bios, LinkedIn descriptions, WHOIS data...&#10;&#10;Example:&#10;John 'Maverick' Doe. Born 12 Aug 1990. Pet dog is Buster. Works at CyberCorp. Favorite team is Arsenal."
+            value={input} onChange={e=>setInput(e.target.value)}
+          />
+          <div className="hint">No structure is required. The AI model will parse and extract relevant concepts automatically.</div>
+          {error && <div className="error">{error}</div>}
+          <div className="actions">
+            <button className="btn btn-primary" onClick={analyze} disabled={loading||!input.trim()||!config}>
+              {loading ? <><span className="spinner"></span> Extracting Parameters...</> : 'Extract Tokens'}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {step === 2 && tokens && (
+        <div className="panel">
+          <div className="panel-title">Verify Extracted Tokens</div>
+          
+          {tokenCategories.map(({key, label, format}) => {
+            const items = tokens[key];
+            if(!items || items.length === 0) return null;
+            return (
+              <div key={key} className="token-section">
+                <div className="token-header">{label} ({items.length})</div>
+                <div className="token-grid">
+                  {items.map((item, idx) => (
+                    <div key={idx} className="token">
+                      {format ? format(item) : item}
+                      <button onClick={()=>setTokens(p=>({...p, [key]: p[key].filter((_,i)=>i!==idx)}))}>×</button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+
+          <div className="toggle-group" style={{marginTop: '32px'}}>
+            <label style={{display:'flex', alignItems:'center', gap:'8px', cursor:'pointer', fontSize:'14px'}}>
+              <input type="checkbox" checked={lenFilter.active} onChange={e=>setLenFilter(p=>({...p, active: e.target.checked}))} />
+              Enforce Length Constraints
+            </label>
+            {lenFilter.active && (
+              <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+                <input type="number" className="input-control" style={{width:'80px'}} value={lenFilter.min} onChange={e=>setLenFilter(p=>({...p, min: parseInt(e.target.value)}))} />
+                <span style={{color:'var(--text-muted)'}}>to</span>
+                <input type="number" className="input-control" style={{width:'80px'}} value={lenFilter.max} onChange={e=>setLenFilter(p=>({...p, max: parseInt(e.target.value)}))} />
+                <span style={{color:'var(--text-muted)'}}>chars</span>
+              </div>
+            )}
+          </div>
+
+          <div className="actions">
+            <button className="btn btn-secondary" onClick={()=>setStep(1)}>Back</button>
+            <button className="btn btn-primary" onClick={generate}>Generate Dictionary</button>
+          </div>
+        </div>
+      )}
+
+      {step === 3 && (
+        <>
+          <div className="stats-grid">
+            <div className="stat-card">
+              <div className="stat-value">{wordlist.length.toLocaleString()}</div>
+              <div className="stat-label">Total Entries</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">{Math.round(wordlist.join('\n').length/1024)}</div>
+              <div className="stat-label">File Size (KB)</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">{lenFilter.active ? `${lenFilter.min}–${lenFilter.max}` : 'None'}</div>
+              <div className="stat-label">Length Filter</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">{(tokens?Object.values(tokens).reduce((s,a)=>s+a.length,0):0)}</div>
+              <div className="stat-label">Source Tokens</div>
+            </div>
+          </div>
+
+          <div className="panel">
+            <div className="panel-title">Payload Preview (First 200 items)</div>
+            <div className="output-preview">
+              {wordlist.slice(0,200).map((w,i) => <div key={i}>{w}</div>)}
+              {wordlist.length > 200 && <div style={{color:'var(--text-muted)', marginTop:'16px'}}>...and {(wordlist.length - 200).toLocaleString()} more.</div>}
+            </div>
+            <div className="actions">
+              <button className="btn btn-primary" onClick={download}>Download .txt</button>
+              <button className="btn btn-secondary" onClick={()=>setStep(2)}>Refine Tokens</button>
+              <button className="btn btn-secondary" onClick={()=>{setStep(1); setTokens(null); setWordlist([]); setInput("");}}>New Session</button>
+            </div>
+          </div>
+        </>
+      )}
+
+      {showCfg && <SettingsModal config={config} onSave={saveConfig} onClose={()=>{if(config) setShowCfg(false)}} />}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

@@ -1,11 +1,5 @@
 {
-  "Languages": [
-    "Python",
-    "C",
-    "C++",
-    "Rust",
-    "Bash"
-  ],
+  "Languages": ["Python", "C", "C++", "Rust", "Bash"],
   "AI/ML & Data": [
     "Machine Learning",
     "RAG (Retrieval-Augmented Generation)",
@@ -13,12 +7,7 @@
     "Offline ML Models",
     "NLP"
   ],
-  "Tools & Platforms": [
-    "Docker",
-    "Neovim",
-    "Tauri",
-    "Git"
-  ],
+  "Tools & Platforms": ["Docker", "Neovim", "Tauri", "Git"],
   "Operating Systems": [
     "Debian (Daily Driver)",
     "Kali Linux",

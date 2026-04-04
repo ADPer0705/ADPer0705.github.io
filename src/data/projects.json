@@ -1,0 +1,32 @@
+[
+  {
+    "id": "reconwordsmith",
+    "title": "ReconWordsmith",
+    "name": "RECONWORDSMITH",
+    "tagline": "ai-driven osint wordlist generator",
+    "description": "Contextual, AI-driven intelligent wordlist generator for security professionals. Automatically parses raw unstructured OSINT data to craft highly targeted local dictionary attacks.",
+    "tags": ["React", "OSINT", "Security", "AI", "LLM"],
+    "stack": ["react", "osint", "security", "ai", "llm"],
+    "category": "sec",
+    "year": "2025",
+    "status": "Completed",
+    "image": "",
+    "link": "https://adper0705.github.io/wordsmith/",
+    "links": { "live": "https://adper0705.github.io/wordsmith/" }
+  },
+  {
+    "id": "sempropos",
+    "title": "Sempropos",
+    "name": "SEMPROPOS",
+    "tagline": "unix workflow suggestion engine",
+    "description": "AI tool to enhance UNIX command-line help by suggesting workflows and executing them upon confirmation.",
+    "tags": ["Python", "NLP", "Shell"],
+    "stack": ["python", "nlp", "shell"],
+    "category": "ai",
+    "year": "2025",
+    "status": "In Progress",
+    "image": "assets/images/sempropos.png",
+    "link": "https://github.com/ADPer/sempropos",
+    "links": { "github": "https://github.com/ADPer/sempropos" }
+  }
+]

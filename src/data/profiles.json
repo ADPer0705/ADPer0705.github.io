@@ -1,0 +1,11 @@
+[
+  {
+    "type": "iframe",
+    "name": "TryHackMe",
+    "title": "TryHackMe",
+    "embed_url": "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2379879",
+    "content": "<iframe src=\"https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2379879\" style='border:none;'></iframe>",
+    "url": "https://tryhackme.com/p/ADPer",
+    "kind": "platform"
+  }
+]

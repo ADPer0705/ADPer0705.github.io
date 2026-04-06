@@ -5,12 +5,11 @@ import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 // Data imports
-import aboutData from './data/about.json';
+import aboutData from './data/whoami.json';
 import experienceData from './data/experience.json';
 import projectsData from './data/projects.json';
 import skillsData from './data/skills.json';
 import certificationsData from './data/certifications.json';
-import blogsData from './data/blogs.json';
 import socialData from './data/social.json';
 import hobbiesData from './data/hobbies.json';
 import profilesData from './data/profiles.json';
@@ -209,7 +208,7 @@ const Nav = () => {
         <span className="text-text-dim">debie</span>@adper<span className="text-text-dim">:</span>~<span className="text-text-dim">$</span>&nbsp;_
       </div>
       <div className="flex gap-5 flex-1">
-        {['work', 'record', 'skills', 'about', 'signals'].map((link) => (
+        {['work', 'record', 'skills', 'whoami', 'signals'].map((link) => (
           <a 
             key={link}
             href={`#${link}`} 
@@ -297,7 +296,7 @@ const Identity = () => {
             ['alias', aboutData.handle, 'text-cyan'],
             ['full_name', aboutData.name, 'text-mint'],
             ['focus', aboutData.role || 'cybersecurity · ai/ml', ''],
-            ['env', 'linux · neovim · bash', ''],
+            ['env', 'debian · bash', ''],
             ['edu', aboutData.institution || 'nfsu · b.tech+m.tech', ''],
             ['spec', 'cybersecurity', ''],
             ['location', aboutData.location || 'gandhinagar, india', ''],
@@ -507,9 +506,9 @@ const Skills = () => {
 
 const About = () => {
   return (
-    <section id="about" className="p-[72px_28px] border-b border-border relative">
+    <section id="whoami" className="p-[72px_28px] border-b border-border relative">
       <div className="flex items-end mb-[52px] gap-5">
-        <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">About</h2>
+        <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">whoami</h2>
         <div className="h-px flex-1 bg-gradient-to-r from-cyan to-transparent opacity-30 mb-2" />
         <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">04 / 05</div>
       </div>
@@ -598,9 +597,9 @@ const About = () => {
               ['github', aboutData.contact.github, `https://${aboutData.contact.github}`],
               ['linkedin', aboutData.contact.linkedin, `https://${aboutData.contact.linkedin}`],
             ].map(([k, v, href]) => (
-              <div key={k} className="flex items-center gap-4 text-xs md:text-sm">
-                <span className="text-text-dim min-w-[56px]">{k}</span>
-                <span className="text-border-hi">→</span>
+              <div key={k} className="grid grid-cols-[88px_14px_1fr] items-center gap-2 text-xs md:text-sm">
+                <span className="text-text-dim">{k}</span>
+                <span className="text-border-hi text-center">→</span>
                 <a href={href} target="_blank" className="text-text-hi transition-colors duration-200 hover:text-cyan cursor-none">
                   {v}
                 </a>
@@ -619,13 +618,24 @@ const Signals = () => {
     ([name]) => name !== 'tryhackme_badge' && name.toLowerCase() !== 'monkeytype'
   );
   const certificates = certificationsData as Array<{ name: string; issuer: string; issue_date: string; image?: string }>;
-  const blogs = blogsData as Array<{ title: string; source: string; date: string; link: string; summary?: string }>;
   const hobbies = hobbiesData as string[];
   const profiles = (profilesData as Array<{ name: string; title?: string; url: string; type?: string; embed_url?: string }>).filter(
     (profile) => profile.name.toLowerCase() !== 'monkeytype'
   );
   const contactEntries = contactData as Array<{ method: string; link: string; cta: string }>;
-  const tryhackmeBadge = social.tryhackme_badge;
+
+  const profileCards = [
+    ...profiles,
+    {
+      name: 'Medium',
+      title: 'Medium',
+      url: social.medium,
+      type: 'link',
+    },
+  ].filter((profile, index, list) => {
+    if (!profile.url) return false;
+    return list.findIndex((item) => item.url === profile.url) === index;
+  });
 
   return (
     <section id="signals" className="p-[72px_28px] border-b border-border relative bg-bg-2">
@@ -635,13 +645,13 @@ const Signals = () => {
         <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">05 / 05</div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="border border-border bg-bg p-4">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4">
+        <div className="border border-border bg-bg p-4 xl:col-span-7">
           <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Certifications</div>
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {certificates.map((cert) => (
-              <div key={cert.name} className="text-xs md:text-sm border border-border-hi p-3">
-                {cert.image && <img src={cert.image} alt={cert.name} className="w-full max-h-32 object-contain border border-border mb-3" />}
+              <div key={cert.name} className="text-xs md:text-sm border border-border-hi p-3 bg-bg-2/60">
+                {cert.image && <img src={cert.image} alt={cert.name} className="w-full h-36 object-contain border border-border mb-3 bg-bg" />}
                 <div className="text-text-hi">{cert.name}</div>
                 <div className="text-text-dim mt-1">{cert.issuer} · {cert.issue_date}</div>
               </div>
@@ -649,42 +659,45 @@ const Signals = () => {
           </div>
         </div>
 
-        <div className="border border-border bg-bg p-4">
-          <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Writing</div>
-          <div className="space-y-3">
-            {blogs.map((blog) => (
-              <a key={blog.title} href={blog.link} target="_blank" rel="noreferrer" className="block text-xs md:text-sm border border-border-hi p-3 transition-colors duration-200 hover:border-cyan">
-                <div className="text-text-hi">{blog.title}</div>
-                <div className="text-text-dim mt-1">{blog.source} · {blog.date}</div>
-                {blog.summary && <div className="text-text mt-2 leading-6">{blog.summary}</div>}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="border border-border bg-bg p-4">
+        <div className="border border-border bg-bg p-4 xl:col-span-5">
           <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Public Profiles</div>
-          <div className="space-y-2">
-            {profiles.map((profile) => (
-              <div key={profile.name} className="text-xs md:text-sm text-text border border-border-hi p-3">
-                <div className="text-text-hi mb-2">{profile.title || profile.name}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {profileCards.map((profile) => (
+              <div key={profile.url} className="text-xs md:text-sm text-text border border-border-hi p-3 bg-bg-2/60 transition-colors duration-200 hover:border-cyan h-full flex flex-col">
+                <div className="text-text-hi mb-2 flex items-center justify-between">
+                  <span>{profile.title || profile.name}</span>
+                  <span className="text-[10px] md:text-xs text-cyan">↗</span>
+                </div>
                 {profile.type === 'iframe' && profile.embed_url && (
-                  <iframe
-                    src={profile.embed_url}
-                    title={profile.title || profile.name}
-                    className="w-full h-40 border border-border mb-2"
-                    loading="lazy"
-                  />
+                  <div className="mb-3 border border-border overflow-hidden bg-bg">
+                    <iframe
+                      src={profile.embed_url}
+                      title={profile.title || profile.name}
+                      className="w-full h-[110px]"
+                      loading="lazy"
+                    />
+                  </div>
                 )}
-                <a href={profile.url} target="_blank" rel="noreferrer" className="inline-block text-cyan hover:text-text-hi transition-colors duration-200">
-                  open profile ↗
+
+                {profile.name.toLowerCase() === 'medium' && (
+                  <div className="mb-3 border border-border bg-bg p-3">
+                    <div className="text-[10px] md:text-xs text-cyan tracking-[0.12em] uppercase">Writing Hub</div>
+                    <div className="text-text mt-2 leading-6">
+                      Essays and build notes on AI systems, cybersecurity, and practical engineering.
+                    </div>
+                    <div className="text-text-dim mt-2 text-[10px] md:text-xs">@adper0705</div>
+                  </div>
+                )}
+
+                <a href={profile.url} target="_blank" rel="noreferrer" className="inline-block text-text-dim hover:text-cyan transition-colors duration-200 mt-auto">
+                  visit profile
                 </a>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="border border-border bg-bg p-4">
+        <div className="border border-border bg-bg p-4 xl:col-span-6">
           <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Networks</div>
           <div className="flex flex-wrap gap-1.5">
             {socialEntries.map(([name, url]) => (
@@ -692,11 +705,6 @@ const Signals = () => {
                 {name}
               </a>
             ))}
-            {tryhackmeBadge && (
-              <a href={tryhackmeBadge} target="_blank" rel="noreferrer" className="text-[10px] md:text-xs text-text border border-border-hi p-[3px_8px] tracking-wider transition-colors duration-200 hover:text-cyan hover:border-cyan">
-                tryhackme_badge
-              </a>
-            )}
           </div>
           <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Off-grid Interests</div>
           <div className="flex flex-wrap gap-1.5">
@@ -709,8 +717,10 @@ const Signals = () => {
           <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Contact Modes</div>
           <div className="space-y-2">
             {contactEntries.map((entry) => (
-              <a key={entry.method} href={entry.link} target="_blank" rel="noreferrer" className="block text-[11px] md:text-[13px] text-text border border-border-hi p-2.5 transition-colors duration-200 hover:text-cyan hover:border-cyan">
-                {entry.method} · {entry.cta}
+              <a key={entry.method} href={entry.link} target="_blank" rel="noreferrer" className="grid grid-cols-[100px_14px_1fr] items-center text-[11px] md:text-[13px] text-text border border-border-hi p-2.5 transition-colors duration-200 hover:text-cyan hover:border-cyan">
+                <span className="text-text-dim">{entry.method}</span>
+                <span className="text-border-hi text-center">→</span>
+                <span>{entry.cta}</span>
               </a>
             ))}
           </div>
@@ -727,7 +737,7 @@ function AppContent() {
   const [currentSection, setCurrentSection] = useState('identity');
 
   useEffect(() => {
-    const sections = ['identity', 'work', 'record', 'skills', 'about', 'signals'];
+    const sections = ['identity', 'work', 'record', 'skills', 'whoami', 'signals'];
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

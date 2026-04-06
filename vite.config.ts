@@ -13,4 +13,12 @@ export default defineConfig({
   server: {
     hmr: process.env.DISABLE_HMR !== 'true',
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        wordsmith: path.resolve(__dirname, 'wordsmith/index.html'),
+      },
+    },
+  },
 });

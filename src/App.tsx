@@ -650,57 +650,57 @@ const Signals = () => {
         <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">05 / 05</div>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4">
-        <div className="border border-border bg-bg p-4 xl:col-span-7">
-          <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Certifications</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 gap-5">
+        <div className="border border-border bg-bg p-4">
+          <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mb-4">Certifications</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {certificates.map((cert) => (
-              <div key={cert.name} className="text-xs md:text-sm border border-border-hi p-3 bg-bg-2/60">
+              <div key={cert.name} className="text-sm border border-border-hi p-4 bg-bg-2/60">
                 {cert.image && (
                   <img
                     src={staticAssetUrls[`../${cert.image}`] || `/${cert.image}`}
                     alt={cert.name}
-                    className="w-full h-36 object-contain border border-border mb-3 bg-bg"
+                    className="w-full h-44 object-contain border border-border mb-3 bg-bg"
                   />
                 )}
-                <div className="text-text-hi">{cert.name}</div>
-                <div className="text-text-dim mt-1">{cert.issuer} · {cert.issue_date}</div>
+                <div className="text-text-hi leading-6">{cert.name}</div>
+                <div className="text-text-dim mt-1 text-xs md:text-sm">{cert.issuer} · {cert.issue_date}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="border border-border bg-bg p-4 xl:col-span-5">
-          <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Public Profiles</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="border border-border bg-bg p-4">
+          <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mb-4">Public Profiles</div>
+          <div className="grid grid-cols-1 gap-4">
             {profileCards.map((profile) => (
-              <div key={profile.url} className="text-xs md:text-sm text-text border border-border-hi p-3 bg-bg-2/60 transition-colors duration-200 hover:border-cyan h-full flex flex-col">
-                <div className="text-text-hi mb-2 flex items-center justify-between">
+              <div key={profile.url} className="text-sm text-text border border-border-hi p-4 bg-bg-2/60 transition-colors duration-200 hover:border-cyan h-full flex flex-col">
+                <div className="text-text-hi mb-3 flex items-center justify-between">
                   <span>{profile.title || profile.name}</span>
-                  <span className="text-[10px] md:text-xs text-cyan">↗</span>
+                  <span className="text-xs md:text-sm text-cyan">↗</span>
                 </div>
                 {profile.type === 'iframe' && profile.embed_url && (
-                  <div className="mb-3 border border-border overflow-hidden bg-bg">
+                  <div className="mb-4 border border-border overflow-hidden bg-bg rounded-sm">
                     <iframe
                       src={profile.embed_url}
                       title={profile.title || profile.name}
-                      className="w-full h-[110px]"
+                      className="w-full h-[128px]"
                       loading="lazy"
                     />
                   </div>
                 )}
 
                 {profile.name.toLowerCase() === 'medium' && (
-                  <div className="mb-3 border border-border bg-bg p-3">
-                    <div className="text-[10px] md:text-xs text-cyan tracking-[0.12em] uppercase">Writing Hub</div>
-                    <div className="text-text mt-2 leading-6">
+                  <div className="mb-4 border border-border bg-bg p-3.5 rounded-sm">
+                    <div className="text-xs text-cyan tracking-[0.12em] uppercase">Writing Hub</div>
+                    <div className="text-text mt-2.5 leading-7 text-sm md:text-[15px]">
                       Essays and build notes on AI systems, cybersecurity, and practical engineering.
                     </div>
-                    <div className="text-text-dim mt-2 text-[10px] md:text-xs">@adper0705</div>
+                    <div className="text-text-dim mt-2.5 text-xs">@adper0705</div>
                   </div>
                 )}
 
-                <a href={profile.url} target="_blank" rel="noreferrer" className="inline-block text-text-dim hover:text-cyan transition-colors duration-200 mt-auto">
+                <a href={profile.url} target="_blank" rel="noreferrer" className="inline-block text-text-dim hover:text-cyan transition-colors duration-200 mt-auto text-sm">
                   visit profile
                 </a>
               </div>
@@ -708,27 +708,27 @@ const Signals = () => {
           </div>
         </div>
 
-        <div className="border border-border bg-bg p-4 xl:col-span-6">
-          <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mb-3">Networks</div>
+        <div className="border border-border bg-bg p-4">
+          <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mb-3">Networks</div>
           <div className="flex flex-wrap gap-1.5">
             {socialEntries.map(([name, url]) => (
-              <a key={name} href={url} target="_blank" rel="noreferrer" className="text-[10px] md:text-xs text-text border border-border-hi p-[3px_8px] tracking-wider transition-colors duration-200 hover:text-cyan hover:border-cyan">
+              <a key={name} href={url} target="_blank" rel="noreferrer" className="text-xs md:text-sm text-text border border-border-hi p-[4px_9px] tracking-wider transition-colors duration-200 hover:text-cyan hover:border-cyan">
                 {name}
               </a>
             ))}
           </div>
-          <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Off-grid Interests</div>
+          <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Off-grid Interests</div>
           <div className="flex flex-wrap gap-1.5">
             {hobbies.map((hobby) => (
-              <span key={hobby} className="text-[10px] md:text-xs text-text-dim border border-border p-[3px_8px] tracking-wider">
+              <span key={hobby} className="text-xs md:text-sm text-text-dim border border-border p-[4px_9px] tracking-wider">
                 {hobby}
               </span>
             ))}
           </div>
-          <div className="text-[10px] md:text-xs text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Contact Modes</div>
+          <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Contact Modes</div>
           <div className="space-y-2">
             {contactEntries.map((entry) => (
-              <a key={entry.method} href={entry.link} target="_blank" rel="noreferrer" className="grid grid-cols-[100px_14px_1fr] items-center text-[11px] md:text-[13px] text-text border border-border-hi p-2.5 transition-colors duration-200 hover:text-cyan hover:border-cyan">
+              <a key={entry.method} href={entry.link} target="_blank" rel="noreferrer" className="grid grid-cols-[108px_16px_1fr] items-center text-xs md:text-sm text-text border border-border-hi p-3 transition-colors duration-200 hover:text-cyan hover:border-cyan">
                 <span className="text-text-dim">{entry.method}</span>
                 <span className="text-border-hi text-center">→</span>
                 <span>{entry.cta}</span>

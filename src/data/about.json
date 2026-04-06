@@ -3,7 +3,7 @@
   "name": "Anay Dhaval Pandya",
   "preferred_name": "adper",
   "role": "CSE Student (Cybersecurity)",
-  "institution": "National Forensic Sciences University, Gujarat",
+  "institution": "National Forensic Sciences University, Gandhinagar",
   "location": "Gujarat, India",
   "email": "dearanayji@gmail.com",
   "title": "cse student (cybersecurity) · ai/ml systems builder",
@@ -20,8 +20,8 @@
     "fonts": ["Roboto", "JetBrains Mono", "Monospace for code snippets"],
     "layout": "single-page or multi-section with smooth scrolling and interactive elements"
   },
-  "current_stack": ["python", "c", "c++", "rust", "bash", "docker", "linux", "neovim", "tauri", "git"],
-  "focus_areas": ["cybersecurity", "system design", "automation", "rag exploration", "computer vision", "linux engineering", "agentic workflows"],
+  "current_stack": ["python", "c", "c++", "rust", "bash", "docker", "linux", "tauri", "git"],
+  "focus_areas": ["cybersecurity", "system design", "automation", "rag exploration", "linux engineering", "agentic workflows"],
   "contact": {
     "email": "dearanayji@gmail.com",
     "github": "github.com/ADPer0705",

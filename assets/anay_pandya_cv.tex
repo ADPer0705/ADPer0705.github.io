@@ -1,0 +1,217 @@
+%========================================
+% MASTER CV - ANAY PANDYA (v2)
+%========================================
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+% Style and color
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{3.2cm}
+
+%----------------------------------------
+% PERSONAL INFORMATION
+%----------------------------------------
+\name{ANAY}{PANDYA}
+\title{CSE (Cybersecurity) Student | National Forensic Sciences University}
+\address{Gandhinagar, Gujarat, India}{382007}
+\phone[mobile]{+91~89051~51222}
+\email{dearanayji@gmail.com}
+\homepage{adper.me}
+\social[github]{ADPer0705}
+\social[linkedin]{dearanayji}
+\extrainfo{Medium: \httplink{medium.com/@adper0705}}
+% \photo[70pt][0.4pt]{yourphoto} % optional; disabled for clean layout
+\quote{"CSE (Cybersecurity) student at NFSU focused on the intersection of AI and security."}
+
+%----------------------------------------
+\begin{document}
+\makecvtitle
+
+%----------------------------------------
+% SUMMARY / OBJECTIVE
+%----------------------------------------
+\section{Profile}
+Third-year B.Tech-M.Tech (Cybersecurity) student at NFSU specializing in the intersection of AI, automated security, and digital forensics. Experienced in architecting robust solutions ranging from serverless cloud compliance frameworks to LLM-driven intelligence tools and forensic analysis systems. Passionate problem-solver, Linux enthusiast, and active community leader as Co-Founder of the NFSU AI/ML Club.
+
+\begin{itemize}
+  \item \textbf{Cybersecurity \& Forensics:} Cloud security automation, anti-forensics detection, and applied cryptography.
+  \item \textbf{AI \& Engineering:} Retrieval-Augmented Generation (RAG), local LLM deployments, and full-stack system architecture.
+\end{itemize}
+
+
+%----------------------------------------
+% EDUCATION
+%----------------------------------------
+\section{Education}
+\cventry{2023--2028}{Integrated B.Tech + M.Tech in Computer Science and Engineering (Cybersecurity)}{National Forensic Sciences University}{Gandhinagar, Gujarat}{}{
+  \begin{itemize}
+    \item Current Semester: 6
+    \item Cumulative Performance Index (CPI): 8.95 / 10.0
+    \item Semester-wise SPI: 8.20, 9.05, 8.30, 8.95, 8.95 % (Optional: keep or remove)
+  \end{itemize}
+}
+
+
+%----------------------------------------
+% TECHNICAL SKILLS
+%----------------------------------------
+\section{Technical Skills}
+\cvitem{Languages}{Python, C/C++, Rust, Bash, JavaScript, HTML/CSS}
+\cvitem{AI / Data Science}{LangChain, FAISS, Ollama, RAG, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib, OpenCV, LLM APIs}
+\cvitem{Cloud \& Web}{AWS (Lambda, EventBridge, SAM), Boto3, FastAPI, React, WebSockets}
+\cvitem{Dev \& Databases}{Linux (Debian, Kali), Git, Docker, SQL Server, Entity Framework Core, Tauri}
+\cvitem{Domains}{Cybersecurity, Machine Learning, Cloud Security, Digital Forensics, Systems Programming}
+
+%----------------------------------------
+% PROJECTS
+%----------------------------------------
+\section{Projects}
+
+\cventry{2026}{\textbf{ChronoTrace - NTFS Anti-Forensics Detection Framework}}{GitHub: \href{https://github.com/GR4Y-SCALE/ChronoTrace}{\texttt{GR4Y-SCALE/ChronoTrace}}}{}{}{
+\begin{itemize}
+    \item Engineered an advanced forensic analysis tool for detecting timestamp manipulations and log evasion via post-mortem image analysis and real-time live monitoring.
+    \item Implemented custom deterministic anti-forensics rules evaluating \$MFT, USN Journal, and \$LogFile NTFS structures.
+    \item \textbf{Tech Stack:} Python, FastAPI, React 19, WebSockets, libewf
+\end{itemize}
+}
+
+\cventry{2026}{\textbf{RBIH IITD Tryst Hackathon}}{GitHub: \href{https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon}{\texttt{ADPer0705/RBIH-IITD-Tryst-Hackathon}}}{}{}{
+\begin{itemize}
+    \item Developed Comprehensive Exploratory Data Analysis (EDA) Jupyter Notebooks and Reports for the National Fraud Prevention Challenge.
+    \item Built and analyzed datasets focusing on digital transaction security and fraud-detection using statistical modelling techniques.
+    \item \textbf{Tech Stack:} Python, Jupyter Notebook, Pandas, Matplotlib, HTML, Data Analysis
+\end{itemize}
+}
+
+\cventry{2026}{\textbf{MerkleWatch - Cryptographic Integrity Tool}}{GitHub: \href{https://github.com/ADPer0705/MerkleWatch}{\texttt{ADPer0705/MerkleWatch}}}{}{}{
+\begin{itemize}
+    \item Developed a CLI-first utility for creating deterministic, tamper-evident directory snapshots using Merkle trees and SHA-256 hashing.
+    \item Implemented domain separation and chunked reading (64KB) for memory-efficient processing of large files, along with customizable ignore rules.
+    \item \textbf{Tech Stack:} Python, Cryptography (SHA-256), File System Operations
+\end{itemize}
+}
+
+\cventry{2026}{\textbf{Wordsmith - Contextual Dictionary Generator}}{URL: \href{https://adper.me/wordsmith}{\texttt{adper.me/wordsmith}}}{}{}{
+\begin{itemize}
+    \item Engineered an AI-driven contextual dictionary and wordlist generator tailored for security professionals.
+    \item Integrated multiple LLM providers (Groq, Gemini, OpenAI) to automatically extract relevant tokens from unstructured raw intelligence.
+    \item \textbf{Tech Stack:} JavaScript/HTML/CSS, Multiple LLM APIs (Groq, Gemini, OpenAI)
+\end{itemize}
+}
+
+\cventry{2025}{\textbf{OverPage - AI Webpage Analyzer}}{GitHub: \href{https://github.com/ADPer0705/OverPage}{\texttt{ADPer0705/OverPage}}}{}{}{
+\begin{itemize}
+    \item Developed a Chrome extension designed to scrape active webpages and generate on-demand summaries via an integrated chat interface.
+    \item Engineered a PHP backend to handle text preprocessing and forward client queries directly to the \textbf{Google Gemini API}, minimizing local resource consumption.
+    \item \textbf{Tech Stack:} HTML/CSS/JavaScript (Chrome Extension), PHP, Google Gemini API
+\end{itemize}
+}
+
+\cventry{2025}{\textbf{Praetor - Serverless AWS Security Automation}}{GitHub: \href{https://github.com/ADPer0705/praetor}{\texttt{ADPer0705/praetor}}}{}{}{
+  \begin{itemize}
+    \item Engineered a serverless compliance auditing platform using \textbf{AWS Lambda and EventBridge} to perform 170+ daily security checks across 11 AWS services.
+    \item Delivered zero-cost, enterprise-grade cloud security scanning through automated HTML dashboards and Slack integration for critical misconfigurations.
+    \item \textbf{Tech Stack:} Python, AWS (Lambda, EventBridge, CloudTrail, SAM), Boto3
+  \end{itemize}
+}
+
+\cventry{2025}{\textbf{ADB Data Fetcher Utility}}{GitHub: \href{https://github.com/ADPer0705/ADB_Data_Fetcher}{\texttt{ADPer0705/ADB\_Data\_Fetcher}}}{}{}{
+  \begin{itemize}
+    \item Developed a Windows Form desktop application using \textbf{C\# (.NET 8.0)} to automate the extraction of SMS, contacts, and logs from Android devices via ADB.
+    \item Integrated Entity Framework Core with SQL Server to provide seamless persistence and management of device data.
+    \item \textbf{Tech Stack:} C\#, Windows Forms, Entity Framework Core, SQL Server, ADB
+  \end{itemize}
+}
+
+\cventry{2025}{\textbf{TeleDM - Telegram Download Manager}}{GitHub: \href{https://github.com/ADPer0705/TeleDM}{\texttt{ADPer0705/TeleDM}}}{}{}{
+  \begin{itemize}
+    \item Developed a feature-rich desktop application enabling robust, interrupt-tolerant file downloads from Telegram without keeping the client active.
+    \item Implemented a Tkinter GUI featuring queue management, progress tracking, auto-resume capabilities, and a SQLite database for persistent download history.
+    \item \textbf{Tech Stack:} Python, Tkinter, SQLite, Telegram API
+  \end{itemize}
+}
+
+\cventry{2024}{\textbf{Inquiro - Local RAG System}}{GitHub: \href{https://github.com/CY-N4P5E/Inquiro}{\texttt{CY-N4P5E/Inquiro}}}{}{}{
+    \begin{itemize}
+    \item Built a \textbf{RAG system} transforming documents into a queryable knowledge base using \textbf{LangChain} and \textbf{FAISS}.
+    \item Implemented a local-first architecture with \textbf{local LLMs (Mistral)} via Ollama, along with Nomic Embed Text for high-quality semantic understanding and optimized memory management.
+    \item \textbf{Tech Stack:} Python, LangChain, Ollama, FAISS, Nomic Embeddings
+\end{itemize}
+}
+
+\cventry{2024}{\textbf{AIML CTF Challenges}}{GitHub: \href{https://github.com/ADPer0705/AIML_CTF}{\texttt{ADPer0705/AIML\_CTF}}}{}{}{
+  \begin{itemize}
+    \item Designed and developed original Capture-the-Flag (CTF) challenges focusing on AI/ML and Cryptography for the university club.
+    \item Created scenarios including machine learning model bias detection and Python reverse engineering to train students on practical security implementations.
+    \item \textbf{Tech Stack:} Python, Jupyter Notebook
+  \end{itemize}
+}
+
+%----------------------------------------
+% EXPERIENCE / INTERNSHIPS
+%----------------------------------------
+\section{Experience}
+\cventry{May--July 2025}{Intern / Research Assistant}{Department of Telecommunications, NFSU}{Gandhinagar}{}{
+  \begin{itemize}
+    \item Selected through a competitive university exam; the only student from my class and the youngest overall to qualify.
+    \item Conducted research on the security posture of 5G architecture, with a focus on subscriber information security vulnerabilities.
+    \item Developed a Retrieval-Augmented Generation (RAG) application, feeding it 5G technical specifications from 3GPP to enable an interactive query interface.
+    \item Gained hands-on experience in cybersecurity research, technical documentation, and applied AI integration.
+  \end{itemize}
+}
+
+\cventry{Jul 2024}{Cybersecurity Intern}{Centre for Development of Advanced Computing (C-DAC), India}{}{}{
+  \begin{itemize}
+    \item Completed an intensive training program on cybersecurity fundamentals.
+    \item Executed hands-on labs in network security, digital forensics, and ethical hacking.
+    \item Gained practical experience with tools like Wireshark, FTK Imager, and Metasploit.
+  \end{itemize}
+}
+
+
+%----------------------------------------
+% CERTIFICATIONS / COURSES
+%----------------------------------------
+\section{Certifications}
+\cvitem{Mar 2026}{Fortinet Certified Fundamentals Cybersecurity -- Fortinet}
+\cvitem{Mar 2026}{Technical Introduction to Cybersecurity 3.0 -- Fortinet}
+\cvitem{Mar 2026}{Introduction to the Threat Landscape 3.0 -- Fortinet}
+\cvitem{Dec 2024}{Certified in CC -- (ISC)\textsuperscript{2}}
+% \cvitem{Apr 2024}{Google Cloud Computing Foundations Certificate -- Google Cloud}
+% \cvitem{Apr 2024}{Build a Secure Google Cloud Network Skill Badge -- Google Cloud}
+% \cvitem{Apr 2024}{Implement Load Balancing on Compute Engine Skill Badge -- Google Cloud}
+% \cvitem{Apr 2024}{Prepare Data for ML APIs on Google Cloud Skill Badge -- Google Cloud}
+% \cvitem{Apr 2024}{Set Up an App Dev Environment on Google Cloud Skill Badge -- Google Cloud}
+
+
+%----------------------------------------
+% LEADERSHIP / POSITIONS OF RESPONSIBILITY
+%----------------------------------------
+\section{Leadership \& Activities}
+\cvitem{2024--Present}{Co-Founder / Tech Lead – AI/ML Club, National Forensic Sciences University
+  \begin{itemize}
+    \item Initiated the creation of the AI/ML Club and actively manage the DataCamp classroom for the university community.
+    \item Played a key role as part of the tech team, organizing workshops, lectures, and hands-on sessions on AI implementation and its real-world applications.
+    \item Designed and conducted a Capture-the-Flag (CTF) challenge, including creating original problems for participants.
+    \item Delivered live demonstrations and interactive programming sessions, educating students on AI/ML project development.
+  \end{itemize}
+}
+
+
+%----------------------------------------
+% INTERESTS
+%----------------------------------------
+\section{Interests}
+\cvitem{Professional}{
+  Cybersecurity, Artificial Intelligence \& Machine Learning, Intelligent Security Systems, Linux Customization, Workflow Automation
+}
+\cvitem{Personal}{
+  Tinkering with hardware/software, Gaming, Writing, Open-Source Contribution, Building towards a Stark-style personal workstation
+}
+
+%----------------------------------------
+\end{document}

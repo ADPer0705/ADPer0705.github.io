@@ -6,22 +6,22 @@
   "institution": "National Forensic Sciences University, Gandhinagar",
   "location": "Gujarat, India",
   "email": "dearanayji@gmail.com",
-  "title": "cse student (cybersecurity) · ai/ml systems builder",
-  "synopsis": "National Forensic Sciences University, Gujarat",
-  "bio": "I'm Anay Dhaval Pandya — a Computer Science student specializing in Cybersecurity at the National Forensic Sciences University, Gujarat. I explore the intersections of AI, systems engineering, and security, building tools that blend practicality with curiosity — whether it's automating workflows, designing intelligent assistants, or dissecting how systems break.\n\nWhen I'm not buried in terminal windows, I'm chasing the \"why\" behind the tech — from how networks trust, to how intelligence emerges in code. I draw a lot from the Stark principle: engineering that feels alive — intuitive, elegant, and human.\n\nLately, my focus has been on bridging human intent and machine execution — creating systems that understand context, not just commands.",
+  "title": "cybersecurity student · ai/ml systems builder",
+  "synopsis": "Specializing in the intersection of AI, automated security, and digital forensics.",
+  "bio": "I'm Anay Dhaval Pandya — a third-year Computer Science student specializing in Cybersecurity at the National Forensic Sciences University. I explore the intersections of AI, automated security, and digital forensics, architecting robust solutions that blend practicality with curiosity.\n\nFrom engineering serverless cloud compliance frameworks to building LLM-driven intelligence tools and anti-forensics detection systems, I'm chasing the \"why\" behind the tech. I draw heavily from the Stark principle: engineering that feels alive — intuitive, elegant, and human. When I'm not buried in terminal windows, I'm analyzing how networks trust or how intelligence emerges in code.\n\nMy current focus lies in bridging human intent and machine execution — creating robust, contextual systems that adapt to complex security landscapes.",
   "description": [
-    "I'm Anay Dhaval Pandya — a Computer Science student specializing in Cybersecurity at the National Forensic Sciences University, Gujarat. I explore the intersections of AI, systems engineering, and security, building tools that blend practicality with curiosity — whether it's automating workflows, designing intelligent assistants, or dissecting how systems break.",
-    "When I'm not buried in terminal windows, I'm chasing the \"why\" behind the tech — from how networks trust, to how intelligence emerges in code. I draw a lot from the Stark principle: engineering that feels alive — intuitive, elegant, and human.",
-    "Lately, my focus has been on bridging human intent and machine execution — creating systems that understand context, not just commands."
+    "I'm Anay Dhaval Pandya — a third-year Computer Science student specializing in Cybersecurity at the National Forensic Sciences University. I explore the intersections of AI, automated security, and digital forensics, architecting robust solutions that blend practicality with curiosity.",
+    "From engineering serverless cloud compliance frameworks to building LLM-driven intelligence tools and anti-forensics detection systems, I'm chasing the \"why\" behind the tech. I draw heavily from the Stark principle: engineering that feels alive — intuitive, elegant, and human.",
+    "My current focus lies in bridging human intent and machine execution — creating robust, contextual systems that adapt to complex security landscapes."
   ],
-  "personality_traits": ["ENFP", "creative", "curious", "tech-geek"],
+  "personality_traits": ["visionary", "curious", "problem-solver", "linux-enthusiast"],
   "theme": {
     "colors": ["#0f111a", "#1a1f2a", "#61dafb", "#ffffff"],
     "fonts": ["Roboto", "JetBrains Mono", "Monospace for code snippets"],
     "layout": "single-page or multi-section with smooth scrolling and interactive elements"
   },
-  "current_stack": ["python", "c", "c++", "rust", "bash", "docker", "linux", "tauri", "git"],
-  "focus_areas": ["cybersecurity", "system design", "automation", "rag exploration", "linux engineering", "agentic workflows"],
+  "current_stack": ["python", "c/c++", "rust", "bash", "aws", "react", "fastapi", "linux"],
+  "focus_areas": ["cybersecurity", "digital forensics", "applied ai/ml", "cloud security", "systems engineering"],
   "contact": {
     "email": "dearanayji@gmail.com",
     "github": "github.com/ADPer0705",

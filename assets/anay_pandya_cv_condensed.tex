@@ -1,0 +1,134 @@
+\documentclass[9pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=0.6cm,bottom=0.6cm,left=1.0cm,right=1.0cm]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+\definecolor{accent}{RGB}{30,80,160}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\pagestyle{empty}
+
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{}{0em}{}
+  [\vspace{-5pt}\rule{\linewidth}{0.6pt}\vspace{-3pt}]
+\titlespacing{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{noitemsep, topsep=0pt, partopsep=0pt, leftmargin=1.2em, itemsep=0pt}
+
+\newcommand{\cventry}[3]{%
+  \noindent\textbf{#1} \hfill \textit{\small #2}%
+  \ifx&#3&\else\\\textit{\small\color{gray}#3}\fi%
+  \vspace{1pt}%
+}
+
+\begin{document}
+
+% HEADER — name left, contact right
+\noindent
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+  {\LARGE\bfseries\color{accent} ANAY PANDYA} &
+  {\footnotesize
+    \href{mailto:dearanayji@gmail.com}{dearanayji@gmail.com} $\cdot$
+    \href{tel:+918905151222}{+91 89051 51222}
+  } \\
+  {\small\textit{CSE (Cybersecurity) $\cdot$ National Forensic Sciences University}} &
+  {\footnotesize
+    \href{https://adper.me}{adper.me} $\cdot$
+    \href{https://github.com/ADPer0705}{github/ADPer0705} $\cdot$
+    \href{https://linkedin.com/in/dearanayji}{linkedin/dearanayji}
+  }
+\end{tabularx}
+\vspace{-2pt}
+
+% EDUCATION
+\section{Education}
+\noindent\textbf{Integrated B.Tech + M.Tech, CSE (Cybersecurity)} \hfill \textit{2023 -- 2028} \\
+{\small\textit{National Forensic Sciences University, Gandhinagar, Gujarat}} \hfill {\small CPI: \textbf{8.95/10.0} $\cdot$ Semester 6}
+
+% SKILLS
+\section{Technical Skills}
+\vspace{1pt}
+{\small
+\noindent\textbf{Languages:} Python, C/C++, Rust, Bash, JavaScript, HTML/CSS \hfill
+\textbf{AI/ML:} LangChain, FAISS, Ollama, RAG, PyTorch, Scikit-learn, OpenCV \\[1pt]
+\noindent\textbf{Cloud \& Web:} AWS (Lambda, EventBridge, SAM), Boto3, FastAPI, React, WebSockets \hfill
+\textbf{Dev:} Linux, Git, Docker, SQLite, SQL Server, Tauri
+}
+
+% EXPERIENCE
+\section{Experience}
+
+\cventry{Research Intern --- Dept. of Telecommunications, NFSU}{May -- July 2025}{}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Youngest and only student from class selected via competitive exam; researched 5G subscriber security vulnerabilities and built a RAG application over 3GPP technical specifications.}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{Cybersecurity Intern --- C-DAC, India}{July 2024}{}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Hands-on labs in network security, digital forensics, and ethical hacking using Wireshark, FTK Imager, and Metasploit.}
+\end{itemize}
+
+% PROJECTS
+\section{Projects}
+
+\cventry{ChronoTrace -- NTFS Anti-Forensics Detection Framework}{2026}{\href{https://github.com/GR4Y-SCALE/ChronoTrace}{github.com/GR4Y-SCALE/ChronoTrace}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Forensic tool detecting timestamp manipulation and log evasion via post-mortem image analysis and real-time monitoring of \$MFT, USN Journal, and \$LogFile NTFS structures. \textit{Python, FastAPI, React 19, WebSockets, libewf}}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{Praetor -- Serverless AWS Security Automation}{2025}{\href{https://github.com/ADPer0705/praetor}{github.com/ADPer0705/praetor}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Serverless compliance platform performing \textbf{170+ daily security checks} across 11 AWS services at zero cost, with automated HTML dashboards and Slack alerting for misconfigurations. \textit{Python, AWS Lambda, EventBridge, CloudTrail, SAM, Boto3}}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{Wordsmith -- AI Security Wordlist Generator}{2026}{\href{https://adper.me/wordsmith}{adper.me/wordsmith}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small AI-driven contextual dictionary integrating Groq, Gemini, and OpenAI to extract tokens from unstructured threat intelligence for security professionals. \textit{JavaScript/HTML/CSS, LLM APIs}}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{MerkleWatch -- Cryptographic Integrity Tool}{2026}{\href{https://github.com/ADPer0705/MerkleWatch}{github.com/ADPer0705/MerkleWatch}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small CLI utility for tamper-evident directory snapshots using Merkle trees and SHA-256 with 64KB chunked reads for memory-efficient large file processing. \textit{Python, Cryptography}}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{Inquiro -- Local RAG System}{2024}{\href{https://github.com/CY-N4P5E/Inquiro}{github.com/CY-N4P5E/Inquiro}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Local-first RAG system over private document collections using LangChain, FAISS, and Mistral via Ollama with Nomic Embed Text for semantic retrieval. \textit{Python, LangChain, FAISS, Ollama}}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{RBIH IITD Tryst Hackathon -- National Fraud Prevention Challenge}{2026}{\href{https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon}{github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Comprehensive EDA notebooks and fraud-detection analysis on digital transaction datasets using statistical modelling techniques. \textit{Python, Jupyter, Pandas, Matplotlib}}
+\end{itemize}
+
+\vspace{1pt}
+\cventry{OverPage -- AI Webpage Analyzer}{2025}{\href{https://github.com/ADPer0705/OverPage}{github.com/ADPer0705/OverPage}}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Chrome extension scraping active webpages and generating on-demand summaries via an integrated chat interface, with a PHP backend forwarding queries to Google Gemini API. \textit{HTML/CSS/JS, PHP, Gemini API}}
+\end{itemize}
+
+% CERTIFICATIONS
+\section{Certifications}
+{\small
+\noindent\textbf{Mar 2026:} Fortinet Certified Fundamentals Cybersecurity; Technical Intro to Cybersecurity 3.0; Intro to the Threat Landscape 3.0 --- \textit{Fortinet} \\[1pt]
+\noindent\textbf{Dec 2024:} Certified in Cybersecurity (CC) --- \textit{(ISC)\textsuperscript{2}}
+}
+
+% LEADERSHIP
+\section{Leadership \& Activities}
+\cventry{Co-Founder / Tech Lead -- AI/ML Club, NFSU}{2024 -- Present}{}
+\begin{itemize}
+  \item[\small$\bullet$] {\small Initiated the club; manage the DataCamp classroom, organize workshops and CTF challenges, and deliver hands-on AI/ML sessions to the university community.}
+\end{itemize}
+
+\end{document}

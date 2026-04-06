@@ -1,24 +1,38 @@
 {
-  "Languages": ["Python", "C", "C++", "Rust", "Bash"],
-  "AI/ML & Data": [
-    "Machine Learning",
-    "RAG (Retrieval-Augmented Generation)",
-    "Computer Vision",
-    "Offline ML Models",
-    "NLP"
+  "Languages": ["Python", "C/C++", "Rust", "Bash", "JavaScript", "HTML/CSS"],
+  "AI / Data Science": [
+    "LangChain",
+    "FAISS",
+    "Ollama",
+    "RAG",
+    "PyTorch",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "OpenCV",
+    "LLM APIs"
   ],
-  "Tools & Platforms": ["Docker", "Neovim", "Tauri", "Git"],
-  "Operating Systems": [
-    "Debian (Daily Driver)",
-    "Kali Linux",
-    "Ubuntu",
-    "Arch Linux",
-    "WSL (Windows Subsystem for Linux)"
+  "Cloud & Web": [
+    "AWS (Lambda, EventBridge, SAM)",
+    "Boto3",
+    "FastAPI",
+    "React",
+    "WebSockets"
   ],
-  "Core Concepts": [
+  "Dev & Databases": [
+    "Linux (Debian, Kali)",
+    "Git",
+    "Docker",
+    "SQL Server",
+    "Entity Framework Core",
+    "Tauri"
+  ],
+  "Domains": [
     "Cybersecurity",
-    "System Design",
-    "Automation & Scripting",
-    "Linux System Administration"
+    "Machine Learning",
+    "Cloud Security",
+    "Digital Forensics",
+    "Systems Programming"
   ]
 }

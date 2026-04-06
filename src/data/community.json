@@ -1,0 +1,17 @@
+[
+  {
+    "org": "AI/ML Club, National Forensic Sciences University",
+    "role": "Co-Founder / Tech Team Member",
+    "period": "2024 - Present",
+    "type": "community",
+    "organization_logo": "assets/ai_ml_club_nfsu_gandhinagar_logo.jpeg",
+    "location": "Gandhinagar, Gujarat, India",
+    "description": "I helped kickstart the AI/ML Club to create a space where we could build and break things together. It's been incredibly rewarding to grow a community of peers who just want to tinker, learn, and share knowledge.",
+    "highlights": [
+      "Manage the DataCamp classroom to provide accessible learning resources for the university community.",
+      "Organize hands-on workshops and live programming sessions to bridge the gap between theory and actual code.",
+      "Designed and hosted original Capture-the-Flag (CTF) challenges focusing on AI/ML and Cryptography to gamify learning."
+    ],
+    "tags": ["community", "education", "mentorship", "ctf", "ai/ml"]
+  }
+]

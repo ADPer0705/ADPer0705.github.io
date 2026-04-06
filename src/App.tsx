@@ -20,6 +20,11 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+const staticAssetUrls = import.meta.glob('../assets/*.{png,jpg,jpeg,webp,avif,gif,svg}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
 // --- Components ---
 
 const Cursor = () => {
@@ -651,7 +656,13 @@ const Signals = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {certificates.map((cert) => (
               <div key={cert.name} className="text-xs md:text-sm border border-border-hi p-3 bg-bg-2/60">
-                {cert.image && <img src={cert.image} alt={cert.name} className="w-full h-36 object-contain border border-border mb-3 bg-bg" />}
+                {cert.image && (
+                  <img
+                    src={staticAssetUrls[`../${cert.image}`] || `/${cert.image}`}
+                    alt={cert.name}
+                    className="w-full h-36 object-contain border border-border mb-3 bg-bg"
+                  />
+                )}
                 <div className="text-text-hi">{cert.name}</div>
                 <div className="text-text-dim mt-1">{cert.issuer} · {cert.issue_date}</div>
               </div>

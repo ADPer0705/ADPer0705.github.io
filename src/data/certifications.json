@@ -4,5 +4,23 @@
     "issuer": "ISC²",
     "issue_date": "December 2024",
     "image": "assets/ISC2-CC.png"
+  },
+  {
+    "name": "Fortinet Certified Fundamentals Cybersecurity",
+    "issuer": "Fortinet",
+    "issue_date": "March 2026",
+    "image": "assets/Fortinet-CertifiedFundamentalsCybersecurity.png"
+  },
+  {
+    "name": "Fortinet Introduction to the Threat Landscape 3.0",
+    "issuer": "Fortinet",
+    "issue_date": "March 2026",
+    "image": "assets/Fortinet-IntroductionToThreatLandscape-3.0.png"
+  },
+  {
+    "name": "Fortinet Technical Introduction to Cybersecurity 3.0",
+    "issuer": "Fortinet",
+    "issue_date": "March 2026",
+    "image": "assets/Fortinet-TechnicalIntroductionToCybersecurity-3.0.png"
   }
 ]

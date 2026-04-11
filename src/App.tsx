@@ -20,7 +20,7 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const staticAssetUrls = import.meta.glob('../assets/*.{png,jpg,jpeg,webp,avif,gif,svg}', {
+const staticAssetUrls = import.meta.glob('../assets/**/*.{png,jpg,jpeg,webp,avif,gif,svg}', {
   eager: true,
   import: 'default',
 }) as Record<string, string>;
@@ -557,7 +557,7 @@ const About = () => {
           </div>
           <div className="flex flex-wrap gap-1.5 mt-1.5">
             {aboutData.current_stack.map(s => (
-              <span key={s} className="text-[11px] md:text-[13px] text-text-dim border border-border p-[3px_10px] tracking-wider transition-all duration-200 hover:text-cyan hover:border-cyan">
+              <span key={s} className="text-[11px] md:text-[13px] text-text border border-border-hi p-[3px_10px] tracking-wider transition-all duration-200 hover:text-cyan hover:border-cyan">
                 {s}
               </span>
             ))}
@@ -584,7 +584,7 @@ const About = () => {
             </div>
             <div className="flex flex-wrap gap-1.5">
               {aboutData.personality_traits.map((trait) => (
-                <span key={trait} className="text-[11px] md:text-[13px] text-text-dim border border-border p-[3px_10px] tracking-wider">
+                <span key={trait} className="text-[11px] md:text-[13px] text-text border border-border-hi p-[3px_10px] tracking-wider">
                   {trait}
                 </span>
               ))}
@@ -720,7 +720,7 @@ const Signals = () => {
           <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mt-6 mb-3">Off-grid Interests</div>
           <div className="flex flex-wrap gap-1.5">
             {hobbies.map((hobby) => (
-              <span key={hobby} className="text-xs md:text-sm text-text-dim border border-border p-[4px_9px] tracking-wider">
+              <span key={hobby} className="text-xs md:text-sm text-text border border-border-hi p-[4px_9px] tracking-wider">
                 {hobby}
               </span>
             ))}

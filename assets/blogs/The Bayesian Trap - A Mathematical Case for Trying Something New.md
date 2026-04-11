@@ -1,3 +1,5 @@
+![The Bayesian Trap - A visualization of Bayes' theorem and probability](./Attachments/BayesianTrap.png)
+
 Humans are notoriously terrible at intuitive probability.
 
 Imagine you wake up feeling slightly off. You visit the doctor, and she runs a battery of tests. A week later, she calls with bad news: you tested positive for a rare disease that affects 0.1% of the population.

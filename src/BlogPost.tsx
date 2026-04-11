@@ -430,14 +430,6 @@ export default function BlogPost() {
             </div>
           )}
 
-          {/* Canonical note */}
-          <div className="border-l-2 border-cyan/30 pl-4 mb-9 text-[10px] text-text-dim tracking-wider leading-[1.8]">
-            <span className="text-cyan/60">canonical:</span>{' '}
-            <code className="text-text-dim">https://adper.me/blog/{meta.slug}</code>
-            <br />
-            This is the original post. Cross-posts on Medium / dev.to / Hashnode point here.
-          </div>
-
           {/* Markdown content */}
           <div
             ref={contentRef}

@@ -219,7 +219,7 @@ const Nav = () => {
         {['work', 'record', 'skills', 'whoami', 'signals', 'log'].map((link) => (
           <a 
             key={link}
-            href={`#${link}`} 
+            href={link === 'log' ? '/logs' : `/#${link}`} 
             className="text-[11px] md:text-[13px] text-text-dim tracking-[0.08em] transition-colors duration-200 hover:text-text-hi relative pb-0.5 group"
           >
             ./{link}
@@ -746,6 +746,35 @@ const Signals = () => {
 
 const Writings = () => {
   const navigate = useNavigate();
+
+  return (
+    <section id="log" className="p-[72px_28px] border-b border-border relative">
+      <div className="flex items-end mb-[52px] gap-5">
+        <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">
+          Log
+        </h2>
+        <div className="h-px flex-1 bg-gradient-to-r from-cyan to-transparent opacity-30 mb-2" />
+        <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">06 / 06</div>
+      </div>
+
+      <div className="max-w-[700px]">
+        <div className="text-xs md:text-sm text-text leading-[1.8] mb-8">
+          Essays and build notes on AI systems, cybersecurity, and practical systems engineering.
+        </div>
+        <button
+          onClick={() => navigate('/logs')}
+          className="font-mono text-[11px] md:text-[13px] text-text-dim border border-border-hi p-[10px_20px] tracking-[0.07em] transition-all duration-200 hover:text-cyan hover:border-cyan relative overflow-hidden group inline-block cursor-none"
+        >
+          [ ACCESS_LOGS ]
+          <span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-[0.06] transition-opacity" />
+        </button>
+      </div>
+    </section>
+  );
+};
+
+const BlogListPage = () => {
+  const navigate = useNavigate();
   type BlogSummary = {
     slug: string;
     title: string;
@@ -780,57 +809,65 @@ const Writings = () => {
   });
 
   return (
-    <section id="log" className="p-[72px_28px] border-b border-border relative">
-      <div className="flex items-end mb-[52px] gap-5">
-        <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">
-          Log
-        </h2>
-        <div className="h-px flex-1 bg-gradient-to-r from-cyan to-transparent opacity-30 mb-2" />
-        <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">06 / 06</div>
-      </div>
+    <div className="relative min-h-screen bg-bg text-text overflow-hidden selection:bg-cyan/15 selection:text-cyan">
+      <Cursor />
+      <CanvasBackground />
+      <Nav />
+      
+      <main className="relative z-10 mt-[42px] mb-[26px]">
+        <section className="p-[72px_28px] border-b border-border relative max-w-[1200px] mx-auto">
+          <div className="flex items-end mb-[52px] gap-5">
+            <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">
+              All Logs
+            </h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-cyan to-transparent opacity-30 mb-2" />
+          </div>
 
-      {/* Section header hint */}
-      <div className="flex items-center gap-2.5 text-[10px] md:text-xs text-text-dim tracking-[0.18em] uppercase mb-9 before:content-[''] before:w-[18px] before:h-px before:bg-cyan before:shrink-0">
-        writing · essays · build-logs
-      </div>
+          <div className="flex items-center gap-2.5 text-[10px] md:text-xs text-text-dim tracking-[0.18em] uppercase mb-9 before:content-[''] before:w-[18px] before:h-px before:bg-cyan before:shrink-0">
+            writing · essays · build-logs
+          </div>
 
-      <div className="flex flex-col gap-[3px]">
-        {posts.map((post) => {
-          const formattedDate = post.date
-            ? new Date(post.date).toLocaleDateString('en-GB', {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-              })
-            : 'undated';
-          return (
-            <button
-              key={post.slug}
-              onClick={() => navigate(`/blog/${post.slug}`)}
-              className="border border-border bg-bg-2 p-5 text-left transition-all duration-200 hover:bg-bg-3 hover:border-cyan group cursor-none"
-            >
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <h3 className="font-display font-bold text-[clamp(16px,2vw,20px)] text-text-hi uppercase tracking-[-0.01em] leading-[1.1] flex-1 group-hover:text-cyan transition-colors duration-200">
-                  {post.title}
-                </h3>
-                <span className="text-[11px] text-text-dim tabular-nums whitespace-nowrap shrink-0">{formattedDate}</span>
-              </div>
-              <p className="text-[13px] text-text-dim leading-[1.6] mb-3">{post.description}</p>
-              <div className="flex flex-wrap gap-1.5">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] md:text-xs text-text-dim border border-border p-[2px_7px] tracking-wider transition-colors duration-200 group-hover:border-border-hi group-hover:text-text"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </button>
-          );
-        })}
-      </div>
-    </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {posts.map((post) => {
+              const formattedDate = post.date
+                ? new Date(post.date).toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                  })
+                : 'undated';
+              return (
+                <a
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="flex flex-col h-full border border-border bg-bg-2 p-6 text-left transition-all duration-200 hover:bg-bg-3 hover:border-cyan group cursor-none"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3 className="font-display font-bold text-[clamp(18px,2vw,22px)] text-text-hi uppercase tracking-[-0.01em] leading-[1.2] flex-1 group-hover:text-cyan transition-colors duration-200">
+                      {post.title}
+                    </h3>
+                    <span className="text-[12px] text-text-dim tabular-nums whitespace-nowrap shrink-0">{formattedDate}</span>
+                  </div>
+                  <p className="text-[14px] text-text-dim leading-[1.6] mb-6 flex-grow">{post.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] md:text-[11px] text-text-dim border border-border p-[3px_8px] tracking-wider transition-colors duration-200 group-hover:border-border-hi group-hover:text-text"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      </main>
+
+      <Statusbar currentSection="log" />
+    </div>
   );
 };
 
@@ -897,6 +934,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<AppContent />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/logs" element={<BlogListPage />} />
       </Routes>
     </Router>
   );

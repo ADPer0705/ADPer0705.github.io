@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "the-bayesian-trap",
+    "title": "The Bayesian Trap: A Mathematical Case for Trying Something New",
+    "date": "2025-11-01",
+    "description": "How Bayes' theorem exposes a cognitive trap — why your brain fights novelty, and why the math says you should push through it anyway.",
+    "tags": ["math", "probability", "decision-making", "essay"],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "the-context-theory-of-relationships",
+    "title": "The Context Theory of Relationships",
+    "date": "2025-10-15",
+    "description": "A framework for understanding why relationships shift when context shifts — and what that means for how we build and maintain them.",
+    "tags": ["essay", "philosophy", "relationships"],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "you-dont-need-prompt-engineering",
+    "title": "You Don't Need Prompt Engineering to Talk to AI",
+    "date": "2025-10-01",
+    "description": "The prompt engineering discourse is overblown. Here's why thinking clearly matters more than any framework or formula.",
+    "tags": ["ai", "llm", "opinion", "essay"],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "bias-buster",
+    "title": "Bias Buster — CTF Writeup",
+    "date": "2025-09-15",
+    "description": "A writeup on designing Bias Buster — a CTF-style challenge exploring AI/ML data bias, built for the AI/ML Club at NFSU.",
+    "tags": ["ctf", "writeup", "ai/ml", "bias"],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  }
+]

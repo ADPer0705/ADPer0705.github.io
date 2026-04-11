@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -14,6 +14,9 @@ import socialData from './data/social.json';
 import hobbiesData from './data/hobbies.json';
 import profilesData from './data/profiles.json';
 import contactData from './data/contact.json';
+import BlogPost from './BlogPost';
+import blogsData from './data/blogs.json';
+import { blogContent } from './blogContent';
 
 // --- Utilities ---
 function cn(...inputs: ClassValue[]) {
@@ -213,7 +216,7 @@ const Nav = () => {
         <span className="text-text-dim">debie</span>@adper<span className="text-text-dim">:</span>~<span className="text-text-dim">$</span>&nbsp;_
       </div>
       <div className="flex gap-5 flex-1">
-        {['work', 'record', 'skills', 'whoami', 'signals'].map((link) => (
+        {['work', 'record', 'skills', 'whoami', 'signals', 'log'].map((link) => (
           <a 
             key={link}
             href={`#${link}`} 
@@ -647,7 +650,7 @@ const Signals = () => {
       <div className="flex items-end mb-[52px] gap-5">
         <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">Signals</h2>
         <div className="h-px flex-1 bg-gradient-to-r from-cyan to-transparent opacity-30 mb-2" />
-        <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">05 / 05</div>
+        <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">05 / 06</div>
       </div>
 
       <div className="grid grid-cols-1 gap-5">
@@ -741,6 +744,96 @@ const Signals = () => {
   );
 };
 
+const Writings = () => {
+  const navigate = useNavigate();
+  type BlogSummary = {
+    slug: string;
+    title: string;
+    date?: string;
+    description: string;
+    tags: string[];
+    platforms: Record<string, string>;
+  };
+
+  const metadataPosts = blogsData as Array<BlogSummary>;
+  const contentSlugs = new Set(Object.keys(blogContent));
+  const knownSlugs = new Set(metadataPosts.map((post) => post.slug));
+
+  const inferredPosts: BlogSummary[] = Array.from(contentSlugs)
+    .filter((slug) => !knownSlugs.has(slug))
+    .map((slug) => ({
+      slug,
+      title: slug
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' '),
+      description: 'Post content available',
+      tags: [],
+      platforms: { medium: '', devto: '', hashnode: '' },
+    }));
+
+  const posts = [...metadataPosts.filter((post) => contentSlugs.has(post.slug)), ...inferredPosts].sort((a, b) => {
+    if (a.date && b.date) return new Date(b.date).getTime() - new Date(a.date).getTime();
+    if (a.date) return -1;
+    if (b.date) return 1;
+    return 0;
+  });
+
+  return (
+    <section id="log" className="p-[72px_28px] border-b border-border relative">
+      <div className="flex items-end mb-[52px] gap-5">
+        <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">
+          Log
+        </h2>
+        <div className="h-px flex-1 bg-gradient-to-r from-cyan to-transparent opacity-30 mb-2" />
+        <div className="text-[11px] md:text-[13px] text-text-dim tracking-[0.1em] mb-1.5 shrink-0">06 / 06</div>
+      </div>
+
+      {/* Section header hint */}
+      <div className="flex items-center gap-2.5 text-[10px] md:text-xs text-text-dim tracking-[0.18em] uppercase mb-9 before:content-[''] before:w-[18px] before:h-px before:bg-cyan before:shrink-0">
+        writing · essays · build-logs
+      </div>
+
+      <div className="flex flex-col gap-[3px]">
+        {posts.map((post) => {
+          const formattedDate = post.date
+            ? new Date(post.date).toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+              })
+            : 'undated';
+          return (
+            <button
+              key={post.slug}
+              onClick={() => navigate(`/blog/${post.slug}`)}
+              className="border border-border bg-bg-2 p-5 text-left transition-all duration-200 hover:bg-bg-3 hover:border-cyan group cursor-none"
+            >
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <h3 className="font-display font-bold text-[clamp(16px,2vw,20px)] text-text-hi uppercase tracking-[-0.01em] leading-[1.1] flex-1 group-hover:text-cyan transition-colors duration-200">
+                  {post.title}
+                </h3>
+                <span className="text-[11px] text-text-dim tabular-nums whitespace-nowrap shrink-0">{formattedDate}</span>
+              </div>
+              <p className="text-[13px] text-text-dim leading-[1.6] mb-3">{post.description}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] md:text-xs text-text-dim border border-border p-[2px_7px] tracking-wider transition-colors duration-200 group-hover:border-border-hi group-hover:text-text"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
 // --- Main App Content ---
 
 function AppContent() {
@@ -748,7 +841,7 @@ function AppContent() {
   const [currentSection, setCurrentSection] = useState('identity');
 
   useEffect(() => {
-    const sections = ['identity', 'work', 'record', 'skills', 'whoami', 'signals'];
+    const sections = ['identity', 'work', 'record', 'skills', 'whoami', 'signals', 'log'];
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -788,6 +881,7 @@ function AppContent() {
             <Skills />
             <About />
             <Signals />
+            <Writings />
           </main>
 
           <Statusbar currentSection={currentSection} />
@@ -800,7 +894,10 @@ function AppContent() {
 export default function App() {
   return (
     <Router>
-      <AppContent />
+      <Routes>
+        <Route path="/" element={<AppContent />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
     </Router>
   );
 }

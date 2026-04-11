@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>adper</title>
+  <script>
+    // GitHub Pages SPA routing fix.
+    // When GH Pages gets a request for /blog/some-slug it returns this 404.html.
+    // We store the full path in sessionStorage and redirect to /, where the
+    // React app reads it back and replaces the history entry — so React Router
+    // sees the correct URL and renders the right component.
+    var path = window.location.pathname + window.location.search + window.location.hash;
+    sessionStorage.setItem('spa_redirect', path);
+    window.location.replace('/');
+  </script>
+</head>
+<body></body>
+</html>

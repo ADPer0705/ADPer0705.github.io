@@ -78,3 +78,240 @@ a { color: inherit; text-decoration: none; }
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ─── Blog Prose Styles ─────────────────────────────────────────────────── */
+/* Append these rules to the bottom of src/index.css                         */
+
+.blog-prose {
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.85;
+  max-width: 680px;
+}
+
+/* Paragraphs */
+.blog-p {
+  margin-bottom: 1.25em;
+  color: var(--color-text);
+}
+
+.blog-spacer {
+  height: 0.5em;
+}
+
+/* Headings */
+.blog-h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--color-text-hi);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  margin: 2.5em 0 0.75em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-h2 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(22px, 3vw, 30px);
+  color: var(--color-text-hi);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin: 2em 0 0.6em;
+}
+
+.blog-h2::before {
+  content: '## ';
+  color: var(--color-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.55em;
+  opacity: 0.6;
+  vertical-align: middle;
+}
+
+.blog-h3 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 1.75em 0 0.5em;
+}
+
+.blog-h3::before {
+  content: '> ';
+  opacity: 0.4;
+}
+
+.blog-h4, .blog-h5, .blog-h6 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-hi);
+  letter-spacing: 0.1em;
+  margin: 1.5em 0 0.4em;
+}
+
+/* Inline code */
+.blog-inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--color-mint);
+  background: color-mix(in srgb, var(--color-mint) 8%, transparent);
+  padding: 1px 6px;
+  border: 1px solid color-mix(in srgb, var(--color-mint) 20%, transparent);
+}
+
+/* Code blocks */
+.blog-pre {
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-border-hi);
+  padding: 18px 20px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  position: relative;
+}
+
+.blog-pre::before {
+  content: '$ ';
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  font-size: 9px;
+  color: var(--color-text-dim);
+  letter-spacing: 0.1em;
+}
+
+.blog-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-hi);
+  line-height: 1.7;
+  white-space: pre;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Blockquote */
+.blog-blockquote {
+  border-left: 2px solid var(--color-cyan);
+  padding: 12px 16px;
+  margin: 1.5em 0;
+  background: color-mix(in srgb, var(--color-cyan) 4%, transparent);
+  color: var(--color-text-hi);
+  font-style: italic;
+}
+
+/* Lists */
+.blog-ul, .blog-ol {
+  margin: 1em 0 1.25em;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blog-li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.blog-ul .blog-li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  color: var(--color-cyan);
+}
+
+.blog-ol {
+  counter-reset: blog-ol;
+}
+
+.blog-ol .blog-li {
+  counter-increment: blog-ol;
+}
+
+.blog-ol .blog-li::before {
+  content: counter(blog-ol) '.';
+  position: absolute;
+  left: 0;
+  color: var(--color-cyan);
+  font-size: 11px;
+  opacity: 0.7;
+  top: 2px;
+}
+
+/* Horizontal rule */
+.blog-hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2.5em 0;
+  position: relative;
+}
+
+.blog-hr::after {
+  content: '···';
+  position: absolute;
+  right: 0;
+  top: -9px;
+  font-size: 10px;
+  color: var(--color-text-dim);
+  letter-spacing: 0.1em;
+}
+
+/* Links */
+.blog-a {
+  color: var(--color-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-cyan) 30%, transparent);
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.blog-a:hover {
+  border-color: var(--color-cyan);
+  opacity: 0.8;
+}
+
+/* Strong / Em */
+.blog-strong {
+  color: var(--color-text-hi);
+  font-weight: 500;
+}
+
+.blog-em {
+  color: var(--color-text-hi);
+  font-style: italic;
+}
+
+/* Math */
+.blog-math-inline .katex {
+  color: var(--color-text-hi);
+  font-size: 0.95em;
+}
+
+.blog-math-block {
+  margin: 1.35em 0;
+  overflow-x: auto;
+}
+
+.blog-math-block .katex-display {
+  margin: 0;
+  color: var(--color-text-hi);
+}
+
+/* Images */
+.blog-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border-hi);
+  margin: 1.5em 0;
+  display: block;
+}

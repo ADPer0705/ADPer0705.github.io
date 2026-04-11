@@ -105,8 +105,8 @@ The framework is both humbling and liberating. Humbling, because it reveals how 
 
 **If you want to go deeper on this:**
 
-- [The Bayesian Trap](https://www.youtube.com/watch?v=HZGCoVF3YvM) by Veritasium — a masterclass in how Bayesian reasoning shapes everything from science to superstition.
-- [Bayes theorem, the geometry of changing beliefs](https://youtu.be/R13BD8qKeTg?si=McU2zULHplBrLTFn) by 3Blue1Brown — a visual, intuition-building walkthrough that makes the math feel inevitable.
+- [The Bayesian Trap](https://youtu.be/R13BD8qKeTg?si=McU2zULHplBrLTFn) by Veritasium — a masterclass in how Bayesian reasoning shapes everything from science to superstition.
+- [Bayes theorem, the geometry of changing beliefs](https://www.youtube.com/watch?v=HZGCoVF3YvM) by 3Blue1Brown — a visual, intuition-building walkthrough that makes the math feel inevitable.
 
 ---
 

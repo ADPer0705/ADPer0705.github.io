@@ -5,6 +5,8 @@
     "FAISS",
     "Ollama",
     "RAG",
+    "Embeddings",
+    "BM25 / Hybrid Retrieval",
     "PyTorch",
     "Scikit-learn",
     "Pandas",
@@ -24,6 +26,8 @@
     "Linux (Debian, Kali)",
     "Git",
     "Docker",
+    "CLI Engineering",
+    "SQLite",
     "SQL Server",
     "Entity Framework Core",
     "Tauri"

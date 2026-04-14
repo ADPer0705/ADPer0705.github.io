@@ -8,9 +8,9 @@
   "email": "dearanayji@gmail.com",
   "title": "cybersecurity student · ai/ml systems builder",
   "synopsis": "Specializing in the intersection of AI, automated security, and digital forensics.",
-  "bio": "I'm Anay Dhaval Pandya — a third-year Computer Science student specializing in Cybersecurity at the National Forensic Sciences University. I explore the intersections of AI, automated security, and digital forensics, architecting robust solutions that blend practicality with curiosity.\n\nFrom engineering serverless cloud compliance frameworks to building LLM-driven intelligence tools and anti-forensics detection systems, I'm chasing the \"why\" behind the tech. I draw heavily from the Stark principle: engineering that feels alive — intuitive, elegant, and human. When I'm not buried in terminal windows, I'm analyzing how networks trust or how intelligence emerges in code.\n\nMy current focus lies in bridging human intent and machine execution — creating robust, contextual systems that adapt to complex security landscapes.",
+  "bio": "I'm Anay Dhaval Pandya — a third-year Computer Science student specializing in Cybersecurity at the National Forensic Sciences University - Gandhinagar. I explore the intersections of AI, automated security, and digital forensics, architecting robust solutions that blend practicality with curiosity.\n\nFrom engineering serverless cloud compliance frameworks to building LLM-driven intelligence tools and anti-forensics detection systems, I'm chasing the \"why\" behind the tech. I draw heavily from the Stark principle: engineering that feels alive — intuitive, elegant, and human. When I'm not buried in terminal windows, I'm analyzing how networks trust or how intelligence emerges in code.\n\nMy current focus lies in bridging human intent and machine execution — creating robust, contextual systems that adapt to complex security landscapes.",
   "description": [
-    "I'm Anay Dhaval Pandya — a third-year Computer Science student specializing in Cybersecurity at the National Forensic Sciences University. I explore the intersections of AI, automated security, and digital forensics, architecting robust solutions that blend practicality with curiosity.",
+    "I'm Anay Dhaval Pandya — a third-year Computer Science student specializing in Cybersecurity at the National Forensic Sciences University - Gandhinagar. I explore the intersections of AI, automated security, and digital forensics, architecting robust solutions that blend practicality with curiosity.",
     "From engineering serverless cloud compliance frameworks to building LLM-driven intelligence tools and anti-forensics detection systems, I'm chasing the \"why\" behind the tech. I draw heavily from the Stark principle: engineering that feels alive — intuitive, elegant, and human.",
     "My current focus lies in bridging human intent and machine execution — creating robust, contextual systems that adapt to complex security landscapes."
   ],
@@ -20,7 +20,7 @@
     "fonts": ["Roboto", "JetBrains Mono", "Monospace for code snippets"],
     "layout": "single-page or multi-section with smooth scrolling and interactive elements"
   },
-  "current_stack": ["python", "c/c++", "rust", "bash", "aws", "react", "fastapi", "linux"],
+  "current_stack": ["python", "c/c++", "rust", "bash", "aws", "react", "fastapi", "sqlite", "linux"],
   "focus_areas": ["cybersecurity", "digital forensics", "applied ai/ml", "cloud security", "systems engineering"],
   "contact": {
     "email": "dearanayji@gmail.com",

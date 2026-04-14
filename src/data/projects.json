@@ -1,18 +1,33 @@
 [
   {
-    "id": "chronotrace",
-    "title": "ChronoTrace",
-    "name": "CHRONOTRACE",
-    "tagline": "ntfs anti-forensics detection framework",
-    "description": "Engineered an advanced forensic analysis tool for detecting timestamp manipulations and log evasion via post-mortem image analysis and real-time live monitoring.",
-    "tags": ["Python", "FastAPI", "React 19", "WebSockets", "libewf"],
-    "stack": ["python", "fastapi", "react", "websockets", "forensics"],
-    "category": "sec",
+    "id": "inquiro",
+    "title": "Inquiro",
+    "name": "INQUIRO",
+    "tagline": "local rag system",
+    "description": "Built a RAG system transforming documents into a queryable knowledge base using LangChain, FAISS, and local Mistral models via Ollama and Nomic Embed Text.",
+    "tags": ["Python", "LangChain", "Ollama", "FAISS"],
+    "stack": ["python", "langchain", "ollama", "faiss"],
+    "category": "ai",
+    "year": "2024",
+    "status": "Completed",
+    "image": "",
+    "link": "https://github.com/CY-N4P5E/Inquiro",
+    "links": { "github": "https://github.com/CY-N4P5E/Inquiro" }
+  },
+  {
+    "id": "sempropos",
+    "title": "Sempropos",
+    "name": "SEMPROPOS",
+    "tagline": "semantic cli command proposer",
+    "description": "Built an open-source Linux CLI that converts natural-language tasks into exact shell commands using local man-page retrieval, hybrid semantic ranking, and lightweight local/remote LLM synthesis.",
+    "tags": ["Python", "CLI", "SQLite", "BM25", "Embeddings", "LLM"],
+    "stack": ["python", "cli", "sqlite", "retrieval", "ai"],
+    "category": "ai",
     "year": "2026",
     "status": "Completed",
     "image": "",
-    "link": "https://github.com/GR4Y-SCALE/ChronoTrace",
-    "links": { "github": "https://github.com/GR4Y-SCALE/ChronoTrace" }
+    "link": "https://github.com/ADPer0705/sempropos",
+    "links": { "github": "https://github.com/ADPer0705/sempropos" }
   },
   {
     "id": "merklewatch",
@@ -28,6 +43,36 @@
     "image": "",
     "link": "https://github.com/ADPer0705/MerkleWatch",
     "links": { "github": "https://github.com/ADPer0705/MerkleWatch" }
+  },
+  {
+    "id": "praetor",
+    "title": "Praetor",
+    "name": "PRAETOR",
+    "tagline": "serverless aws security automation",
+    "description": "Engineered a serverless compliance auditing platform using AWS Lambda and EventBridge to perform 170+ daily security checks across 11 AWS services. Delivered zero-cost cloud security scanning via automated HTML dashboards and Slack integration.",
+    "tags": ["Python", "AWS Lambda", "EventBridge", "Boto3", "Cloud Security"],
+    "stack": ["python", "aws", "cloud", "security"],
+    "category": "sec",
+    "year": "2025",
+    "status": "Completed",
+    "image": "",
+    "link": "https://github.com/ADPer0705/praetor",
+    "links": { "github": "https://github.com/ADPer0705/praetor" }
+  },
+  {
+    "id": "chronotrace",
+    "title": "ChronoTrace",
+    "name": "CHRONOTRACE",
+    "tagline": "ntfs anti-forensics detection framework",
+    "description": "Engineered an advanced forensic analysis tool for detecting timestamp manipulations and log evasion via post-mortem image analysis and real-time live monitoring.",
+    "tags": ["Python", "FastAPI", "React 19", "WebSockets", "libewf"],
+    "stack": ["python", "fastapi", "react", "websockets", "forensics"],
+    "category": "sec",
+    "year": "2026",
+    "status": "Completed",
+    "image": "",
+    "link": "https://github.com/GR4Y-SCALE/ChronoTrace",
+    "links": { "github": "https://github.com/GR4Y-SCALE/ChronoTrace" }
   },
   {
     "id": "wordsmith",
@@ -75,36 +120,6 @@
     "links": { "github": "https://github.com/ADPer0705/OverPage" }
   },
   {
-    "id": "praetor",
-    "title": "Praetor",
-    "name": "PRAETOR",
-    "tagline": "serverless aws security automation",
-    "description": "Engineered a serverless compliance auditing platform using AWS Lambda and EventBridge to perform 170+ daily security checks across 11 AWS services. Delivered zero-cost cloud security scanning via automated HTML dashboards and Slack integration.",
-    "tags": ["Python", "AWS Lambda", "EventBridge", "Boto3", "Cloud Security"],
-    "stack": ["python", "aws", "cloud", "security"],
-    "category": "sec",
-    "year": "2025",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/praetor",
-    "links": { "github": "https://github.com/ADPer0705/praetor" }
-  },
-  {
-    "id": "adb-data-fetcher",
-    "title": "ADB Data Fetcher Utility",
-    "name": "ADB DATA FETCHER",
-    "tagline": "android device extraction automation",
-    "description": "Developed a Windows Form desktop application using C# (.NET 8.0) to automate the extraction of SMS, contacts, and logs from Android devices via ADB, with an Entity Framework Core / SQL Server backend.",
-    "tags": ["C#", "Entity Framework Core", "SQL Server", "ADB"],
-    "stack": ["csharp", "dotnet", "sql", "forensics"],
-    "category": "tool",
-    "year": "2025",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/ADB_Data_Fetcher",
-    "links": { "github": "https://github.com/ADPer0705/ADB_Data_Fetcher" }
-  },
-  {
     "id": "teledm",
     "title": "TeleDM",
     "name": "TELEDM",
@@ -120,18 +135,18 @@
     "links": { "github": "https://github.com/ADPer0705/TeleDM" }
   },
   {
-    "id": "inquiro",
-    "title": "Inquiro",
-    "name": "INQUIRO",
-    "tagline": "local rag system",
-    "description": "Built a RAG system transforming documents into a queryable knowledge base using LangChain, FAISS, and local Mistral models via Ollama and Nomic Embed Text.",
-    "tags": ["Python", "LangChain", "Ollama", "FAISS"],
-    "stack": ["python", "langchain", "ollama", "faiss"],
-    "category": "ai",
-    "year": "2024",
+    "id": "adb-data-fetcher",
+    "title": "ADB Data Fetcher Utility",
+    "name": "ADB DATA FETCHER",
+    "tagline": "android device extraction automation",
+    "description": "Developed a Windows Form desktop application using C# (.NET 8.0) to automate the extraction of SMS, contacts, and logs from Android devices via ADB, with an Entity Framework Core / SQL Server backend.",
+    "tags": ["C#", "Entity Framework Core", "SQL Server", "ADB"],
+    "stack": ["csharp", "dotnet", "sql", "forensics"],
+    "category": "tool",
+    "year": "2025",
     "status": "Completed",
     "image": "",
-    "link": "https://github.com/CY-N4P5E/Inquiro",
-    "links": { "github": "https://github.com/CY-N4P5E/Inquiro" }
+    "link": "https://github.com/ADPer0705/ADB_Data_Fetcher",
+    "links": { "github": "https://github.com/ADPer0705/ADB_Data_Fetcher" }
   }
 ]

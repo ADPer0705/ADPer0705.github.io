@@ -1,5 +1,17 @@
 [
   {
+    "slug": "encrypt-once-boot-forever",
+    "title": "Encrypt Once, Boot Forever: TPM2 Auto-Unlock on Fedora 44",
+    "date": "2026-05-20",
+    "description": "How to seal your LUKS decryption key inside the TPM chip to let the hardware unlock your drive automatically on boot.",
+    "tags": ["linux", "fedora", "tpm2", "security", "luks"],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
     "slug": "the-bayesian-trap",
     "title": "The Bayesian Trap: A Mathematical Case for Trying Something New",
     "date": "2025-11-01",

@@ -315,3 +315,33 @@ a { color: inherit; text-decoration: none; }
   margin: 1.5em 0;
   display: block;
 }
+
+/* Tables */
+.blog-table-container {
+  overflow-x: auto;
+  margin: 1.75em 0;
+}
+
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.blog-th,
+.blog-td {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+}
+
+.blog-th {
+  background: var(--color-bg);
+  font-weight: 500;
+  color: var(--color-text-hi);
+  border-bottom: 2px solid var(--color-border-hi);
+}
+
+.blog-td {
+  color: var(--color-text);
+}

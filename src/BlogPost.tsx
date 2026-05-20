@@ -169,6 +169,25 @@ function renderMarkdown(raw: string): string {
       continue;
     }
 
+    // Markdown Table
+    if (line.trim().startsWith('|') && i + 1 < lines.length && /^\|[-:\s|]+\|$/.test(lines[i + 1].trim())) {
+      const headers = line.trim().split('|').slice(1, -1).map(h => h.trim());
+      i += 2; // Skip header and separator
+      const rows: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        const cells = lines[i].trim().split('|').slice(1, -1).map(c => c.trim());
+        rows.push(`<tr>${cells.map(c => `<td class="blog-td">${inlineMarkdown(c)}</td>`).join('')}</tr>`);
+        i++;
+      }
+      out.push(
+        `<div class="blog-table-container"><table class="blog-table">` +
+        `<thead><tr>${headers.map(h => `<th class="blog-th">${inlineMarkdown(h)}</th>`).join('')}</tr></thead>` +
+        `<tbody>${rows.join('')}</tbody>` +
+        `</table></div>`
+      );
+      continue;
+    }
+
     // Blank line → paragraph break (no <p> tag, handled by spacing)
     if (line.trim() === '') {
       out.push('<div class="blog-spacer"></div>');

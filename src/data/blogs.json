@@ -1,5 +1,21 @@
 [
   {
+    "slug": "how-does-llm-know-sky-is-blue",
+    "title": "How does an LLM \"know\" the sky is blue?",
+    "date": "2026-06-16",
+    "description": "An exploration into how large language models predict text and whether they truly \"know\" the facts they output.",
+    "tags": [
+      "ai",
+      "llm",
+      "essay"
+    ],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
     "slug": "encrypt-once-boot-forever",
     "title": "Encrypt Once, Boot Forever: TPM2 Auto-Unlock on Fedora 44",
     "date": "2026-05-20",

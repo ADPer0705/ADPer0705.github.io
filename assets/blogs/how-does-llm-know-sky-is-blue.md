@@ -1,5 +1,3 @@
-# How does an LLM "know" the sky is blue?
-
 For most people, LLMs are a magic box that spews out language. Somehow, that language is very similar to "**what a human would say**". "LLMs work on neural networks", "LLMs predict the next words in a sentence", "They're trained on a large set of data", are some of the common things people say about these mysterious models. 
 
 But **HOW**?? How can a machine, which was mostly working on logic, 1s and 0s, following instructions, how can that lead to such varied, random, and complex outputs in the form of language that is also mostly correct, not just structurally but also factually. What kind of logical steps can lead to "**human-like intelligence**"? 

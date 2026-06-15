@@ -6,7 +6,7 @@ But **HOW**?? How can a machine, which was mostly working on logic, 1s and 0s, f
 
 > Hint: The answer says more about us than the machine.
 
-But to understand that, for those who are unfamiliar with the working of a model, here's a brief introduction of how a LLM works at a bird's-eye view. For those familiar with it, can skip to [[#The Big Question.]]
+But to understand that, for those who are unfamiliar with the working of a model, here's a brief introduction of how a LLM works at a bird's-eye view. For those familiar with it, can skip to [The Big Question](#the-big-question).
 
 # How LLMs work.
 
@@ -20,7 +20,7 @@ The models are a result of fairly complex mathematics, but in use, a language mo
 
 Raw next-token prediction is only the first stage of training. After that, models go through a process called fine-tuning — what it is is, humans rate thousands of model outputs for helpfulness and accuracy, and the model is adjusted to produce more of what gets rated highly. This is why the same underlying math that could generate Reddit comments can also answer your coding questions coherently. The base architecture learns language; the fine-tuning teaches it a job.
 
-# The Big Question.
+# The Big Question
 
 What almost no-one questions is how these models are so intelligent. Intelligent in the sense that "The sky is red" is just as grammatically correct as "The sky is blue". So if we feed the model "The sky is ", what is preventing it from predicting the word "red".
 

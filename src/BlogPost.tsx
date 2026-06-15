@@ -234,7 +234,11 @@ function inlineMarkdown(text: string): string {
   // Links: [text](href)
   text = text.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
-    '<a href="$2" class="blog-a" target="_blank" rel="noreferrer">$1</a>'
+    (_, textMatch, hrefMatch) => {
+      const isAnchor = hrefMatch.startsWith('#');
+      const target = isAnchor ? '' : ' target="_blank" rel="noreferrer"';
+      return `<a href="${hrefMatch}" class="blog-a"${target}>${textMatch}</a>`;
+    }
   );
   // Inline math: $...$
   text = text.replace(/\$([^$\n]+)\$/g, (_, expr) => `<span class="blog-math-inline">${renderMath(expr, false)}</span>`);

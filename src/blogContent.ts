@@ -8,6 +8,6 @@ export const blogContent: Record<string, string> = {};
 
 for (const [path, raw] of Object.entries(markdownFiles)) {
   const filename = path.split('/').pop() ?? '';
-  const slug = filename.replace(/\.md$/i, '');
+  const slug = filename.replace(/\.md$/i, '').toLowerCase();
   blogContent[slug] = raw;
 }

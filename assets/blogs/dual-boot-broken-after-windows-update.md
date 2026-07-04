@@ -6,7 +6,7 @@ Here’s all the things I had to do again after the update to get my Fedora back
 
 Now, like all good engineers, I thought about automating this, cause who wants to spend 5 minutes, maybe in a couple of months doing this manually, when they can automate.
 
-Here’s the link to my [script](https://github.com/ADPer0705/bash/blob/97150587a9282fa7ea3a81655e3ac54db322e2b1/fed_fuck_windows_updates.sh). Please don’t mind the name. Everything below goes through what the script does.
+Here’s the link to my [bash script](https://github.com/ADPer0705/bash/blob/97150587a9282fa7ea3a81655e3ac54db322e2b1/fed_fuck_windows_updates.sh). Please don’t mind the name. Everything below goes through what the script does.
 
 # LUKS2 + TPM2 Auto-Unlock
 

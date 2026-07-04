@@ -1,17 +1,5 @@
 [
   {
-    "slug": "dual-boot-broken-after-windows-update",
-    "title": "Dual Boot broken after Windows Updates - Fixing LUKS, NVIDIA and Time Sync",
-    "date": "2026-07-04",
-    "description": "Windows update broke your dual-boot setup? Here's a checklist for fixing LUKS+TPM2 auto-unlock, NVIDIA drivers, and time sync after Windows overwrites your boot configuration.",
-    "tags": ["linux", "fedora", "nvidia", "dual-boot", "windows", "tpm2", "luks"],
-    "platforms": {
-      "medium": "",
-      "devto": "",
-      "hashnode": ""
-    }
-  },
-  {
     "slug": "how-does-llm-know-sky-is-blue",
     "title": "How does an LLM \"know\" the sky is blue?",
     "date": "2026-06-16",
@@ -97,6 +85,18 @@
       "writing",
       "philosophy"
     ],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "dual-boot-broken-after-windows-update",
+    "title": "Dual Boot broken after Windows Updates - Fixing LUKS, NVIDIA and Time Sync",
+    "date": "2026-07-04",
+    "description": "Steps to recover Fedora after Windows updates break dual-boot: LUKS TPM2 auto-unlock, rebuilding NVIDIA modules, and fixing hardware clock sync.",
+    "tags": ["linux", "fedora", "luks", "tpm2", "nvidia", "time"],
     "platforms": {
       "medium": "",
       "devto": "",

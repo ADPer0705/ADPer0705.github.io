@@ -226,35 +226,54 @@ function escHtml(s: string): string {
 }
 
 function inlineMarkdown(text: string): string {
-  // Images: ![alt](src)
+  // Protect link/image URLs from inline formatting (e.g. underscores in URLs
+  // being treated as italic markers). Extract them into tokens first.
+  const inlineTokens: string[] = [];
   text = text.replace(
-    /!\[([^\]]*)\]\(([^)]+)\)/g,
-    (_, alt, src) => `<img src="${resolveImageSrc(src)}" alt="${alt}" class="blog-img" loading="lazy" />`
-  );
-  // Links: [text](href)
-  text = text.replace(
-    /\[([^\]]+)\]\(([^)]+)\)/g,
-    (_, textMatch, hrefMatch) => {
-      const isAnchor = hrefMatch.startsWith('#');
-      const target = isAnchor ? '' : ' target="_blank" rel="noreferrer"';
-      return `<a href="${hrefMatch}" class="blog-a"${target}>${textMatch}</a>`;
+    /(!?\[[^\]]*\]\([^)]+\))/g,
+    (match) => {
+      const token = `@@INLINE_${inlineTokens.length}@@`;
+      inlineTokens.push(match);
+      return token;
     }
   );
+
   // Inline math: $...$
   text = text.replace(/\$([^$\n]+)\$/g, (_, expr) => `<span class="blog-math-inline">${renderMath(expr, false)}</span>`);
+
   // Inline code: `code`
-  text = text.replace(
-    /`([^`]+)`/g,
-    '<code class="blog-inline-code">$1</code>'
-  );
+  text = text.replace(/`([^`]+)`/g, '<code class="blog-inline-code">$1</code>');
+
   // Bold: **text** or __text__
   text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="blog-strong">$1</strong>');
   text = text.replace(/__(.+?)__/g, '<strong class="blog-strong">$1</strong>');
+
   // Italic: *text* or _text_
   text = text.replace(/\*(.+?)\*/g, '<em class="blog-em">$1</em>');
   text = text.replace(/_(.+?)_/g, '<em class="blog-em">$1</em>');
+
   // Strikethrough: ~~text~~
   text = text.replace(/~~(.+?)~~/g, '<del>$1</del>');
+
+  // Restore and render link/image tokens
+  text = text.replace(/@@INLINE_(\d+)@@/g, (_, idx) => {
+    const raw = inlineTokens[Number(idx)];
+    if (raw.startsWith('!')) {
+      return raw.replace(
+        /!\[([^\]]*)\]\(([^)]+)\)/g,
+        (_, alt, src) => `<img src="${resolveImageSrc(src)}" alt="${alt}" class="blog-img" loading="lazy" />`
+      );
+    }
+    return raw.replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      (_, textMatch, hrefMatch) => {
+        const isAnchor = hrefMatch.startsWith('#');
+        const target = isAnchor ? '' : ' target="_blank" rel="noreferrer"';
+        return `<a href="${hrefMatch}" class="blog-a"${target}>${textMatch}</a>`;
+      }
+    );
+  });
+
   return text;
 }
 

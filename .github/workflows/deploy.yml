@@ -20,29 +20,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
+
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: 22
-          cache: "npm"
+          cache: npm
+
       - name: Install Dependencies
         run: npm ci
+
       - name: Build
         run: npm run build
-      - name: Package Pages artifact
-        run: |
-          tar --dereference --hard-dereference --directory ./dist -cvf "$RUNNER_TEMP/artifact.tar" .
-          gzip -9 "$RUNNER_TEMP/artifact.tar"
-        shell: bash
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: github-pages
-          path: ${{ runner.temp }}/artifact.tar.gz
-          retention-days: 1
-          if-no-files-found: error
+          path: ./dist
 
   deploy:
     environment:

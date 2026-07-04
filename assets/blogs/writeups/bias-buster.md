@@ -55,7 +55,7 @@ Good luck, and may the most unbiased detective win! 🚀
 
 So we’re given a dataset, a model trained on that dataset, and a python script for generating output from the model, using the test cases provided in the `json` file. Here is what we get upon running the testing python script after installing all the required libraries :
 
-![[Pasted image.png]]
+![[pasted-image.png]]
 
 running the `test_model.py script`
 
@@ -84,7 +84,7 @@ and the final output is in
 
 - loan_status
 
-![[Pasted image (2).png]]
+![[pasted-image-2.png]]
 
 biased_loan_approval_dataset.csv
 
@@ -92,7 +92,7 @@ biased_loan_approval_dataset.csv
 
 Now, we know that for a feature to be biased, there must be an imbalance in how the various values of features corrosponds to the outcome (`loan_status`). To see this, you can either make a visual representation, or we can simply do `.groupby()` .
 
-![[Pasted image (3).png]]
+![[pasted-image-3.png]]
 
 doing groupby on various features
 

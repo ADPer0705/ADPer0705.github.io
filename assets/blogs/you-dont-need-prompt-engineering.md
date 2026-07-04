@@ -1,6 +1,6 @@
 ### **You Don’t Need “Prompt Engineering” to Talk to AI**
 
-![[Pasted image 20251124112939.png]]
+![[pasted-image-20251124112939.png]]
 
 ### A simple guide to getting what you want from Large Language Models, from a student who lives in the lab.
 

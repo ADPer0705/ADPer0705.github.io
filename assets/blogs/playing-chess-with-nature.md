@@ -1,0 +1,7 @@
+# playing chess with nature
+
+Most humans on earth believe in some sort of “almighty”. As for me, that almighty is the nature. By nature I mean the exact state, the details of everything around me, and far away from me, that affects me in ways that are unfathomable to the human brain. Things like the weather, the traffic where I am, the lives of people around me, and innumerable other such things, silently but surely pulling ropes on me, trying to steer my course. 
+
+More often than not, those strings will not be polite. Nothing goes our way, nothing feels comfortable, it seems that you just cannot catch a break any time soon. It’s like when you’re running, but you’re really focused on how far and how long you’ve run. The only constant being the lack of a resting place, you just have to keep running. I see those situation as a game of chess. Allow me to explain.
+
+Those little discomforts, all the hurdles, everything, is nature playing their pieces. Sometimes, it wants to punish the player. All the player can do is make their moves. It’s a slow and painful recovery especially when the situation is dire, pieces are hanging, the player’s being forked left and right, the king is wide open. But, there isn’t a magical move that can bring things back to order. It has to be a slow, deliberate, conscious series of moves to bring order to the board. It has to be SLOW, DELIBERATE, and CONSCIOUS.

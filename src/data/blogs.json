@@ -1,5 +1,17 @@
 [
   {
+    "slug": "virtualization-qemu-kvm",
+    "title": "Virtualization — QEMU/KVM",
+    "date": "2026-08-11",
+    "description": "Setting up a network of VMs with QEMU/KVM, libvirt and virt-manager for an Information and Network Security class — choosing the kernel-native path over VirtualBox and VMware.",
+    "tags": ["virtualization", "qemu", "kvm", "linux"],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
     "slug": "how-does-llm-know-sky-is-blue",
     "title": "How does an LLM \"know\" the sky is blue?",
     "date": "2026-06-16",

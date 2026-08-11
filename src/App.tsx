@@ -212,9 +212,9 @@ const Nav = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 h-[42px] bg-bg/95 border-b border-border backdrop-blur-md flex items-center px-7 gap-7 z-[500]">
-      <div className="text-[11px] md:text-[13px] text-cyan tracking-wider opacity-80 shrink-0">
+      <a href="/" className="text-[11px] md:text-[13px] text-cyan tracking-wider opacity-80 shrink-0 transition-opacity duration-200 hover:opacity-100">
         <span className="text-text-dim">debie</span>@adper<span className="text-text-dim">:</span>~<span className="text-text-dim">$</span>&nbsp;_
-      </div>
+      </a>
       <div className="flex gap-5 flex-1">
         {['work', 'record', 'skills', 'whoami', 'signals', 'log'].map((link) => (
           <a 
@@ -816,6 +816,13 @@ const BlogListPage = () => {
       
       <main className="relative z-10 mt-[42px] mb-[26px]">
         <section className="p-[72px_28px] border-b border-border relative max-w-[1200px] mx-auto">
+          <button
+            onClick={() => navigate('/')}
+            className="text-[11px] text-text-dim tracking-[0.12em] hover:text-cyan transition-colors duration-200 mb-9 flex items-center gap-2 cursor-none"
+          >
+            <span className="text-cyan opacity-60">←</span> ~/home
+          </button>
+
           <div className="flex items-end mb-[52px] gap-5">
             <h2 className="font-display font-black text-[clamp(42px,6vw,64px)] text-text-hi uppercase tracking-[-0.01em] leading-none">
               All Logs

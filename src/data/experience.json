@@ -1,4 +1,18 @@
 [  {
+    "org": "National Forensic Sciences University (NFSU)",
+    "role": "Intern",
+    "period": "Jul 2026 - Present",
+    "type": "internship",
+    "organization_logo": "",
+    "location": "Gandhinagar, Gujarat, India · On-site",
+    "description": "Developing solutions for DeepFake Detection with explainability, and determinism for investigative workflows.",
+    "highlights": [
+        "Performed dataset survey with an aim to identify gaps in available datasets, with focus on indian demographics and improving generalization of detection models.",
+        "Worked towards an automated deepfake analysis pipeline with outputs and explainability artifacts gathered from various detectors running in air-gapped isolated environments"
+    ],
+    "tags": ["deepfakes", "research", "machine learning"]
+  },
+  {
     "org": "Department of Telecommunications, Government of India",
     "role": "Intern / Research Assistant",
     "period": "May 2025 - July 2025",

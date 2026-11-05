@@ -1,42 +1,35 @@
 {
-  "Languages": ["Python", "C/C++", "Rust", "Bash", "JavaScript", "HTML/CSS"],
-  "AI / Data Science": [
-    "LangChain",
-    "FAISS",
-    "Ollama",
-    "RAG",
-    "Embeddings",
-    "BM25 / Hybrid Retrieval",
-    "PyTorch",
-    "Scikit-learn",
-    "Pandas",
-    "NumPy",
-    "Matplotlib",
-    "OpenCV",
-    "LLM APIs"
-  ],
-  "Cloud & Web": [
-    "AWS (Lambda, EventBridge, SAM)",
-    "Boto3",
-    "FastAPI",
-    "React",
-    "WebSockets"
-  ],
-  "Dev & Databases": [
-    "Linux (Debian, Kali)",
-    "Git",
-    "Docker",
-    "CLI Engineering",
-    "SQLite",
-    "SQL Server",
-    "Entity Framework Core",
-    "Tauri"
-  ],
-  "Domains": [
-    "Cybersecurity",
-    "Machine Learning",
-    "Cloud Security",
-    "Digital Forensics",
-    "Systems Programming"
-  ]
+    "Languages": [
+        "Python",
+        "C/C++",
+        "Rust",
+        "Bash",
+        "JavaScript",
+        "HTML/CSS"
+    ],
+    "AI / Data Science": [
+        "RAG",
+        "LangChain",
+        "FAISS",
+        "Ollama",
+        "Embeddings",
+        "BM25 / Hybrid Retrieval"
+    ],
+    "Cloud & Web": [
+        "AWS (Lambda, EventBridge, SAM)",
+        "Boto3",
+        "FastAPI"
+    ],
+    "Dev & Databases": [
+        "Linux (Fedora, Debian, Kali)",
+        "Git",
+        "Docker"
+    ],
+    "Domains": [
+        "Cybersecurity",
+        "Machine Learning",
+        "Digital Forensics",
+        "Systems Programming",
+        "Cloud Security"
+    ]
 }

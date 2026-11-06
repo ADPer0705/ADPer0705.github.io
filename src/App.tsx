@@ -185,7 +185,7 @@ const BootSequence = ({ onComplete }: { onComplete: () => void }) => {
       d: 310,
     },
     {
-      t: '> <span class="text-mint">[ OK ]</span> mounting projects: inquiro wordsmith chronotrace praetor merklewatch overpage',
+      t: '> <span class="text-mint">[ OK ]</span> mounting projects: verity droidscanner gloss inquiro chronotrace praetor merklewatch',
       d: 440,
     },
     {

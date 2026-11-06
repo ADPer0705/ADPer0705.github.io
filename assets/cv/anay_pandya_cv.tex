@@ -9,7 +9,7 @@
 
 % Character encoding
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.85]{geometry}
+\usepackage[top=1.4cm,bottom=1.4cm,left=1.8cm,right=1.8cm]{geometry}
 \setlength{\hintscolumnwidth}{3.2cm}
 
 %----------------------------------------
@@ -60,16 +60,32 @@ Third-year B.Tech-M.Tech (Cybersecurity) student at NFSU specializing in the int
 % TECHNICAL SKILLS
 %----------------------------------------
 \section{Technical Skills}
-\cvitem{Languages}{Python, C/C++, Rust, Bash, JavaScript, HTML/CSS}
-\cvitem{AI / Data Science}{LangChain, FAISS, Ollama, RAG, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib, OpenCV, LLM APIs}
+\cvitem{Languages}{Python, C/C++, Rust, Kotlin, Bash, JavaScript, HTML/CSS}
+\cvitem{AI / Data Science}{LangChain, FAISS, Ollama, RAG, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib, OpenCV, MediaPipe, ML Kit, LLM APIs}
 \cvitem{Cloud \& Web}{AWS (Lambda, EventBridge, SAM), Boto3, FastAPI, React, WebSockets}
-\cvitem{Dev \& Databases}{Linux (Debian, Kali), Git, Docker, SQL Server, Entity Framework Core, Tauri}
+\cvitem{Dev \& Databases}{Linux (Debian, Kali), Git, Docker, Android, SQL Server, Entity Framework Core, Tauri}
 \cvitem{Domains}{Cybersecurity, Machine Learning, Cloud Security, Digital Forensics, Systems Programming}
 
 %----------------------------------------
 % PROJECTS
 %----------------------------------------
 \section{Projects}
+
+\cventry{2026}{\textbf{Verity - Multi-Detector Deepfake Forensics}}{GitHub: \href{https://github.com/ADPer0705/verity}{\texttt{ADPer0705/verity}}}{}{}{
+\begin{itemize}
+    \item Engineered a deepfake examination platform for image, video, and audio that characterises media, selects every detector able to consume it, and runs each one in its own isolated, version-pinned environment.
+    \item Implemented a deterministic pipeline producing per-detector verdicts, confidence reasoning, and explainability artifacts (faces, attention maps, timelines) alongside five model-free forensic analyzers, never collapsing the panel into a single real/fake score.
+    \item \textbf{Tech Stack:} Python, PyTorch, FastAPI, React, Docker, uv
+\end{itemize}
+}
+
+\cventry{2026}{\textbf{DroidScanner - On-Device Android Risk Auditor}}{GitHub: \href{https://github.com/ADPer0705/droidscanner}{\texttt{ADPer0705/droidscanner}}}{}{}{
+\begin{itemize}
+    \item Built a Kotlin/Jetpack Compose Android app that audits installed apps by permissions, special access, and installer source, producing an explainable 0--100 risk score with plain-language reasons.
+    \item Bundled an on-device Universal Sentence Encoder (MediaPipe) for purpose-mismatch detection and added install monitoring, permission diffs, and shareable PDF reports, with no \texttt{INTERNET} permission declared.
+    \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, MediaPipe, Android SDK
+\end{itemize}
+}
 
 \cventry{2026}{\textbf{ChronoTrace - NTFS Anti-Forensics Detection Framework}}{GitHub: \href{https://github.com/GR4Y-SCALE/ChronoTrace}{\texttt{GR4Y-SCALE/ChronoTrace}}}{}{}{
 \begin{itemize}
@@ -141,6 +157,14 @@ Third-year B.Tech-M.Tech (Cybersecurity) student at NFSU specializing in the int
     \item Developed a feature-rich desktop application enabling robust, interrupt-tolerant file downloads from Telegram without keeping the client active.
     \item Implemented a Tkinter GUI featuring queue management, progress tracking, auto-resume capabilities, and a SQLite database for persistent download history.
     \item \textbf{Tech Stack:} Python, Tkinter, SQLite, Telegram API
+  \end{itemize}
+}
+
+\cventry{2026}{\textbf{Gloss - Offline Tap-to-Translate Reader}}{GitHub: \href{https://github.com/ADPer0705/gloss}{\texttt{ADPer0705/gloss}}}{}{}{
+  \begin{itemize}
+    \item Developed an offline Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping.
+    \item Runs entirely on-device after a one-time model download per language pair, with no accounts and no cloud dependency.
+    \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, ML Kit, Android SDK
   \end{itemize}
 }
 

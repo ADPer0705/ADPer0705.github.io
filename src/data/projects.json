@@ -1,5 +1,35 @@
 [
   {
+    "id": "verity",
+    "title": "Verity",
+    "name": "VERITY",
+    "tagline": "multi-detector deepfake forensics",
+    "description": "Engineered a deepfake examination platform that characterises any image, video, or audio file, then runs every compatible detector in its own version-pinned environment. Produces deterministic reports with per-detector verdicts, explainability artifacts, and model-free forensic observations, never collapsing the panel into a single real/fake score.",
+    "tags": ["Python", "PyTorch", "FastAPI", "React", "Docker", "Deepfake Detection"],
+    "stack": ["python", "pytorch", "fastapi", "react", "docker", "forensics"],
+    "category": "sec",
+    "year": "2026",
+    "status": "Completed",
+    "image": "",
+    "link": "https://github.com/ADPer0705/verity",
+    "links": { "github": "https://github.com/ADPer0705/verity" }
+  },
+  {
+    "id": "droidscanner",
+    "title": "DroidScanner",
+    "name": "DROIDSCANNER",
+    "tagline": "on-device android risk auditor",
+    "description": "Built a Kotlin/Jetpack Compose Android app that audits installed apps by permissions, special access, and installer source, producing an explainable 0–100 risk score with plain-language reasons. Ships a bundled on-device sentence encoder for purpose-mismatch checks and generates shareable PDF reports, all with no INTERNET permission declared.",
+    "tags": ["Kotlin", "Jetpack Compose", "Android", "MediaPipe", "On-Device ML"],
+    "stack": ["kotlin", "android", "mediapipe", "ai", "security"],
+    "category": "sec",
+    "year": "2026",
+    "status": "Completed",
+    "image": "",
+    "link": "https://github.com/ADPer0705/droidscanner",
+    "links": { "github": "https://github.com/ADPer0705/droidscanner" }
+  },
+  {
     "id": "inquiro",
     "title": "Inquiro",
     "name": "INQUIRO",
@@ -148,5 +178,20 @@
     "image": "",
     "link": "https://github.com/ADPer0705/ADB_Data_Fetcher",
     "links": { "github": "https://github.com/ADPer0705/ADB_Data_Fetcher" }
+  },
+  {
+    "id": "gloss",
+    "title": "Gloss",
+    "name": "GLOSS",
+    "tagline": "offline tap-to-translate reader",
+    "description": "Developed an offline Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping. Runs entirely on-device after a one-time ~30 MB model download, with no accounts and no cloud dependency.",
+    "tags": ["Kotlin", "Jetpack Compose", "ML Kit", "Android", "Offline"],
+    "stack": ["kotlin", "android", "ml-kit"],
+    "category": "tool",
+    "year": "2026",
+    "status": "Completed",
+    "image": "",
+    "link": "https://github.com/ADPer0705/gloss",
+    "links": { "github": "https://github.com/ADPer0705/gloss" }
   }
 ]

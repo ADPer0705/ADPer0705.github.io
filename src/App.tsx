@@ -17,7 +17,6 @@ import skillsData from "./data/skills.json";
 import certificationsData from "./data/certifications.json";
 import socialData from "./data/social.json";
 import hobbiesData from "./data/hobbies.json";
-import profilesData from "./data/profiles.json";
 import contactData from "./data/contact.json";
 import BlogPost from "./BlogPost";
 import blogsData from "./data/blogs.json";
@@ -872,33 +871,11 @@ const Signals = () => {
     image?: string;
   }>;
   const hobbies = hobbiesData as string[];
-  const profiles = (
-    profilesData as Array<{
-      name: string;
-      title?: string;
-      url: string;
-      type?: string;
-      embed_url?: string;
-    }>
-  ).filter((profile) => profile.name.toLowerCase() !== "monkeytype");
   const contactEntries = contactData as Array<{
     method: string;
     link: string;
     cta: string;
   }>;
-
-  const profileCards = [
-    ...profiles,
-    {
-      name: "Medium",
-      title: "Medium",
-      url: social.medium,
-      type: "link",
-    },
-  ].filter((profile, index, list) => {
-    if (!profile.url) return false;
-    return list.findIndex((item) => item.url === profile.url) === index;
-  });
 
   return (
     <section
@@ -939,59 +916,6 @@ const Signals = () => {
                 <div className="text-text-dim mt-1 text-xs md:text-sm">
                   {cert.issuer} · {cert.issue_date}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="border border-border bg-bg p-4">
-          <div className="text-xs md:text-sm text-cyan tracking-[0.14em] uppercase mb-4">
-            Public Profiles
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {profileCards.map((profile) => (
-              <div
-                key={profile.url}
-                className="text-sm text-text border border-border-hi p-4 bg-bg-2/60 transition-colors duration-200 hover:border-cyan h-full flex flex-col"
-              >
-                <div className="text-text-hi mb-3 flex items-center justify-between">
-                  <span>{profile.title || profile.name}</span>
-                  <span className="text-xs md:text-sm text-cyan">↗</span>
-                </div>
-                {profile.type === "iframe" && profile.embed_url && (
-                  <div className="mb-4 border border-border overflow-hidden bg-bg rounded-sm">
-                    <iframe
-                      src={profile.embed_url}
-                      title={profile.title || profile.name}
-                      className="w-full h-[128px]"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-
-                {profile.name.toLowerCase() === "medium" && (
-                  <div className="mb-4 border border-border bg-bg p-3.5 rounded-sm">
-                    <div className="text-xs text-cyan tracking-[0.12em] uppercase">
-                      Writing Hub
-                    </div>
-                    <div className="text-text mt-2.5 leading-7 text-sm md:text-[15px]">
-                      Essays and build notes on AI systems, cybersecurity, and
-                      practical engineering.
-                    </div>
-                    <div className="text-text-dim mt-2.5 text-xs">
-                      @adper0705
-                    </div>
-                  </div>
-                )}
-
-                <a
-                  href={profile.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block text-text-dim hover:text-cyan transition-colors duration-200 mt-auto text-sm"
-                >
-                  visit profile
-                </a>
               </div>
             ))}
           </div>

@@ -1,7 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import katex from 'katex';
+import ReactMarkdown, { type Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypeSlug from 'rehype-slug';
 import 'katex/dist/katex.min.css';
 import { blogContent } from './blogContent';
 import blogsData from './data/blogs.json';
@@ -12,25 +16,81 @@ const attachmentAssets = import.meta.glob('../assets/blogs/Attachments/*.{png,jp
 }) as Record<string, string>;
 
 function resolveImageSrc(source: string): string {
-  const filename = source.split('/').pop() ?? source;
+  let decoded = source;
+  try {
+    decoded = decodeURIComponent(source);
+  } catch {
+    // Keep original source if it is not valid percent-encoding
+  }
+  const filename = decoded.split('/').pop() ?? decoded;
   const key = Object.keys(attachmentAssets).find((path) => path.endsWith(`/${filename}`));
   if (key) return attachmentAssets[key];
   return `/assets/blogs/Attachments/${filename}`;
 }
 
-function renderMath(expr: string, displayMode: boolean): string {
-  try {
-    return katex.renderToString(expr.trim(), {
-      throwOnError: false,
-      displayMode,
-      strict: 'ignore',
-    });
-  } catch {
-    return displayMode
-      ? `<pre class="blog-pre"><code class="blog-code">${escHtml(expr)}</code></pre>`
-      : `<code class="blog-inline-code">${escHtml(expr)}</code>`;
-  }
+function preprocessMarkdown(raw: string): string {
+  let md = raw.replace(/\r\n/g, '\n');
+  md = md.replace(/^---[\s\S]*?---\n?/, '');
+  // Convert Obsidian ![[file.png]] / ![[file.png|alt]] embeds to standard markdown images
+  md = md.replace(/!\[\[([^\]|]+?)(?:\|([^\]]*))?\]\]/g, (_, target: string, alt?: string) => {
+    const src = target.trim();
+    const label = (alt ?? src).trim();
+    return `![${label}](${encodeURI(src)})`;
+  });
+  return md;
 }
+
+const cx = (...classes: Array<string | undefined>) => classes.filter(Boolean).join(' ');
+
+const markdownComponents: Components = {
+  h1: ({ className, ...props }) => <h1 className={cx('blog-h1', className)} {...props} />,
+  h2: ({ className, ...props }) => <h2 className={cx('blog-h2', className)} {...props} />,
+  h3: ({ className, ...props }) => <h3 className={cx('blog-h3', className)} {...props} />,
+  h4: ({ className, ...props }) => <h4 className={cx('blog-h4', className)} {...props} />,
+  h5: ({ className, ...props }) => <h5 className={cx('blog-h5', className)} {...props} />,
+  h6: ({ className, ...props }) => <h6 className={cx('blog-h6', className)} {...props} />,
+  p: ({ className, ...props }) => <p className={cx('blog-p', className)} {...props} />,
+  a: ({ href, className, ...props }) => {
+    const isAnchor = href?.startsWith('#');
+    return (
+      <a
+        href={href}
+        className={cx('blog-a', className)}
+        target={isAnchor ? undefined : '_blank'}
+        rel={isAnchor ? undefined : 'noreferrer'}
+        {...props}
+      />
+    );
+  },
+  img: ({ src, alt, className, ...props }) => (
+    <img
+      src={src ? resolveImageSrc(src) : undefined}
+      alt={alt ?? ''}
+      className={cx('blog-img', className)}
+      loading="lazy"
+      {...props}
+    />
+  ),
+  pre: ({ className, ...props }) => <pre className={cx('blog-pre', className)} {...props} />,
+  code: ({ className, ...props }) => {
+    const isBlock = Boolean(className && /language-|math/.test(className));
+    return <code className={cx(isBlock ? 'blog-code' : 'blog-inline-code', className)} {...props} />;
+  },
+  blockquote: ({ className, ...props }) => <blockquote className={cx('blog-blockquote', className)} {...props} />,
+  ul: ({ className, ...props }) => <ul className={cx('blog-ul', className)} {...props} />,
+  ol: ({ className, ...props }) => <ol className={cx('blog-ol', className)} {...props} />,
+  li: ({ className, ...props }) => <li className={cx('blog-li', className)} {...props} />,
+  hr: ({ className, ...props }) => <hr className={cx('blog-hr', className)} {...props} />,
+  strong: ({ className, ...props }) => <strong className={cx('blog-strong', className)} {...props} />,
+  em: ({ className, ...props }) => <em className={cx('blog-em', className)} {...props} />,
+  table: ({ className, ...props }) => (
+    <div className="blog-table-container">
+      <table className={cx('blog-table', className)} {...props} />
+    </div>
+  ),
+  th: ({ className, ...props }) => <th className={cx('blog-th', className)} {...props} />,
+  td: ({ className, ...props }) => <td className={cx('blog-td', className)} {...props} />,
+};
 
 const Cursor = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -74,210 +134,6 @@ const Cursor = () => {
 };
 
 // ---------------------------------------------------------------------------
-// Minimal Markdown → HTML renderer
-// Handles: headings, bold, italic, inline code, code blocks, blockquotes,
-//          horizontal rules, unordered / ordered lists, paragraphs, images,
-//          links, and the Obsidian-style ![[attachment]] syntax.
-// ---------------------------------------------------------------------------
-function renderMarkdown(raw: string): string {
-  // Normalise line endings
-  let md = raw.replace(/\r\n/g, '\n');
-
-  // Strip YAML front-matter if present
-  md = md.replace(/^---[\s\S]*?---\n?/, '');
-
-  // Obsidian attachment embeds — convert to <img> using Vite asset path
-  // e.g. ![[Pasted image.png]] → <img src="/assets/blogs/Attachments/Pasted image.png">
-  md = md.replace(
-    /!\[\[([^\]]+)\]\]/g,
-    (_, name) =>
-      `<img src="${resolveImageSrc(name)}" alt="${name}" class="blog-img" loading="lazy" />`
-  );
-
-  const codeBlocks: string[] = [];
-
-  // Temporarily extract fenced code blocks so later markdown transforms
-  // (like math) do not alter code content.
-  md = md.replace(
-    /```(\w*)\n([\s\S]*?)```/g,
-    (_, lang, code) => {
-      const html = `<pre class="blog-pre"><code class="blog-code lang-${lang}">${escHtml(code.trimEnd())}</code></pre>`;
-      const token = `@@CODEBLOCK_${codeBlocks.length}@@`;
-      codeBlocks.push(html);
-      return token;
-    }
-  );
-
-  // Block math: $$ ... $$
-  md = md.replace(/\$\$([\s\S]+?)\$\$/g, (_, expr) => `<div class="blog-math-block">${renderMath(expr, true)}</div>`);
-
-  const lines = md.split('\n');
-  const out: string[] = [];
-  let i = 0;
-
-  while (i < lines.length) {
-    const line = lines[i];
-
-    // Headings
-    const hMatch = line.match(/^(#{1,6})\s+(.*)/);
-    if (hMatch) {
-      const level = hMatch[1].length;
-      const text = inlineMarkdown(hMatch[2]);
-      const id = hMatch[2].toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-      out.push(`<h${level} id="${id}" class="blog-h${level}">${text}</h${level}>`);
-      i++;
-      continue;
-    }
-
-    // Horizontal rule
-    if (/^(-{3,}|\*{3,}|_{3,})$/.test(line.trim())) {
-      out.push('<hr class="blog-hr" />');
-      i++;
-      continue;
-    }
-
-    // Blockquote
-    if (line.startsWith('> ')) {
-      const qLines: string[] = [];
-      while (i < lines.length && lines[i].startsWith('> ')) {
-        qLines.push(lines[i].slice(2));
-        i++;
-      }
-      out.push(`<blockquote class="blog-blockquote">${inlineMarkdown(qLines.join(' '))}</blockquote>`);
-      continue;
-    }
-
-    // Unordered list
-    if (/^[-*+] /.test(line)) {
-      const items: string[] = [];
-      while (i < lines.length && /^[-*+] /.test(lines[i])) {
-        items.push(`<li class="blog-li">${inlineMarkdown(lines[i].slice(2))}</li>`);
-        i++;
-      }
-      out.push(`<ul class="blog-ul">${items.join('')}</ul>`);
-      continue;
-    }
-
-    // Ordered list
-    if (/^\d+\. /.test(line)) {
-      const items: string[] = [];
-      while (i < lines.length && /^\d+\. /.test(lines[i])) {
-        items.push(`<li class="blog-li">${inlineMarkdown(lines[i].replace(/^\d+\.\s+/, ''))}</li>`);
-        i++;
-      }
-      out.push(`<ol class="blog-ol">${items.join('')}</ol>`);
-      continue;
-    }
-
-    // Markdown Table
-    if (line.trim().startsWith('|') && i + 1 < lines.length && /^\|[-:\s|]+\|$/.test(lines[i + 1].trim())) {
-      const headers = line.trim().split('|').slice(1, -1).map(h => h.trim());
-      i += 2; // Skip header and separator
-      const rows: string[] = [];
-      while (i < lines.length && lines[i].trim().startsWith('|')) {
-        const cells = lines[i].trim().split('|').slice(1, -1).map(c => c.trim());
-        rows.push(`<tr>${cells.map(c => `<td class="blog-td">${inlineMarkdown(c)}</td>`).join('')}</tr>`);
-        i++;
-      }
-      out.push(
-        `<div class="blog-table-container"><table class="blog-table">` +
-        `<thead><tr>${headers.map(h => `<th class="blog-th">${inlineMarkdown(h)}</th>`).join('')}</tr></thead>` +
-        `<tbody>${rows.join('')}</tbody>` +
-        `</table></div>`
-      );
-      continue;
-    }
-
-    // Blank line → paragraph break (no <p> tag, handled by spacing)
-    if (line.trim() === '') {
-      out.push('<div class="blog-spacer"></div>');
-      i++;
-      continue;
-    }
-
-    const tokenMatch = line.trim().match(/^@@CODEBLOCK_(\d+)@@$/);
-    if (tokenMatch) {
-      out.push(codeBlocks[Number(tokenMatch[1])] ?? line);
-      i++;
-      continue;
-    }
-
-    // Already an HTML block (from image replacement or math replacement above)
-    if (line.trimStart().startsWith('<')) {
-      out.push(line);
-      i++;
-      continue;
-    }
-
-    // Paragraph
-    out.push(`<p class="blog-p">${inlineMarkdown(line)}</p>`);
-    i++;
-  }
-
-  return out.join('\n');
-}
-
-function escHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
-function inlineMarkdown(text: string): string {
-  // Protect link/image URLs from inline formatting (e.g. underscores in URLs
-  // being treated as italic markers). Extract them into tokens first.
-  const inlineTokens: string[] = [];
-  text = text.replace(
-    /(!?\[[^\]]*\]\([^)]+\))/g,
-    (match) => {
-      const token = `@@INLINE_${inlineTokens.length}@@`;
-      inlineTokens.push(match);
-      return token;
-    }
-  );
-
-  // Inline math: $...$
-  text = text.replace(/\$([^$\n]+)\$/g, (_, expr) => `<span class="blog-math-inline">${renderMath(expr, false)}</span>`);
-
-  // Inline code: `code`
-  text = text.replace(/`([^`]+)`/g, '<code class="blog-inline-code">$1</code>');
-
-  // Bold: **text** or __text__
-  text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="blog-strong">$1</strong>');
-  text = text.replace(/__(.+?)__/g, '<strong class="blog-strong">$1</strong>');
-
-  // Italic: *text* or _text_
-  text = text.replace(/\*(.+?)\*/g, '<em class="blog-em">$1</em>');
-  text = text.replace(/_(.+?)_/g, '<em class="blog-em">$1</em>');
-
-  // Strikethrough: ~~text~~
-  text = text.replace(/~~(.+?)~~/g, '<del>$1</del>');
-
-  // Restore and render link/image tokens
-  text = text.replace(/@@INLINE_(\d+)@@/g, (_, idx) => {
-    const raw = inlineTokens[Number(idx)];
-    if (raw.startsWith('!')) {
-      return raw.replace(
-        /!\[([^\]]*)\]\(([^)]+)\)/g,
-        (_, alt, src) => `<img src="${resolveImageSrc(src)}" alt="${alt}" class="blog-img" loading="lazy" />`
-      );
-    }
-    return raw.replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      (_, textMatch, hrefMatch) => {
-        const isAnchor = hrefMatch.startsWith('#');
-        const target = isAnchor ? '' : ' target="_blank" rel="noreferrer"';
-        return `<a href="${hrefMatch}" class="blog-a"${target}>${textMatch}</a>`;
-      }
-    );
-  });
-
-  return text;
-}
-
-// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 export default function BlogPost() {
@@ -292,8 +148,8 @@ export default function BlogPost() {
 
   const rawContent = slug ? blogContent[slug] ?? null : null;
 
-  const htmlContent = useMemo(
-    () => (rawContent ? renderMarkdown(rawContent) : null),
+  const markdownSource = useMemo(
+    () => (rawContent ? preprocessMarkdown(rawContent) : null),
     [rawContent]
   );
 
@@ -360,7 +216,7 @@ export default function BlogPost() {
   }, [slug]);
 
   // 404
-  if (!meta || !htmlContent) {
+  if (!meta || !markdownSource) {
     return (
       <div className="min-h-screen bg-bg text-text flex flex-col items-center justify-center gap-6 font-mono">
         <div className="text-[11px] text-text-dim tracking-[0.18em] uppercase">404 · not found</div>
@@ -475,11 +331,15 @@ export default function BlogPost() {
           )}
 
           {/* Markdown content */}
-          <div
-            ref={contentRef}
-            className="blog-prose"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+          <div ref={contentRef} className="blog-prose">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeKatex, rehypeSlug]}
+              components={markdownComponents}
+            >
+              {markdownSource}
+            </ReactMarkdown>
+          </div>
 
           {/* Footer nav */}
           <div className="border-t border-border mt-[72px] pt-9 flex items-center justify-between">

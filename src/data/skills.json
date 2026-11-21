@@ -9,15 +9,13 @@
     ],
     "AI / Data Science": [
         "RAG",
-        "LangChain",
-        "FAISS",
-        "Ollama",
+        "Agents",
+        "Local Intelligence",
         "Embeddings",
         "BM25 / Hybrid Retrieval"
     ],
     "Cloud & Web": [
-        "AWS (Lambda, EventBridge, SAM)",
-        "Boto3",
+        "AWS (Boto3, Lambda, EventBridge, SAM)",
         "FastAPI"
     ],
     "Dev & Databases": [

@@ -1,197 +1,329 @@
 [
-  {
-    "id": "verity",
-    "title": "Verity",
-    "name": "VERITY",
-    "tagline": "multi-detector deepfake forensics",
-    "description": "Engineered a deepfake examination platform that characterises any image, video, or audio file, then runs every compatible detector in its own version-pinned environment. Produces deterministic reports with per-detector verdicts, explainability artifacts, and model-free forensic observations, never collapsing the panel into a single real/fake score.",
-    "tags": ["Python", "PyTorch", "FastAPI", "React", "Docker", "Deepfake Detection"],
-    "stack": ["python", "pytorch", "fastapi", "react", "docker", "forensics"],
-    "category": "sec",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/verity",
-    "links": { "github": "https://github.com/ADPer0705/verity" }
-  },
-  {
-    "id": "droidscanner",
-    "title": "DroidScanner",
-    "name": "DROIDSCANNER",
-    "tagline": "on-device android risk auditor",
-    "description": "Built a Kotlin/Jetpack Compose Android app that audits installed apps by permissions, special access, and installer source, producing an explainable 0–100 risk score with plain-language reasons. Ships a bundled on-device sentence encoder for purpose-mismatch checks and generates shareable PDF reports, all with no INTERNET permission declared.",
-    "tags": ["Kotlin", "Jetpack Compose", "Android", "MediaPipe", "On-Device ML"],
-    "stack": ["kotlin", "android", "mediapipe", "ai", "security"],
-    "category": "sec",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/droidscanner",
-    "links": { "github": "https://github.com/ADPer0705/droidscanner" }
-  },
-  {
-    "id": "inquiro",
-    "title": "Inquiro",
-    "name": "INQUIRO",
-    "tagline": "local rag system",
-    "description": "Built a RAG system transforming documents into a queryable knowledge base using LangChain, FAISS, and local Mistral models via Ollama and Nomic Embed Text.",
-    "tags": ["Python", "LangChain", "Ollama", "FAISS"],
-    "stack": ["python", "langchain", "ollama", "faiss"],
-    "category": "ai",
-    "year": "2024",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/CY-N4P5E/Inquiro",
-    "links": { "github": "https://github.com/CY-N4P5E/Inquiro" }
-  },
-  {
-    "id": "sempropos",
-    "title": "Sempropos",
-    "name": "SEMPROPOS",
-    "tagline": "semantic cli command proposer",
-    "description": "Built an open-source Linux CLI that converts natural-language tasks into exact shell commands using local man-page retrieval, hybrid semantic ranking, and lightweight local/remote LLM synthesis.",
-    "tags": ["Python", "CLI", "SQLite", "BM25", "Embeddings", "LLM"],
-    "stack": ["python", "cli", "sqlite", "retrieval", "ai"],
-    "category": "ai",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/sempropos",
-    "links": { "github": "https://github.com/ADPer0705/sempropos" }
-  },
-  {
-    "id": "merklewatch",
-    "title": "MerkleWatch",
-    "name": "MERKLEWATCH",
-    "tagline": "cryptographic integrity tool",
-    "description": "Developed a CLI-first utility for creating deterministic, tamper-evident directory snapshots using Merkle trees and SHA-256 hashing. Implemented 64KB chunked reading for memory-efficient processing of large files.",
-    "tags": ["Python", "Cryptography", "SHA-256", "CLI"],
-    "stack": ["python", "cryptography", "security"],
-    "category": "sec",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/MerkleWatch",
-    "links": { "github": "https://github.com/ADPer0705/MerkleWatch" }
-  },
-  {
-    "id": "praetor",
-    "title": "Praetor",
-    "name": "PRAETOR",
-    "tagline": "serverless aws security automation",
-    "description": "Engineered a serverless compliance auditing platform using AWS Lambda and EventBridge to perform 170+ daily security checks across 11 AWS services. Delivered zero-cost cloud security scanning via automated HTML dashboards and Slack integration.",
-    "tags": ["Python", "AWS Lambda", "EventBridge", "Boto3", "Cloud Security"],
-    "stack": ["python", "aws", "cloud", "security"],
-    "category": "sec",
-    "year": "2025",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/praetor",
-    "links": { "github": "https://github.com/ADPer0705/praetor" }
-  },
-  {
-    "id": "chronotrace",
-    "title": "ChronoTrace",
-    "name": "CHRONOTRACE",
-    "tagline": "ntfs anti-forensics detection framework",
-    "description": "Engineered an advanced forensic analysis tool for detecting timestamp manipulations and log evasion via post-mortem image analysis and real-time live monitoring.",
-    "tags": ["Python", "FastAPI", "React 19", "WebSockets", "libewf"],
-    "stack": ["python", "fastapi", "react", "websockets", "forensics"],
-    "category": "sec",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/GR4Y-SCALE/ChronoTrace",
-    "links": { "github": "https://github.com/GR4Y-SCALE/ChronoTrace" }
-  },
-  {
-    "id": "wordsmith",
-    "title": "Wordsmith",
-    "name": "WORDSMITH",
-    "tagline": "ai-driven contextual dictionary generator",
-    "description": "Engineered an AI-driven contextual dictionary and wordlist generator tailored for security professionals. Integrates Groq, Gemini, and OpenAI to automatically extract relevant tokens from unstructured raw intelligence.",
-    "tags": ["JavaScript", "HTML/CSS", "LLM APIs", "AI", "Security"],
-    "stack": ["javascript", "html", "css", "ai", "security"],
-    "category": "ai",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://adper.me/wordsmith",
-    "links": { "live": "https://adper.me/wordsmith" }
-  },
-  {
-    "id": "rbi-hackathon",
-    "title": "RBIH IITD Tryst Hackathon",
-    "name": "RBIH FRAUD PREVENTION",
-    "tagline": "exploratory data analysis & fraud prevention",
-    "description": "Developed Comprehensive Exploratory Data Analysis (EDA) Jupyter Notebooks and Reports for the National Fraud Prevention Challenge.",
-    "tags": ["Python", "Jupyter Notebook", "Pandas", "Data Analysis"],
-    "stack": ["python", "jupyter", "pandas", "data"],
-    "category": "data",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon",
-    "links": { "github": "https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon" }
-  },
-  {
-    "id": "overpage",
-    "title": "OverPage",
-    "name": "OVERPAGE",
-    "tagline": "ai webpage analyzer & summarizer",
-    "description": "Developed a Chrome extension designed to scrape active webpages and generate on-demand summaries via an integrated chat interface, using a PHP backend to forward queries to the Google Gemini API.",
-    "tags": ["HTML/CSS/JS", "Chrome Extension", "PHP", "Google Gemini API"],
-    "stack": ["javascript", "php", "ai", "gemini"],
-    "category": "ai",
-    "year": "2025",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/OverPage",
-    "links": { "github": "https://github.com/ADPer0705/OverPage" }
-  },
-  {
-    "id": "teledm",
-    "title": "TeleDM",
-    "name": "TELEDM",
-    "tagline": "telegram download manager",
-    "description": "Developed a desktop application enabling robust, interrupt-tolerant file downloads from Telegram without keeping the client active. Features GUI queue management and SQLite persistent history.",
-    "tags": ["Python", "Tkinter", "SQLite", "Telegram API"],
-    "stack": ["python", "tkinter", "sqlite", "api"],
-    "category": "tool",
-    "year": "2025",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/TeleDM",
-    "links": { "github": "https://github.com/ADPer0705/TeleDM" }
-  },
-  {
-    "id": "adb-data-fetcher",
-    "title": "ADB Data Fetcher Utility",
-    "name": "ADB DATA FETCHER",
-    "tagline": "android device extraction automation",
-    "description": "Developed a Windows Form desktop application using C# (.NET 8.0) to automate the extraction of SMS, contacts, and logs from Android devices via ADB, with an Entity Framework Core / SQL Server backend.",
-    "tags": ["C#", "Entity Framework Core", "SQL Server", "ADB"],
-    "stack": ["csharp", "dotnet", "sql", "forensics"],
-    "category": "tool",
-    "year": "2025",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/ADB_Data_Fetcher",
-    "links": { "github": "https://github.com/ADPer0705/ADB_Data_Fetcher" }
-  },
-  {
-    "id": "gloss",
-    "title": "Gloss",
-    "name": "GLOSS",
-    "tagline": "offline tap-to-translate reader",
-    "description": "Developed an offline Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping. Runs entirely on-device after a one-time ~30 MB model download, with no accounts and no cloud dependency.",
-    "tags": ["Kotlin", "Jetpack Compose", "ML Kit", "Android", "Offline"],
-    "stack": ["kotlin", "android", "ml-kit"],
-    "category": "tool",
-    "year": "2026",
-    "status": "Completed",
-    "image": "",
-    "link": "https://github.com/ADPer0705/gloss",
-    "links": { "github": "https://github.com/ADPer0705/gloss" }
-  }
+    {
+        "id": "verity",
+        "title": "Verity",
+        "name": "VERITY",
+        "tagline": "multi-detector deepfake forensics",
+        "description": "Engineered a deepfake examination platform that characterises images, videos, or audio files, determines and runs suitable deepfake detectors, produces detailed reports with explainability artifacts thus streamlining the deepfake investigation workflow",
+        "tags": [
+            "Deepfake Detection",
+            "Digital Forensics"
+        ],
+        "stack": [
+            "python",
+            "pytorch",
+            "fastapi",
+            "react"
+        ],
+        "category": "sec",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/verity",
+        "links": {
+            "github": "https://github.com/ADPer0705/verity"
+        }
+    },
+    {
+        "id": "droidscanner",
+        "title": "DroidScanner",
+        "name": "DROIDSCANNER",
+        "tagline": "on-device android risk auditor",
+        "description": "An App for offline security audit of an android device. Evaluates permissions, special access and installer source for various installed applications with a sentence encoder, produces explainable risk score and reports for the daily user to identify installed apps and excessive permissions.",
+        "tags": [
+            "Android Security",
+            "On-Device ML"
+        ],
+        "stack": [
+            "kotlin",
+            "Jetpack Compose",
+            "android",
+            "mediapipe",
+            "language encoder"
+        ],
+        "category": "sec",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/droidscanner",
+        "links": {
+            "github": "https://github.com/ADPer0705/droidscanner"
+        }
+    },
+    {
+        "id": "inquiro",
+        "title": "Inquiro",
+        "name": "INQUIRO",
+        "tagline": "local rag system",
+        "description": "RAG system transforming documents into a queryable knowledge base using LangChain, FAISS, and local models via Ollama.",
+        "tags": [
+            "Ollama",
+            "RAG",
+            "Local models"
+        ],
+        "stack": [
+            "python",
+            "langchain",
+            "ollama",
+            "faiss"
+        ],
+        "category": "ai",
+        "year": "2024",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/CY-N4P5E/Inquiro",
+        "links": {
+            "github": "https://github.com/CY-N4P5E/Inquiro"
+        }
+    },
+    {
+        "id": "sempropos",
+        "title": "Sempropos",
+        "name": "SEMPROPOS",
+        "tagline": "semantic cli command proposer",
+        "description": "A cli utility that converts natural-language tasks into shell commands using available local tool documentation based RAG and llm synthesis.",
+        "tags": [
+            "CLI",
+            "RAG",
+            "BM25",
+            "Embeddings",
+            "LLM"
+        ],
+        "stack": [
+            "python",
+            "sqlite"
+        ],
+        "category": "ai",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/sempropos",
+        "links": {
+            "github": "https://github.com/ADPer0705/sempropos"
+        }
+    },
+    {
+        "id": "merklewatch",
+        "title": "MerkleWatch",
+        "name": "MERKLEWATCH",
+        "tagline": "cryptographic integrity tool",
+        "description": "Directory snapshot utility using Merkle trees and SHA-256 hashing to identify tampering and integrity breaches.",
+        "tags": [
+            "Python",
+            "Cryptography",
+            "SHA-256",
+            "CLI"
+        ],
+        "stack": [
+            "python"
+        ],
+        "category": "sec",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/MerkleWatch",
+        "links": {
+            "github": "https://github.com/ADPer0705/MerkleWatch"
+        }
+    },
+    {
+        "id": "praetor",
+        "title": "Praetor",
+        "name": "PRAETOR",
+        "tagline": "serverless aws security automation",
+        "description": "A serverless cloud compliance auditing platform for AWS using Lambda and EventBridge to perform periodic audits and reports on Slack and HTML dashboard. ",
+        "tags": [
+            "AWS Lambda",
+            "EventBridge",
+            "Boto3",
+            "Cloud Security"
+        ],
+        "stack": [
+            "python",
+            "aws boto3"
+        ],
+        "category": "sec",
+        "year": "2025",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/praetor",
+        "links": {
+            "github": "https://github.com/ADPer0705/praetor"
+        }
+    },
+    {
+        "id": "chronotrace",
+        "title": "ChronoTrace",
+        "name": "CHRONOTRACE",
+        "tagline": "ntfs anti-forensics detection framework",
+        "description": "Anti-forensic analysis tool for detecting timestamp manipulation and log evasion on windows environment, via both post-mortem image analysis and real-time live monitoring.",
+        "tags": [
+            "Anti-Forensics Detection",
+            "Windows Forensics",
+            "MFT analysis",
+            "Digital Forensics"
+        ],
+        "stack": [
+            "python",
+            "fastapi",
+            "react",
+            "libewf"
+        ],
+        "category": "sec",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/GR4Y-SCALE/ChronoTrace",
+        "links": {
+            "github": "https://github.com/GR4Y-SCALE/ChronoTrace"
+        }
+    },
+    {
+        "id": "wordsmith",
+        "title": "Wordsmith",
+        "name": "WORDSMITH",
+        "tagline": "ai-driven contextual dictionary generator",
+        "description": "Wordlist generator tailored for security professionals, utilizing recon data for generating wordlists.",
+        "tags": [
+            "AI",
+            "Security"
+        ],
+        "stack": [
+            "javascript",
+            "html",
+            "css"
+        ],
+        "category": "ai",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://adper.me/wordsmith",
+        "links": {
+            "live": "https://adper.me/wordsmith"
+        }
+    },
+    {
+        "id": "rbi-hackathon",
+        "title": "RBIH IITD Tryst Hackathon",
+        "name": "RBIH FRAUD PREVENTION",
+        "tagline": "exploratory data analysis & fraud prevention",
+        "description": "Developed Comprehensive Exploratory Data Analysis (EDA) Jupyter Notebooks and Reports for the National Fraud Prevention Challenge.",
+        "tags": [
+            "Jupyter Notebook",
+            "Data Analysis"
+        ],
+        "stack": [
+            "python",
+            "jupyter",
+            "pandas",
+            "data"
+        ],
+        "category": "data",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon",
+        "links": {
+            "github": "https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon"
+        }
+    },
+    {
+        "id": "overpage",
+        "title": "OverPage",
+        "name": "OVERPAGE",
+        "tagline": "ai webpage analyzer & summarizer",
+        "description": "Developed a Chrome extension designed to scrape active webpages and generate on-demand summaries via an integrated chat interface, using a PHP backend to forward queries to the Google Gemini API.",
+        "tags": [
+            "Chrome Extension",
+            "PHP",
+            "Google Gemini API"
+        ],
+        "stack": [
+            "javascript",
+            "php",
+            "ai",
+            "gemini"
+        ],
+        "category": "ai",
+        "year": "2025",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/OverPage",
+        "links": {
+            "github": "https://github.com/ADPer0705/OverPage"
+        }
+    },
+    {
+        "id": "teledm",
+        "title": "TeleDM",
+        "name": "TELEDM",
+        "tagline": "telegram download manager",
+        "description": "Developed a desktop application enabling robust, interrupt-tolerant file downloads from Telegram without keeping the client active. Features GUI queue management and SQLite persistent history.",
+        "tags": [
+            "Telegram API"
+        ],
+        "stack": [
+            "python",
+            "tkinter",
+            "sqlite",
+            "api"
+        ],
+        "category": "tool",
+        "year": "2025",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/TeleDM",
+        "links": {
+            "github": "https://github.com/ADPer0705/TeleDM"
+        }
+    },
+    {
+        "id": "adb-data-fetcher",
+        "title": "ADB Data Fetcher Utility",
+        "name": "ADB DATA FETCHER",
+        "tagline": "android device extraction automation",
+        "description": "Developed a Windows Form desktop application using C# (.NET 8.0) to automate the extraction of SMS, contacts, and logs from Android devices via ADB, with an Entity Framework Core / SQL Server backend.",
+        "tags": [
+            "Entity Framework Core",
+            "SQL Server",
+            "ADB",
+            "Digital Forensics"
+        ],
+        "stack": [
+            "C#",
+            "dotnet",
+            "sql"
+        ],
+        "category": "tool",
+        "year": "2025",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/ADB_Data_Fetcher",
+        "links": {
+            "github": "https://github.com/ADPer0705/ADB_Data_Fetcher"
+        }
+    },
+    {
+        "id": "gloss",
+        "title": "Gloss",
+        "name": "GLOSS",
+        "tagline": "offline tap-to-translate reader",
+        "description": "An Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping. Runs entirely on-device after a one-time ~30 MB model download, with no accounts and no cloud dependency. Allows for improved language learning by quick lookups and translations.",
+        "tags": [
+            "ML Kit",
+            "Android"
+        ],
+        "stack": [
+            "kotlin",
+            "ml-kit"
+        ],
+        "category": "tool",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/gloss",
+        "links": {
+            "github": "https://github.com/ADPer0705/gloss"
+        }
+    }
 ]

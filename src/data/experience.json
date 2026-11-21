@@ -1,43 +1,60 @@
-[  {
-    "org": "National Forensic Sciences University (NFSU)",
-    "role": "Intern",
-    "period": "Jul 2026 - Present",
-    "type": "internship",
-    "organization_logo": "",
-    "location": "Gandhinagar, Gujarat, India · On-site",
-    "description": "Developing solutions for DeepFake Detection with explainability, and determinism for investigative workflows.",
-    "highlights": [
-        "Performed dataset survey with an aim to identify gaps in available datasets, with focus on indian demographics and improving generalization of detection models.",
-        "Worked towards an automated deepfake analysis pipeline with outputs and explainability artifacts gathered from various detectors running in air-gapped isolated environments"
-    ],
-    "tags": ["deepfakes", "research", "machine learning"]
-  },
-  {
-    "org": "Department of Telecommunications, Government of India",
-    "role": "Intern / Research Assistant",
-    "period": "May 2025 - July 2025",
-    "type": "internship",
-    "organization_logo": "",
-    "location": "Gandhinagar, Gujarat, India",
-    "description": "Selected through a competitive university exam to conduct research on the security posture of 5G architecture, focusing on subscriber information security vulnerabilities.",
-    "highlights": [
-      "Developed an interactive Retrieval-Augmented Generation (RAG) application utilizing 5G technical specifications from 3GPP.",
-      "Gained hands-on experience in cybersecurity research, technical documentation, and applied AI integration."
-    ],
-    "tags": ["research", "5g", "rag", "cybersecurity", "ai"]
-  },
-  {
-    "org": "Centre for Development of Advanced Computing (C-DAC)",
-    "role": "Cybersecurity Intern",
-    "period": "Jul 2024",
-    "type": "internship",
-    "organization_logo": "",
-    "location": "India",
-    "description": "Completed an intensive training program on cybersecurity fundamentals with a focus on practical security operations.",
-    "highlights": [
-      "Executed hands-on labs in network security, digital forensics, and ethical hacking.",
-      "Gained practical experience with industry-standard tools including Wireshark, FTK Imager, and Metasploit."
-    ],
-    "tags": ["network security", "digital forensics", "wireshark", "metasploit"]
-  }
+[
+    {
+        "org": "National Forensic Sciences University (NFSU)",
+        "role": "Intern",
+        "period": "Jul 2026 - Present",
+        "type": "internship",
+        "organization_logo": "",
+        "location": "Gandhinagar, Gujarat, India · On-site",
+        "description": "Developing solutions for DeepFake Detection with explainability, and determinism for investigative workflows.",
+        "highlights": [
+            "Identified gaps in Deepfake Datasets, with focus on Indian demographics and improving generalization of detection models",
+            "Worked towards an automated deepfake analysis pipeline with outputs and explainability artifacts gathered from various detectors running in air-gapped isolated environments to aid forensic media investigators"
+        ],
+        "tags": [
+            "deepfakes",
+            "research",
+            "machine learning",
+            "AI engineering"
+        ]
+    },
+    {
+        "org": "Department of Telecommunications, Government of India",
+        "role": "Intern / Research Assistant",
+        "period": "May 2025 - July 2025",
+        "type": "internship",
+        "organization_logo": "",
+        "location": "Gandhinagar, Gujarat, India",
+        "description": "Conducted research on the security posture of 5G architecture, focusing on subscriber information security vulnerabilities.",
+        "highlights": [
+            "Developed an interactive Retrieval-Augmented Generation (RAG) application utilizing 5G technical specifications from 3GPP.",
+            "Gained hands-on experience in cybersecurity research, technical documentation, and applied AI integration."
+        ],
+        "tags": [
+            "research",
+            "5g",
+            "rag",
+            "cybersecurity",
+            "Telecommunications"
+        ]
+    },
+    {
+        "org": "Centre for Development of Advanced Computing (C-DAC)",
+        "role": "Cybersecurity Intern",
+        "period": "Jul 2024",
+        "type": "internship",
+        "organization_logo": "",
+        "location": "India",
+        "description": "Completed an intensive training program on cybersecurity fundamentals with a focus on practical security operations.",
+        "highlights": [
+            "Executed hands-on labs in network security, digital forensics, and ethical hacking.",
+            "Gained practical experience with industry-standard tools including Wireshark, FTK Imager, and Metasploit."
+        ],
+        "tags": [
+            "network security",
+            "digital forensics",
+            "wireshark",
+            "metasploit"
+        ]
+    }
 ]

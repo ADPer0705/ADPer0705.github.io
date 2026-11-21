@@ -4,7 +4,63 @@
     "title": "Virtualization — QEMU/KVM",
     "date": "2026-08-11",
     "description": "Setting up a network of VMs with QEMU/KVM, libvirt and virt-manager for an Information and Network Security class — choosing the kernel-native path over VirtualBox and VMware.",
-    "tags": ["virtualization", "qemu", "kvm", "linux"],
+    "tags": [
+      "virtualization",
+      "qemu",
+      "kvm",
+      "linux"
+    ],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "playing-chess-with-nature",
+    "title": "Playing Chess with Nature",
+    "date": "2026-07-09",
+    "description": "Seeing life's hardships as a chess game against nature — where you can't control the moves against you, only your own slow, deliberate response.",
+    "tags": [
+      "essay",
+      "philosophy",
+      "life"
+    ],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "dual-boot-broken-after-windows-update",
+    "title": "Dual Boot broken after Windows Updates - Fixing LUKS, NVIDIA and Time Sync",
+    "date": "2026-07-04",
+    "description": "Steps to recover Fedora after Windows updates break dual-boot: LUKS TPM2 auto-unlock, rebuilding NVIDIA modules, and fixing hardware clock sync.",
+    "tags": [
+      "linux",
+      "fedora",
+      "luks",
+      "tpm2",
+      "nvidia",
+      "time"
+    ],
+    "platforms": {
+      "medium": "",
+      "devto": "",
+      "hashnode": ""
+    }
+  },
+  {
+    "slug": "why-write-something",
+    "title": "Why write something??",
+    "date": "2026-07-03",
+    "description": "A personal exploration of why we write — how pacing our thoughts through writing helps us understand situations, gather ourselves when lost, and develop clarity in a noisy mind.",
+    "tags": [
+      "essay",
+      "writing",
+      "philosophy"
+    ],
     "platforms": {
       "medium": "",
       "devto": "",
@@ -32,7 +88,13 @@
     "title": "Encrypt Once, Boot Forever: TPM2 Auto-Unlock on Fedora 44",
     "date": "2026-05-20",
     "description": "How to seal your LUKS decryption key inside the TPM chip to let the hardware unlock your drive automatically on boot.",
-    "tags": ["linux", "fedora", "tpm2", "security", "luks"],
+    "tags": [
+      "linux",
+      "fedora",
+      "tpm2",
+      "security",
+      "luks"
+    ],
     "platforms": {
       "medium": "",
       "devto": "",
@@ -44,7 +106,12 @@
     "title": "The Bayesian Trap: A Mathematical Case for Trying Something New",
     "date": "2025-11-01",
     "description": "How Bayes' theorem exposes a cognitive trap — why your brain fights novelty, and why the math says you should push through it anyway.",
-    "tags": ["math", "probability", "decision-making", "essay"],
+    "tags": [
+      "math",
+      "probability",
+      "decision-making",
+      "essay"
+    ],
     "platforms": {
       "medium": "",
       "devto": "",
@@ -56,7 +123,11 @@
     "title": "The Context Theory of Relationships",
     "date": "2025-10-15",
     "description": "A framework for understanding why relationships shift when context shifts — and what that means for how we build and maintain them.",
-    "tags": ["essay", "philosophy", "relationships"],
+    "tags": [
+      "essay",
+      "philosophy",
+      "relationships"
+    ],
     "platforms": {
       "medium": "",
       "devto": "",
@@ -68,7 +139,12 @@
     "title": "You Don't Need Prompt Engineering to Talk to AI",
     "date": "2025-10-01",
     "description": "The prompt engineering discourse is overblown. Here's why thinking clearly matters more than any framework or formula.",
-    "tags": ["ai", "llm", "opinion", "essay"],
+    "tags": [
+      "ai",
+      "llm",
+      "opinion",
+      "essay"
+    ],
     "platforms": {
       "medium": "",
       "devto": "",
@@ -80,47 +156,12 @@
     "title": "Bias Buster — CTF Writeup",
     "date": "2025-09-15",
     "description": "A writeup on designing Bias Buster — a CTF-style challenge exploring AI/ML data bias, built for the AI/ML Club at NFSU.",
-    "tags": ["ctf", "writeup", "ai/ml", "bias"],
-    "platforms": {
-      "medium": "",
-      "devto": "",
-      "hashnode": ""
-    }
-  },
-  {
-    "slug": "why-write-something",
-    "title": "Why write something??",
-    "date": "2026-07-03",
-    "description": "A personal exploration of why we write — how pacing our thoughts through writing helps us understand situations, gather ourselves when lost, and develop clarity in a noisy mind.",
     "tags": [
-      "essay",
-      "writing",
-      "philosophy"
+      "ctf",
+      "writeup",
+      "ai/ml",
+      "bias"
     ],
-    "platforms": {
-      "medium": "",
-      "devto": "",
-      "hashnode": ""
-    }
-  },
-  {
-    "slug": "dual-boot-broken-after-windows-update",
-    "title": "Dual Boot broken after Windows Updates - Fixing LUKS, NVIDIA and Time Sync",
-    "date": "2026-07-04",
-    "description": "Steps to recover Fedora after Windows updates break dual-boot: LUKS TPM2 auto-unlock, rebuilding NVIDIA modules, and fixing hardware clock sync.",
-    "tags": ["linux", "fedora", "luks", "tpm2", "nvidia", "time"],
-    "platforms": {
-      "medium": "",
-      "devto": "",
-      "hashnode": ""
-    }
-  },
-  {
-    "slug": "playing-chess-with-nature",
-    "title": "Playing Chess with Nature",
-    "date": "2026-07-09",
-    "description": "Seeing life's hardships as a chess game against nature — where you can't control the moves against you, only your own slow, deliberate response.",
-    "tags": ["essay", "philosophy", "life"],
     "platforms": {
       "medium": "",
       "devto": "",

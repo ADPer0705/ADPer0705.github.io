@@ -80,13 +80,13 @@ Gandhinagar, Gujarat, India\par\vspace{1pt}
 % SUMMARY
 %----------------------------------------
 \section{Summary}
-Integrated B.Tech--M.Tech student in Computer Science and Engineering (Cybersecurity) at National Forensic Sciences University (NFSU), Gandhinagar, working at the intersection of AI and security. Experienced in deterministic deepfake detection and digital forensics pipelines, Retrieval-Augmented Generation (RAG) systems, serverless cloud security auditing, and local Large Language Model (LLM) workflows. Co-founder and technical lead of the NFSU AI/ML Club.
+Computer Science student, working at the intersection of AI and security. Experienced in AI-Engineering, Local-first intelligence systems, deterministic deepfake detection and digital forensics pipelines, Retrieval-Augmented Generation (RAG) systems, and serverless cloud security auditing.
 
 %----------------------------------------
 % EDUCATION
 %----------------------------------------
 \section{Education}
-\cventry{Integrated Bachelor of Technology (B.Tech) and Master of Technology (M.Tech), Computer Science and Engineering (Cybersecurity)}{National Forensic Sciences University, Gandhinagar, Gujarat}{2023--2028 (Expected)}
+\cventry{Integrated Bachelor of Technology (B.Tech) and Master of Technology (M.Tech), Computer Science and Engineering (Cybersecurity)}{National Forensic Sciences University, Gandhinagar, Gujarat}{2023--2028}
 CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 %----------------------------------------
@@ -94,7 +94,7 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 %----------------------------------------
 \section{Technical Skills}
 \cvskill{Languages}{Python, C, C++, Rust, Kotlin, C\# (.NET), Bash, JavaScript, HTML, CSS}
-\cvskill{AI \& Machine Learning}{RAG Architectures, Agentic Workflows, Local Inference, Computer Vision, PyTorch, OpenCV, Scikit-learn}
+\cvskill{AI \& Machine Learning}{RAG Architectures, Agentic Workflows, Local Inference, Computer Vision}
 \cvskill{Cloud \& Web}{AWS (Lambda, EventBridge, SAM), Boto3, FastAPI, React, WebSockets}
 \cvskill{Systems \& DevOps}{Linux (Fedora, Debian, Kali), Docker, Git, Android, SQLite}
 
@@ -105,9 +105,8 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 \cventry{Intern -- Deepfake Detection \& Forensics}{National Forensic Sciences University (NFSU), Gandhinagar}{Jul 2026--Present}
 \begin{itemize}
-  \item Build deterministic, explainable deepfake detection workflows for investigative use.
-  \item Conducted a dataset survey to identify gaps in available deepfake datasets, focusing on Indian demographics and improving generalization of detection models.
-  \item Work toward an automated analysis pipeline that aggregates outputs and explainability artifacts from multiple detectors running in isolated, air-gapped environments.
+  \item Automated deterministic, explainable, air-gapped deepfake detection workflows for investigative use.
+  \item Identifying gaps in Deepfake Datasets pertaining to generalization of detection models, focusing on Indian demographics. 
 \end{itemize}
 
 \cventry{Research Intern}{Department of Telecommunications (DoT), NFSU, Gandhinagar}{May--Jul 2025}
@@ -130,28 +129,28 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 \cventry{Verity -- Multi-Detector Deepfake Forensics}{\href{https://github.com/ADPer0705/verity}{github.com/ADPer0705/verity}}{2026}
 \begin{itemize}
-  \item Engineered a deepfake examination platform for image, video, and audio that characterizes media, selects every detector able to consume it, and runs each detector in its own isolated, version-pinned environment.
-  \item Implemented a deterministic pipeline producing per-detector verdicts, confidence reasoning, and explainability artifacts (faces, attention maps, timelines) alongside five model-free forensic analyzers, without collapsing the panel into a single real/fake score.
-  \item \textbf{Tech Stack:} Python, PyTorch, FastAPI, React, Docker, uv
+  \item Engineered a deepfake examination platform for image, video, and audio that characterizes media, selects suitable deepfake detectors, and runs each detector in its own isolated, version-pinned environment.
+  \item Implemented a deterministic pipeline producing per-detector verdicts, confidence reasoning, and explainability artifacts (faces, attention maps, timelines) alongside model-free forensic analyzers, without collapsing the panel into a single real/fake score.
+  \item \textbf{Tech Stack:} Python, PyTorch, FastAPI, React, uv
 \end{itemize}
 
 \cventry{DroidScanner -- On-Device Android Risk Auditor}{\href{https://github.com/ADPer0705/droidscanner}{github.com/ADPer0705/droidscanner}}{2026}
 \begin{itemize}
-  \item Built a Kotlin/Jetpack Compose Android app that audits installed apps by permissions, special access, and installer source, producing an explainable 0--100 risk score with plain-language reasons.
-  \item Bundled an on-device Universal Sentence Encoder (MediaPipe) for purpose-mismatch detection and added install monitoring, permission diffs, and shareable PDF reports, with no \texttt{INTERNET} permission declared.
+  \item Built an Android app that audits installed apps by permissions, special access, and installer source, producing an explainable risk score with plain-language reasons.
+  \item Bundled an on-device Sentence Encoder (MediaPipe) for purpose-mismatch detection and added install monitoring, permission diffs, and shareable PDF reports, with no \texttt{INTERNET} permission declared.
   \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, MediaPipe, Android SDK
 \end{itemize}
 
 \cventry{ChronoTrace -- NTFS Anti-Forensics Detection Framework}{\href{https://github.com/GR4Y-SCALE/ChronoTrace}{github.com/GR4Y-SCALE/ChronoTrace}}{2026}
 \begin{itemize}
   \item Engineered a forensic analysis tool for detecting timestamp manipulations and log evasion via post-mortem image analysis and real-time live monitoring.
-  \item Implemented deterministic anti-forensics rules evaluating \$MFT, USN Journal, and \$LogFile NTFS structures.
+  \item Designed and implemented deterministic anti-forensics rules evaluating \$MFT, USN Journal, and \$LogFile NTFS structures.
   \item \textbf{Tech Stack:} Python, FastAPI, React 19, WebSockets, libewf
 \end{itemize}
 
 \cventry{Praetor -- Serverless AWS Security Automation}{\href{https://github.com/ADPer0705/praetor}{github.com/ADPer0705/praetor}}{2025}
 \begin{itemize}
-  \item Engineered a serverless compliance auditing platform using AWS Lambda and EventBridge to perform 170+ daily security checks across 11 AWS services.
+  \item Built a serverless compliance auditing platform using AWS Lambda and EventBridge to perform 170+ daily security checks across 11 AWS services.
   \item Delivered zero-cost cloud security scanning through automated HTML dashboards and Slack integration for critical misconfigurations.
   \item \textbf{Tech Stack:} Python, AWS (Lambda, EventBridge, CloudTrail, SAM), Boto3
 \end{itemize}
@@ -165,7 +164,7 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 \cventry{Sempropos -- Semantic CLI Command Proposer}{\href{https://github.com/ADPer0705/sempropos}{github.com/ADPer0705/sempropos}}{2026}
 \begin{itemize}
-  \item Built an open-source, offline-first Linux CLI that converts natural-language tasks into exact shell commands using local man-page retrieval.
+  \item Built an open-source, offline-first Linux CLI that converts natural-language tasks into exact shell commands using local man-page based context retrieval.
   \item Designed a hybrid retrieval pipeline combining BM25, embedding similarity, and reciprocal rank fusion over a SQLite-backed index of tools, flags, and examples.
   \item Implemented pluggable synthesis backends (llama.cpp, Ollama, and API providers) with install and update workflows and index staleness checks.
   \item \textbf{Tech Stack:} Python, SQLite, BM25, FastEmbed, NumPy, Ollama, llama.cpp
@@ -195,8 +194,8 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 \cventry{Inquiro -- Local RAG System}{\href{https://github.com/CY-N4P5E/Inquiro}{github.com/CY-N4P5E/Inquiro}}{2024}
 \begin{itemize}
   \item Built a RAG system transforming documents into a queryable knowledge base using LangChain and FAISS.
-  \item Implemented a local-first architecture with local LLMs (Mistral) via Ollama, along with Nomic Embed Text for semantic understanding and memory management.
-  \item \textbf{Tech Stack:} Python, LangChain, Ollama, FAISS, Nomic Embeddings
+  \item Implemented a local-first architecture with local LLMs and Embedding models via Ollama.
+  \item \textbf{Tech Stack:} Python, LangChain, Ollama, FAISS
 \end{itemize}
 
 \cventry{OverPage -- AI Webpage Analyzer}{\href{https://github.com/ADPer0705/OverPage}{github.com/ADPer0705/OverPage}}{2025}
@@ -208,7 +207,7 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 \cventry{Gloss -- Offline Tap-to-Translate Reader}{\href{https://github.com/ADPer0705/gloss}{github.com/ADPer0705/gloss}}{2026}
 \begin{itemize}
-  \item Developed an offline Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping.
+  \item An Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping.
   \item Runs entirely on-device after a one-time model download per language pair, with no accounts and no cloud dependency.
   \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, ML Kit, Android SDK
 \end{itemize}
@@ -241,7 +240,7 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 \section{Leadership \& Activities}
 \cventry{Co-Founder / Technical Lead -- AI/ML Club}{National Forensic Sciences University}{2024--Present}
 \begin{itemize}
-  \item Initiated the creation of the AI/ML Club and actively manage the DataCamp classroom for the university community.
+  \item Initiated the creation of the AI/ML Club and brought in DataCamp classroom for the university community.
   \item Organized workshops, lectures, and hands-on sessions on AI implementation and its real-world applications.
   \item Designed and conducted a Capture-the-Flag (CTF) challenge, including creating original problems for participants.
   \item Delivered live demonstrations and interactive programming sessions, educating students on AI/ML project development.

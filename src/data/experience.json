@@ -41,20 +41,24 @@
     {
         "org": "Centre for Development of Advanced Computing (C-DAC)",
         "role": "Cybersecurity Intern",
-        "period": "Jul 2024",
+        "period": "May 2024 - Jul 2024",
         "type": "internship",
         "organization_logo": "",
-        "location": "India",
-        "description": "Completed an intensive training program on cybersecurity fundamentals with a focus on practical security operations.",
+        "location": "India · Remote",
+        "description": "Completed a cybersecurity internship covering foundational training, advanced security labs, and secure network infrastructure design.",
         "highlights": [
-            "Executed hands-on labs in network security, digital forensics, and ethical hacking.",
-            "Gained practical experience with industry-standard tools including Wireshark, FTK Imager, and Metasploit."
+            "Executed hands-on labs in network security, digital forensics, vulnerability assessment, and system hardening using Wireshark, FTK Imager, Nmap, Volatility, Nuclei, and phishing protection mechanisms.",
+            "Designed and implemented a GNS3-based network with Windows machines and Cisco router images, applying Cisco's Security Checklist for network hardening, configuration security, and secure infrastructure deployment."
         ],
         "tags": [
             "network security",
             "digital forensics",
+            "vulnerability assessment",
+            "system hardening",
+            "gns3",
             "wireshark",
-            "metasploit"
+            "volatility",
+            "nuclei"
         ]
     }
 ]

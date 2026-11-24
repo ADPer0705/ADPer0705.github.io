@@ -1,33 +1,45 @@
 {
     "Languages": [
         "Python",
-        "C/C++",
         "Rust",
-        "Bash",
+        "Kotlin",
+        "C/C++",
+        "TypeScript",
         "JavaScript",
-        "HTML/CSS"
+        "Bash",
+        "SQL"
     ],
-    "AI / Data Science": [
-        "RAG",
-        "Agents",
-        "Local Intelligence",
-        "Embeddings",
-        "BM25 / Hybrid Retrieval"
+    "AI / Machine Learning": [
+        "PyTorch",
+        "ONNX Runtime",
+        "MediaPipe",
+        "RAG & Hybrid Retrieval",
+        "Local Inference (llama.cpp / Ollama)",
+        "Agentic Workflows",
+        "Computer Vision"
     ],
     "Cloud & Web": [
-        "AWS (Boto3, Lambda, EventBridge, SAM)",
-        "FastAPI"
+        "FastAPI",
+        "React",
+        "WebSockets",
+        "AWS (Lambda, EventBridge, SAM)",
+        "Boto3"
     ],
-    "Dev & Databases": [
+    "Systems & Mobile": [
         "Linux (Fedora, Debian, Kali)",
-        "Git",
-        "Docker"
+        "Android SDK",
+        "Jetpack Compose",
+        "Ratatui (TUI)",
+        "SQLite / FTS5",
+        "Docker",
+        "Git"
     ],
     "Domains": [
         "Cybersecurity",
-        "Machine Learning",
         "Digital Forensics",
-        "Systems Programming",
-        "Cloud Security"
+        "Deepfake Detection",
+        "Android Security",
+        "Applied AI/ML",
+        "Systems Tooling"
     ]
 }

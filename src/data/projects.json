@@ -4,23 +4,33 @@
         "title": "Verity",
         "name": "VERITY",
         "tagline": "multi-detector deepfake forensics",
-        "description": "Engineered a deepfake examination platform that characterises images, videos, or audio files, determines and runs suitable deepfake detectors, produces detailed reports with explainability artifacts thus streamlining the deepfake investigation workflow",
+        "description": "Deterministic multi-modal deepfake examination platform for image, video, and audio. Characterizes media, selects evidence-grade detectors, runs each in an isolated version-pinned environment, and preserves per-detector verdicts, reasoning, and explainability artifacts without collapsing disagreement into a single score.",
+        "highlights": [
+            "58 ported detector architectures (39 evidence-grade) in isolated uv environments + 5 model-free forensic analyzers",
+            "Standalone air-gapped Linux executable with embedded FastAPI/React console and USB air-gap export/import kits",
+            "Deterministic chain-of-custody .zip evidence bundles (MANIFEST.json + SHA256SUMS.txt) and Hugging Face checkpoint mirror"
+        ],
         "tags": [
             "Deepfake Detection",
-            "Digital Forensics"
+            "Digital Forensics",
+            "Air-Gap"
         ],
         "stack": [
             "python",
             "pytorch",
             "fastapi",
-            "react"
+            "react",
+            "uv"
         ],
         "category": "sec",
+        "tier": "featured",
+        "version": "v0.6.0",
         "year": "2026",
-        "status": "Completed",
+        "status": "Active",
         "image": "",
-        "link": "https://github.com/ADPer0705/verity",
+        "link": "https://verity.dearanayji.rocks",
         "links": {
+            "wiki": "https://verity.dearanayji.rocks",
             "github": "https://github.com/ADPer0705/verity"
         }
     },
@@ -28,127 +38,70 @@
         "id": "droidscanner",
         "title": "DroidScanner",
         "name": "DROIDSCANNER",
-        "tagline": "on-device android risk auditor",
-        "description": "An App for offline security audit of an android device. Evaluates permissions, special access and installer source for various installed applications with a sentence encoder, produces explainable risk score and reports for the daily user to identify installed apps and excessive permissions.",
+        "tagline": "rootless on-device android security guardian",
+        "description": "100% offline Android security auditor with zero INTERNET permission enforced at the OS sandbox level. Audits installed apps, pre-install APKs, and device posture through public rootless APIs with explainable risk scoring and continuous background monitoring.",
+        "highlights": [
+            "Scoring Engine v3 (~380 permissions across 9 domains, 19 combination rules) + streaming low-RAM Deep APK/DEX inspection",
+            "Pre-Install APK Scanner with signing-certificate mismatch detection, 16 rootless device posture checks, and WorkManager Background Guard",
+            "Auto-invalidating Reviewed & Trusted workflow, bounded on-device MediaPipe Sentence Encoder, and shareable PDF/JSON reports"
+        ],
         "tags": [
             "Android Security",
-            "On-Device ML"
+            "On-Device ML",
+            "Offline-First"
         ],
         "stack": [
             "kotlin",
-            "Jetpack Compose",
-            "android",
-            "mediapipe",
-            "language encoder"
+            "jetpack compose",
+            "android sdk",
+            "mediapipe"
         ],
         "category": "sec",
+        "tier": "featured",
+        "version": "v1.1.2",
         "year": "2026",
-        "status": "Completed",
+        "status": "Active",
         "image": "",
-        "link": "https://github.com/ADPer0705/droidscanner",
+        "link": "https://droidscanner.dearanayji.rocks",
         "links": {
+            "wiki": "https://droidscanner.dearanayji.rocks",
             "github": "https://github.com/ADPer0705/droidscanner"
-        }
-    },
-    {
-        "id": "inquiro",
-        "title": "Inquiro",
-        "name": "INQUIRO",
-        "tagline": "local rag system",
-        "description": "RAG system transforming documents into a queryable knowledge base using LangChain, FAISS, and local models via Ollama.",
-        "tags": [
-            "Ollama",
-            "RAG",
-            "Local models"
-        ],
-        "stack": [
-            "python",
-            "langchain",
-            "ollama",
-            "faiss"
-        ],
-        "category": "ai",
-        "year": "2024",
-        "status": "Completed",
-        "image": "",
-        "link": "https://github.com/CY-N4P5E/Inquiro",
-        "links": {
-            "github": "https://github.com/CY-N4P5E/Inquiro"
         }
     },
     {
         "id": "sempropos",
         "title": "Sempropos",
         "name": "SEMPROPOS",
-        "tagline": "semantic cli command proposer",
-        "description": "A cli utility that converts natural-language tasks into shell commands using available local tool documentation based RAG and llm synthesis.",
+        "tagline": "offline-first semantic cli replacement for man & apropos",
+        "description": "Instant, offline-first Linux CLI (sem) that indexes locally installed commands into a canonical ToolSpec database for plain-English command synthesis (Ctrl+S), 0ms-LLM structured reference cards, and ranked tool discovery.",
+        "highlights": [
+            "4-source ToolSpec pipeline (man(7)/mdoc(7) macro parser, tldr-pages, Fish/Zsh completions, safe --help probe) in SQLite v3 + FTS5 + FastEmbed",
+            "Curated local GGUF models (0.5B–3B via llama.cpp), pure-HTTP Ollama/OpenAI providers, and Tier-0 deterministic mode",
+            "Warm Unix-domain-socket daemon (<200ms latency), Ctrl+S shell widget, and command grounding with destructive safety warnings"
+        ],
         "tags": [
             "CLI",
-            "RAG",
-            "BM25",
-            "Embeddings",
-            "LLM"
+            "Hybrid RAG",
+            "Local LLM"
         ],
         "stack": [
             "python",
-            "sqlite"
+            "sqlite",
+            "fts5",
+            "fastembed",
+            "llama.cpp"
         ],
         "category": "ai",
+        "tier": "featured",
+        "version": "v1.0.1",
         "year": "2026",
-        "status": "Completed",
+        "status": "Active",
         "image": "",
-        "link": "https://github.com/ADPer0705/sempropos",
+        "link": "https://sempropos.dearanayji.rocks",
         "links": {
-            "github": "https://github.com/ADPer0705/sempropos"
-        }
-    },
-    {
-        "id": "merklewatch",
-        "title": "MerkleWatch",
-        "name": "MERKLEWATCH",
-        "tagline": "cryptographic integrity tool",
-        "description": "Directory snapshot utility using Merkle trees and SHA-256 hashing to identify tampering and integrity breaches.",
-        "tags": [
-            "Python",
-            "Cryptography",
-            "SHA-256",
-            "CLI"
-        ],
-        "stack": [
-            "python"
-        ],
-        "category": "sec",
-        "year": "2026",
-        "status": "Completed",
-        "image": "",
-        "link": "https://github.com/ADPer0705/MerkleWatch",
-        "links": {
-            "github": "https://github.com/ADPer0705/MerkleWatch"
-        }
-    },
-    {
-        "id": "praetor",
-        "title": "Praetor",
-        "name": "PRAETOR",
-        "tagline": "serverless aws security automation",
-        "description": "A serverless cloud compliance auditing platform for AWS using Lambda and EventBridge to perform periodic audits and reports on Slack and HTML dashboard. ",
-        "tags": [
-            "AWS Lambda",
-            "EventBridge",
-            "Boto3",
-            "Cloud Security"
-        ],
-        "stack": [
-            "python",
-            "aws boto3"
-        ],
-        "category": "sec",
-        "year": "2025",
-        "status": "Completed",
-        "image": "",
-        "link": "https://github.com/ADPer0705/praetor",
-        "links": {
-            "github": "https://github.com/ADPer0705/praetor"
+            "wiki": "https://sempropos.dearanayji.rocks",
+            "github": "https://github.com/ADPer0705/sempropos",
+            "pypi": "https://pypi.org/project/sempropos/"
         }
     },
     {
@@ -156,20 +109,27 @@
         "title": "ChronoTrace",
         "name": "CHRONOTRACE",
         "tagline": "ntfs anti-forensics detection framework",
-        "description": "Anti-forensic analysis tool for detecting timestamp manipulation and log evasion on windows environment, via both post-mortem image analysis and real-time live monitoring.",
+        "description": "Forensic analysis framework for uncovering timestamp manipulation and log evasion on Windows NTFS volumes through both post-mortem EnCase .E01 disk image analysis and real-time live system monitoring.",
+        "highlights": [
+            "Parses $MFT, $UsnJrnl, and $LogFile structures via libewf/pyewf and correlates $SI vs $FN timestamps",
+            "15 deterministic anti-forensics rules detecting backdating, LSN sequence breaks, USN gaps, and stripped Mark-of-the-Web ADS",
+            "Real-time WebSocket progress/alert streaming, interactive case timeline viewer, and exportable PDF forensic reports"
+        ],
         "tags": [
-            "Anti-Forensics Detection",
+            "Anti-Forensics",
             "Windows Forensics",
-            "MFT analysis",
-            "Digital Forensics"
+            "NTFS"
         ],
         "stack": [
             "python",
             "fastapi",
             "react",
+            "websockets",
             "libewf"
         ],
         "category": "sec",
+        "tier": "featured",
+        "version": "",
         "year": "2026",
         "status": "Completed",
         "image": "",
@@ -179,151 +139,207 @@
         }
     },
     {
-        "id": "wordsmith",
-        "title": "Wordsmith",
-        "name": "WORDSMITH",
-        "tagline": "ai-driven contextual dictionary generator",
-        "description": "Wordlist generator tailored for security professionals, utilizing recon data for generating wordlists.",
+        "id": "adbsight",
+        "title": "ADBSight",
+        "name": "ADBSIGHT",
+        "tagline": "rust tui android deep inspector",
+        "description": "Cross-platform Rust + Ratatui terminal inspector for Android devices over USB and Wi-Fi ADB. Evolved from the earlier .NET WinForms ADB Data Fetcher into a fast, zero-setup TUI with live telemetry, offline SQLite snapshots, and multi-format dossier exports.",
+        "highlights": [
+            "First-class Wi-Fi Wireless Debugging: Android 11+ terminal Unicode QR pairing, mDNS auto-discovery, and one-key USB-to-Wi-Fi handoff",
+            "8 deep inspector modules: live CPU/Wi-Fi sparklines, dumpsys/settings, processes, packages, streaming logcat, dual-pane files, personal data, and shell",
+            "Root-aware unlock, bundled WAL-mode SQLite snapshot history, JSON/CSV/Markdown exports, and built-in --demo device simulator"
+        ],
         "tags": [
-            "AI",
-            "Security"
+            "TUI",
+            "Android",
+            "Systems Tooling"
         ],
         "stack": [
-            "javascript",
-            "html",
-            "css"
-        ],
-        "category": "ai",
-        "year": "2026",
-        "status": "Completed",
-        "image": "",
-        "link": "https://adper.me/wordsmith",
-        "links": {
-            "live": "https://adper.me/wordsmith"
-        }
-    },
-    {
-        "id": "rbi-hackathon",
-        "title": "RBIH IITD Tryst Hackathon",
-        "name": "RBIH FRAUD PREVENTION",
-        "tagline": "exploratory data analysis & fraud prevention",
-        "description": "Developed Comprehensive Exploratory Data Analysis (EDA) Jupyter Notebooks and Reports for the National Fraud Prevention Challenge.",
-        "tags": [
-            "Jupyter Notebook",
-            "Data Analysis"
-        ],
-        "stack": [
-            "python",
-            "jupyter",
-            "pandas",
-            "data"
-        ],
-        "category": "data",
-        "year": "2026",
-        "status": "Completed",
-        "image": "",
-        "link": "https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon",
-        "links": {
-            "github": "https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon"
-        }
-    },
-    {
-        "id": "overpage",
-        "title": "OverPage",
-        "name": "OVERPAGE",
-        "tagline": "ai webpage analyzer & summarizer",
-        "description": "Developed a Chrome extension designed to scrape active webpages and generate on-demand summaries via an integrated chat interface, using a PHP backend to forward queries to the Google Gemini API.",
-        "tags": [
-            "Chrome Extension",
-            "PHP",
-            "Google Gemini API"
-        ],
-        "stack": [
-            "javascript",
-            "php",
-            "ai",
-            "gemini"
-        ],
-        "category": "ai",
-        "year": "2025",
-        "status": "Completed",
-        "image": "",
-        "link": "https://github.com/ADPer0705/OverPage",
-        "links": {
-            "github": "https://github.com/ADPer0705/OverPage"
-        }
-    },
-    {
-        "id": "teledm",
-        "title": "TeleDM",
-        "name": "TELEDM",
-        "tagline": "telegram download manager",
-        "description": "Developed a desktop application enabling robust, interrupt-tolerant file downloads from Telegram without keeping the client active. Features GUI queue management and SQLite persistent history.",
-        "tags": [
-            "Telegram API"
-        ],
-        "stack": [
-            "python",
-            "tkinter",
+            "rust",
+            "ratatui",
+            "tokio",
             "sqlite",
-            "api"
+            "adb"
         ],
         "category": "tool",
-        "year": "2025",
-        "status": "Completed",
+        "tier": "featured",
+        "version": "v1.0.0",
+        "year": "2026",
+        "status": "Active",
         "image": "",
-        "link": "https://github.com/ADPer0705/TeleDM",
+        "link": "https://adbsight.dearanayji.rocks",
         "links": {
-            "github": "https://github.com/ADPer0705/TeleDM"
-        }
-    },
-    {
-        "id": "adb-data-fetcher",
-        "title": "ADB Data Fetcher Utility",
-        "name": "ADB DATA FETCHER",
-        "tagline": "android device extraction automation",
-        "description": "Developed a Windows Form desktop application using C# (.NET 8.0) to automate the extraction of SMS, contacts, and logs from Android devices via ADB, with an Entity Framework Core / SQL Server backend.",
-        "tags": [
-            "Entity Framework Core",
-            "SQL Server",
-            "ADB",
-            "Digital Forensics"
-        ],
-        "stack": [
-            "C#",
-            "dotnet",
-            "sql"
-        ],
-        "category": "tool",
-        "year": "2025",
-        "status": "Completed",
-        "image": "",
-        "link": "https://github.com/ADPer0705/ADB_Data_Fetcher",
-        "links": {
-            "github": "https://github.com/ADPer0705/ADB_Data_Fetcher"
+            "wiki": "https://adbsight.dearanayji.rocks",
+            "github": "https://github.com/ADPer0705/adbsight"
         }
     },
     {
         "id": "gloss",
         "title": "Gloss",
         "name": "GLOSS",
-        "tagline": "offline tap-to-translate reader",
-        "description": "An Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping. Runs entirely on-device after a one-time ~30 MB model download, with no accounts and no cloud dependency. Allows for improved language learning by quick lookups and translations.",
+        "tagline": "202-language offline tap-to-translate reader",
+        "description": "Everyday offline Android translation reader built for instant phrase lookup and word-level comprehension anywhere—no mobile data, account, or cloud dependency required.",
+        "highlights": [
+            "202 languages 100% offline via quantized Meta AI NLLB-200-distilled-600M INT8 ONNX (~1.4 GB peak RAM)",
+            "Bidirectional Duolingo-style tap-a-word lookup on both source and translated text, plus Quick Translate & Recent Phrases home screen widgets",
+            "Offline Android TTS pronunciation, searchable FLORES-200 language picker, pinned Hugging Face mirror, and in-app GitHub Releases / Obtainium updates"
+        ],
         "tags": [
-            "ML Kit",
-            "Android"
+            "Android",
+            "On-Device AI",
+            "Offline-First"
         ],
         "stack": [
             "kotlin",
-            "ml-kit"
+            "jetpack compose",
+            "onnx runtime",
+            "nllb-200"
         ],
         "category": "tool",
+        "tier": "featured",
+        "version": "v2.4.0",
+        "year": "2026",
+        "status": "Active",
+        "image": "",
+        "link": "https://gloss.dearanayji.rocks",
+        "links": {
+            "wiki": "https://gloss.dearanayji.rocks",
+            "github": "https://github.com/ADPer0705/gloss"
+        }
+    },
+    {
+        "id": "wordsmith",
+        "title": "Wordsmith",
+        "name": "WORDSMITH",
+        "tagline": "contextual wordlist generator cli",
+        "description": "Zero-config npm CLI using a local ONNX zero-shot NER model (GLiNER) and probability-ranked mutation tiers to generate targeted password wordlists from raw OSINT text.",
+        "tags": [
+            "CLI",
+            "Security",
+            "npm"
+        ],
+        "stack": [
+            "typescript",
+            "node.js",
+            "onnx",
+            "gliner"
+        ],
+        "category": "ai",
+        "tier": "archive",
+        "version": "v1.0.1",
         "year": "2026",
         "status": "Completed",
         "image": "",
-        "link": "https://github.com/ADPer0705/gloss",
+        "link": "https://github.com/ADPer0705/wordsmith",
         "links": {
-            "github": "https://github.com/ADPer0705/gloss"
+            "github": "https://github.com/ADPer0705/wordsmith",
+            "npm": "https://www.npmjs.com/package/@adper/wordsmith"
+        }
+    },
+    {
+        "id": "qr-transfer",
+        "title": "qr-transfer",
+        "name": "QR-TRANSFER",
+        "tagline": "air-gapped file transfer over qr codes",
+        "description": "Terminal file transfer utility between two laptops using QR codes and webcams as the physical channel, implementing stop-and-wait ARQ with sequence numbers and SHA-256 verification.",
+        "tags": [
+            "Networking",
+            "ARQ",
+            "CLI"
+        ],
+        "stack": [
+            "rust",
+            "crossterm",
+            "nokhwa",
+            "rqrr"
+        ],
+        "category": "tool",
+        "tier": "archive",
+        "version": "v0.1.4",
+        "year": "2026",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/qr-transfer",
+        "links": {
+            "github": "https://github.com/ADPer0705/qr-transfer"
+        }
+    },
+    {
+        "id": "merklewatch",
+        "title": "MerkleWatch",
+        "name": "MERKLEWATCH",
+        "tagline": "merkle-tree directory integrity cli",
+        "description": "CLI utility that generates deterministic SHA-256 Merkle-tree directory snapshots with .merkleignore support to detect file tampering, additions, and removals.",
+        "tags": [
+            "Cryptography",
+            "CLI"
+        ],
+        "stack": [
+            "python",
+            "sha-256"
+        ],
+        "category": "sec",
+        "tier": "archive",
+        "version": "v1.0.0",
+        "year": "2025",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/MerkleWatch",
+        "links": {
+            "github": "https://github.com/ADPer0705/MerkleWatch"
+        }
+    },
+    {
+        "id": "inquiro",
+        "title": "Inquiro",
+        "name": "INQUIRO",
+        "tagline": "local document rag assistant",
+        "description": "Local-first RAG system transforming PDF and DOCX collections into a queryable knowledge base using LangChain, FAISS, and Ollama.",
+        "tags": [
+            "RAG",
+            "Local LLM"
+        ],
+        "stack": [
+            "python",
+            "langchain",
+            "ollama",
+            "faiss"
+        ],
+        "category": "ai",
+        "tier": "archive",
+        "version": "",
+        "year": "2024",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/CY-N4P5E/Inquiro",
+        "links": {
+            "github": "https://github.com/CY-N4P5E/Inquiro"
+        }
+    },
+    {
+        "id": "teledm",
+        "title": "TeleDM",
+        "name": "TELEDM",
+        "tagline": "telegram desktop download manager",
+        "description": "Standalone Tkinter desktop download manager with Telegram API integration, interrupt-tolerant resume, queue management, and SQLite persistent history.",
+        "tags": [
+            "Desktop GUI",
+            "Telegram API"
+        ],
+        "stack": [
+            "python",
+            "tkinter",
+            "sqlite"
+        ],
+        "category": "tool",
+        "tier": "archive",
+        "version": "v1.0.0",
+        "year": "2025",
+        "status": "Completed",
+        "image": "",
+        "link": "https://github.com/ADPer0705/TeleDM",
+        "links": {
+            "github": "https://github.com/ADPer0705/TeleDM"
         }
     }
 ]

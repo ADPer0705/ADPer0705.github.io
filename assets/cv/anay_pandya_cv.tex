@@ -94,7 +94,7 @@ Gandhinagar, Gujarat, India\par\vspace{1pt}
 % SUMMARY
 %----------------------------------------
 \section{Summary}
-Computer Science student working at the intersection of AI and cybersecurity, with experience in AI engineering, local-first intelligence systems, deterministic deepfake detection, digital forensics pipelines, Retrieval-Augmented Generation (RAG), and serverless cloud security auditing.
+Computer Science student working at the intersection of AI and cybersecurity, with experience in AI engineering, local-first intelligence systems, deterministic deepfake detection, digital forensics pipelines, on-device Android security, and systems tooling.
 
 %----------------------------------------
 % EDUCATION
@@ -107,10 +107,10 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 % TECHNICAL SKILLS
 %----------------------------------------
 \section{Technical Skills}
-\cvskill{Languages}{Python, C, C++, Rust, Kotlin, C\# (.NET), Bash, JavaScript, HTML, CSS}
-\cvskill{AI \& Machine Learning}{RAG Architectures, Agentic Workflows, Local Inference, Computer Vision}
-\cvskill{Cloud \& Web}{AWS (Lambda, EventBridge, SAM), Boto3, FastAPI, React, WebSockets}
-\cvskill{Systems \& DevOps}{Linux (Fedora, Debian, Kali), Docker, Git, Android, SQLite}
+\cvskill{Languages}{Python, Rust, Kotlin, C, C++, TypeScript, JavaScript, Bash, SQL}
+\cvskill{AI \& Machine Learning}{PyTorch, ONNX Runtime, MediaPipe, RAG Architectures, Agentic Workflows, Local Inference, Computer Vision}
+\cvskill{Cloud \& Web}{FastAPI, React, WebSockets, AWS (Lambda, EventBridge, SAM), Boto3}
+\cvskill{Systems \& Tooling}{Linux (Fedora, Debian, Kali), Android SDK, Jetpack Compose, Ratatui, SQLite (FTS5), Docker, Git}
 
 %----------------------------------------
 % EXPERIENCE
@@ -140,66 +140,46 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 %----------------------------------------
 \section{Projects}
 
-\cventry{Verity -- Multi-Detector Deepfake Forensics}{\href{https://github.com/ADPer0705/verity}{github.com/ADPer0705/verity}}{2026}
+\cventry{Verity -- Multi-Detector Deepfake Forensics}{\href{https://github.com/ADPer0705/verity}{github.com/ADPer0705/verity}\enspace\textbar\enspace\href{https://verity.dearanayji.rocks}{verity.dearanayji.rocks}}{2026}
 \begin{itemize}
-  \item A multi-modal deepfake examination platform for image, video, and audio that profiles media, selects suitable detectors, and runs each in an isolated, version-pinned environment.
-  \item Explainable forensic reporting pairing model-free analyzers with per-detector confidence reasoning and artifacts, giving investigators verifiable evidence beyond binary real-or-fake scores.
+  \item A deterministic multi-modal deepfake examination platform for image, video, and audio that ports 58 detector architectures (39 evidence-grade) in isolated, version-pinned \texttt{uv} environments alongside 5 model-free forensic analyzers, preserving per-detector verdicts, reasoning, and explainability artifacts.
+  \item Ships as a standalone air-gapped Linux executable with an embedded FastAPI/React console, USB air-gap export/import kits, and deterministic chain-of-custody \texttt{.zip} evidence bundles (\texttt{MANIFEST.json} and \texttt{SHA256SUMS.txt}).
   \item \textbf{Tech Stack:} Python, PyTorch, FastAPI, React, uv
 \end{itemize}
 
-\cventry{DroidScanner -- On-Device Android Risk Auditor}{\href{https://github.com/ADPer0705/droidscanner}{github.com/ADPer0705/droidscanner}}{2026}
+\cventry{DroidScanner -- Rootless On-Device Android Security Guardian}{\href{https://github.com/ADPer0705/droidscanner}{github.com/ADPer0705/droidscanner}\enspace\textbar\enspace\href{https://droidscanner.dearanayji.rocks}{droidscanner.dearanayji.rocks}}{2026}
 \begin{itemize}
-  \item An Android app that audits installed apps by permissions, special access, and installer source, producing an explainable risk score with plain-language reasons.
-  \item An offline privacy suite featuring an on-device MediaPipe Sentence Encoder for purpose-mismatch detection, alongside install monitoring, permission diffs, and shareable PDF reports.
+  \item A 100\% offline Android security auditor with zero \texttt{INTERNET} permission enforced at the OS sandbox level, featuring Scoring Engine v3 (\textasciitilde380 permissions across 9 domains, 19 combination rules), streaming low-RAM Deep APK/DEX inspection, and a bounded on-device MediaPipe Sentence Encoder.
+  \item Includes a Pre-Install APK Scanner with signing-certificate mismatch detection, 16 rootless device posture checks, a WorkManager Background Guard, an auto-invalidating Reviewed \& Trusted workflow, and shareable PDF/JSON audit reports.
   \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, MediaPipe, Android SDK
+\end{itemize}
+
+\cventry{Sempropos -- Offline-First Semantic CLI Replacement for Man \& Apropos}{\href{https://github.com/ADPer0705/sempropos}{github.com/ADPer0705/sempropos}\enspace\textbar\enspace\href{https://sempropos.dearanayji.rocks}{sempropos.dearanayji.rocks}}{2026}
+\begin{itemize}
+  \item An open-source, offline-first Linux CLI (PyPI: \texttt{sempropos}) that indexes locally installed commands from 4 sources (\texttt{man(7)}/\texttt{mdoc(7)} pages, \texttt{tldr-pages}, Fish/Zsh completions, and safe \texttt{--help} probing) into a canonical \texttt{ToolSpec} SQLite v3 + FTS5 + FastEmbed index.
+  \item Synthesizes grounded shell commands via curated local GGUF models (\texttt{llama.cpp}), pure-HTTP Ollama/OpenAI providers, or Tier-0 deterministic matching, backed by a warm Unix-domain-socket daemon, \texttt{Ctrl+S} shell integration, and destructive-command safety warnings.
+  \item \textbf{Tech Stack:} Python, SQLite (FTS5), FastEmbed, llama.cpp, Ollama
 \end{itemize}
 
 \cventry{ChronoTrace -- NTFS Anti-Forensics Detection Framework}{\href{https://github.com/GR4Y-SCALE/ChronoTrace}{github.com/GR4Y-SCALE/ChronoTrace}}{2026}
 \begin{itemize}
-  \item A forensic analysis framework for detecting timestamp manipulations and log evasion via post-mortem disk image inspection and real-time live monitoring.
-  \item A deterministic anti-forensics rule engine evaluating \$MFT, USN Journal, and \$LogFile NTFS structures for uncovering timeline tampering and evidence evasion.
+  \item A forensic analysis framework for uncovering timestamp manipulation and log evasion on Windows NTFS volumes via post-mortem EnCase \texttt{.E01} disk image inspection and real-time live monitoring.
+  \item Implements 15 deterministic anti-forensics detection rules correlating \texttt{\$MFT} (\texttt{\$SI}/\texttt{\$FN}), \texttt{\$UsnJrnl}, and \texttt{\$LogFile} structures, paired with WebSocket progress/alert streams, an interactive case timeline viewer, and exportable PDF reports.
   \item \textbf{Tech Stack:} Python, FastAPI, React 19, WebSockets, libewf
 \end{itemize}
 
-\cventry{Sempropos -- Semantic CLI Command Proposer}{\href{https://github.com/ADPer0705/sempropos}{github.com/ADPer0705/sempropos}}{2026}
+\cventry{ADBSight -- Rust TUI Android Deep Inspector}{\href{https://github.com/ADPer0705/adbsight}{github.com/ADPer0705/adbsight}\enspace\textbar\enspace\href{https://adbsight.dearanayji.rocks}{adbsight.dearanayji.rocks}}{2026}
 \begin{itemize}
-  \item An open-source, offline-first Linux CLI that translates natural-language tasks into exact shell commands using local man-page context retrieval.
-  \item A hybrid retrieval pipeline combining BM25, embedding similarity, and reciprocal rank fusion over a SQLite index of tools, flags, and examples, paired with local (llama.cpp, Ollama) and API models and index staleness checks.
-  \item \textbf{Tech Stack:} Python, SQLite, BM25, FastEmbed, NumPy, Ollama, llama.cpp
+  \item A cross-platform Rust and Ratatui terminal inspector for Android devices over USB and Wi-Fi ADB, featuring first-class Wireless Debugging (Android 11+ terminal QR pairing, mDNS auto-discovery, and one-key USB-to-Wi-Fi handoff).
+  \item Provides 8 deep inspector modules (live CPU/Wi-Fi telemetry, \texttt{dumpsys}, processes, packages, streaming logcat, dual-pane files, personal data, and shell), root-aware unlock, embedded WAL-mode SQLite snapshot history, and JSON/CSV/Markdown dossier exports.
+  \item \textbf{Tech Stack:} Rust, Ratatui, Tokio, SQLite, ADB
 \end{itemize}
 
-\cventry{Wordsmith -- Contextual Dictionary Generator}{\href{https://dearanayji.rocks/wordsmith}{dearanayji.rocks/wordsmith}}{2026}
+\cventry{Gloss -- 202-Language Offline Tap-to-Translate Reader}{\href{https://github.com/ADPer0705/gloss}{github.com/ADPer0705/gloss}\enspace\textbar\enspace\href{https://gloss.dearanayji.rocks}{gloss.dearanayji.rocks}}{2026}
 \begin{itemize}
-  \item An AI-driven contextual dictionary and wordlist generator for penetration testing and password auditing.
-  \item Multi-provider LLM integration (Groq, Gemini, OpenAI) for extracting targeted password tokens directly from raw text.
-  \item \textbf{Tech Stack:} JavaScript, HTML, CSS, LLM APIs (Groq, Gemini, OpenAI)
-\end{itemize}
-
-\cventry{ADB Data Fetcher -- Android Device Data Extraction}{\href{https://github.com/ADPer0705/ADB_Data_Fetcher}{github.com/ADPer0705/ADB\_Data\_Fetcher}}{2025}
-\begin{itemize}
-  \item A C\# (.NET 8.0) Windows Forms desktop application with Entity Framework Core and SQL Server persistence for automating SMS, contact, and log extraction from Android devices via Android Debug Bridge (ADB).
-  \item \textbf{Tech Stack:} C\#, Windows Forms, Entity Framework Core, SQL Server, ADB
-\end{itemize}
-
-\cventry{Inquiro -- Local RAG System}{\href{https://github.com/CY-N4P5E/Inquiro}{github.com/CY-N4P5E/Inquiro}}{2024}
-\begin{itemize}
-  \item A local-first RAG system with LangChain and FAISS vector indexing for turning documents into a queryable knowledge base.
-  \item Offline LLM and embedding inference via Ollama for privacy-preserving document search and retrieval.
-  \item \textbf{Tech Stack:} Python, LangChain, Ollama, FAISS
-\end{itemize}
-
-\cventry{Gloss -- Offline Tap-to-Translate Reader}{\href{https://github.com/ADPer0705/gloss}{github.com/ADPer0705/gloss}}{2026}
-\begin{itemize}
-  \item An Android translation reader supporting 59 languages via ML Kit, with tap-to-lookup per-word inspection and instant language swapping.
-  \item Fully on-device translation after a one-time model download per language pair for private offline reading without accounts or cloud access.
-  \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, ML Kit, Android SDK
-\end{itemize}
-
-\cventry{TeleDM -- Telegram Download Manager}{\href{https://github.com/ADPer0705/TeleDM}{github.com/ADPer0705/TeleDM}}{2025}
-\begin{itemize}
-  \item A standalone desktop download manager with Telegram API integration for interrupt-tolerant file downloads without keeping the Telegram client active.
-  \item A Tkinter GUI backed by a SQLite database for queue management, progress tracking, automatic resume, and persistent download history.
-  \item \textbf{Tech Stack:} Python, Tkinter, SQLite, Telegram API
+  \item An everyday offline Android translation reader supporting 202 languages via quantized Meta AI \texttt{NLLB-200-distilled-600M} INT8 ONNX (\textasciitilde1.4 GB peak RAM) with bidirectional tap-a-word lookup across source and translated text.
+  \item Includes Quick Translate and Recent Phrases home screen widgets, offline Android TTS pronunciation, a searchable FLORES-200 language picker, a pinned Hugging Face model mirror, and in-app GitHub Releases / Obtainium updates.
+  \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, ONNX Runtime, NLLB-200, Android SDK
 \end{itemize}
 
 %----------------------------------------

@@ -94,7 +94,7 @@ Gandhinagar, Gujarat, India\par\vspace{1pt}
 % SUMMARY
 %----------------------------------------
 \section{Summary}
-Computer Science student, working at the intersection of AI and security. Experienced in AI-Engineering, Local-first intelligence systems, deterministic deepfake detection and digital forensics pipelines, Retrieval-Augmented Generation (RAG) systems, and serverless cloud security auditing.
+Computer Science student working at the intersection of AI and cybersecurity, with experience in AI engineering, local-first intelligence systems, deterministic deepfake detection, digital forensics pipelines, Retrieval-Augmented Generation (RAG), and serverless cloud security auditing.
 
 %----------------------------------------
 % EDUCATION
@@ -119,21 +119,20 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 \cventry{Intern -- Deepfake Detection \& Forensics}{National Forensic Sciences University (NFSU), Gandhinagar}{Jul 2026--Present}
 \begin{itemize}
-  \item Automated deterministic, explainable, air-gapped deepfake detection workflows for investigative use.
-  \item Identifying gaps in Deepfake Datasets pertaining to generalization of detection models, focusing on Indian demographics. 
+  \item Automated deterministic, explainable deepfake detection pipelines for air-gapped investigative environments, enabling reproducible forensic analysis and traceable evidence without cloud exposure.
+  \item Evaluated detection model generalization across benchmark datasets, identifying representation gaps affecting accuracy on Indian demographics to guide more reliable model evaluation.
 \end{itemize}
 
 \cventry{Research Intern}{Department of Telecommunications (DoT), NFSU, Gandhinagar}{May--Jul 2025}
 \begin{itemize}
-  \item Selected through a competitive university examination as the sole student from the cohort to qualify.
-  \item Researched the security posture of 5G architecture, focusing on subscriber information security vulnerabilities.
-  \item Built a Retrieval-Augmented Generation (RAG) application over 3GPP 5G technical specifications to enable interactive security querying.
+  \item Analyzed the security posture of 5G network architectures to identify subscriber information security vulnerabilities and support threat assessment.
+  \item Engineered a Retrieval-Augmented Generation (RAG) system over dense 3GPP 5G technical specifications, turning complex standards documentation into an interactive query interface that accelerates protocol lookup and vulnerability research.
 \end{itemize}
 
 \cventry{Cybersecurity Intern}{Centre for Development of Advanced Computing (C-DAC), India}{Jul 2024}
 \begin{itemize}
-  \item Completed an intensive training program on cybersecurity fundamentals, network security, digital forensics, and ethical hacking.
-  \item Executed hands-on labs using Wireshark, FTK Imager, and Metasploit for packet analysis, forensic imaging, and exploitation exercises.
+  \item Completed a practical training program covering network security, digital forensics, and ethical hacking to establish foundational threat-analysis skills.
+  \item Executed packet capture analysis, forensic disk imaging, and controlled exploitation exercises using Wireshark, FTK Imager, and Metasploit to investigate simulated intrusions and recover forensic artifacts.
 \end{itemize}
 
 %----------------------------------------
@@ -143,101 +142,64 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 
 \cventry{Verity -- Multi-Detector Deepfake Forensics}{\href{https://github.com/ADPer0705/verity}{github.com/ADPer0705/verity}}{2026}
 \begin{itemize}
-  \item Engineered a deepfake examination platform for image, video, and audio that characterizes media, selects suitable deepfake detectors, and runs each detector in its own isolated, version-pinned environment.
-  \item Implemented a deterministic pipeline producing per-detector verdicts, confidence reasoning, and explainability artifacts (faces, attention maps, timelines) alongside model-free forensic analyzers, without collapsing the panel into a single real/fake score.
+  \item A multi-modal deepfake examination platform for image, video, and audio that profiles media, selects suitable detectors, and runs each in an isolated, version-pinned environment.
+  \item Explainable forensic reporting pairing model-free analyzers with per-detector confidence reasoning and artifacts, giving investigators verifiable evidence beyond binary real-or-fake scores.
   \item \textbf{Tech Stack:} Python, PyTorch, FastAPI, React, uv
 \end{itemize}
 
 \cventry{DroidScanner -- On-Device Android Risk Auditor}{\href{https://github.com/ADPer0705/droidscanner}{github.com/ADPer0705/droidscanner}}{2026}
 \begin{itemize}
-  \item Built an Android app that audits installed apps by permissions, special access, and installer source, producing an explainable risk score with plain-language reasons.
-  \item Bundled an on-device Sentence Encoder (MediaPipe) for purpose-mismatch detection and added install monitoring, permission diffs, and shareable PDF reports, with no \texttt{INTERNET} permission declared.
+  \item An Android app that audits installed apps by permissions, special access, and installer source, producing an explainable risk score with plain-language reasons.
+  \item An offline privacy suite featuring an on-device MediaPipe Sentence Encoder for purpose-mismatch detection, alongside install monitoring, permission diffs, and shareable PDF reports.
   \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, MediaPipe, Android SDK
 \end{itemize}
 
 \cventry{ChronoTrace -- NTFS Anti-Forensics Detection Framework}{\href{https://github.com/GR4Y-SCALE/ChronoTrace}{github.com/GR4Y-SCALE/ChronoTrace}}{2026}
 \begin{itemize}
-  \item Engineered a forensic analysis tool for detecting timestamp manipulations and log evasion via post-mortem image analysis and real-time live monitoring.
-  \item Designed and implemented deterministic anti-forensics rules evaluating \$MFT, USN Journal, and \$LogFile NTFS structures.
+  \item A forensic analysis framework for detecting timestamp manipulations and log evasion via post-mortem disk image inspection and real-time live monitoring.
+  \item A deterministic anti-forensics rule engine evaluating \$MFT, USN Journal, and \$LogFile NTFS structures for uncovering timeline tampering and evidence evasion.
   \item \textbf{Tech Stack:} Python, FastAPI, React 19, WebSockets, libewf
-\end{itemize}
-
-\cventry{Praetor -- Serverless AWS Security Automation}{\href{https://github.com/ADPer0705/praetor}{github.com/ADPer0705/praetor}}{2025}
-\begin{itemize}
-  \item Built a serverless compliance auditing platform using AWS Lambda and EventBridge to perform 170+ daily security checks across 11 AWS services.
-  \item Delivered zero-cost cloud security scanning through automated HTML dashboards and Slack integration for critical misconfigurations.
-  \item \textbf{Tech Stack:} Python, AWS (Lambda, EventBridge, CloudTrail, SAM), Boto3
-\end{itemize}
-
-\cventry{MerkleWatch -- Cryptographic Integrity Tool}{\href{https://github.com/ADPer0705/MerkleWatch}{github.com/ADPer0705/MerkleWatch}}{2026}
-\begin{itemize}
-  \item Developed a CLI-first utility for creating deterministic, tamper-evident directory snapshots using Merkle trees and SHA-256 hashing.
-  \item Implemented domain separation and chunked reading (64 KB) for memory-efficient processing of large files, along with customizable ignore rules.
-  \item \textbf{Tech Stack:} Python, SHA-256, Merkle Trees
 \end{itemize}
 
 \cventry{Sempropos -- Semantic CLI Command Proposer}{\href{https://github.com/ADPer0705/sempropos}{github.com/ADPer0705/sempropos}}{2026}
 \begin{itemize}
-  \item Built an open-source, offline-first Linux CLI that converts natural-language tasks into exact shell commands using local man-page based context retrieval.
-  \item Designed a hybrid retrieval pipeline combining BM25, embedding similarity, and reciprocal rank fusion over a SQLite-backed index of tools, flags, and examples.
-  \item Implemented pluggable synthesis backends (llama.cpp, Ollama, and API providers) with install and update workflows and index staleness checks.
+  \item An open-source, offline-first Linux CLI that translates natural-language tasks into exact shell commands using local man-page context retrieval.
+  \item A hybrid retrieval pipeline combining BM25, embedding similarity, and reciprocal rank fusion over a SQLite index of tools, flags, and examples, paired with local (llama.cpp, Ollama) and API models and index staleness checks.
   \item \textbf{Tech Stack:} Python, SQLite, BM25, FastEmbed, NumPy, Ollama, llama.cpp
-\end{itemize}
-
-\cventry{National Fraud Prevention Analytics -- RBIH IITD Tryst Hackathon}{\href{https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon}{github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon}}{2026}
-\begin{itemize}
-  \item Developed comprehensive Exploratory Data Analysis (EDA) Jupyter notebooks and reports for the National Fraud Prevention Challenge.
-  \item Built and analyzed datasets focusing on digital transaction security and fraud detection using statistical modeling techniques.
-  \item \textbf{Tech Stack:} Python, Jupyter Notebook, Pandas, Matplotlib, Statistical Modeling, Exploratory Data Analysis
 \end{itemize}
 
 \cventry{Wordsmith -- Contextual Dictionary Generator}{\href{https://dearanayji.rocks/wordsmith}{dearanayji.rocks/wordsmith}}{2026}
 \begin{itemize}
-  \item Engineered an AI-driven contextual dictionary and wordlist generator for penetration testing and password auditing.
-  \item Integrated multiple LLM providers (Groq, Gemini, OpenAI) to automatically extract relevant tokens from unstructured raw intelligence.
+  \item An AI-driven contextual dictionary and wordlist generator for penetration testing and password auditing.
+  \item Multi-provider LLM integration (Groq, Gemini, OpenAI) for extracting targeted password tokens directly from raw text.
   \item \textbf{Tech Stack:} JavaScript, HTML, CSS, LLM APIs (Groq, Gemini, OpenAI)
 \end{itemize}
 
 \cventry{ADB Data Fetcher -- Android Device Data Extraction}{\href{https://github.com/ADPer0705/ADB_Data_Fetcher}{github.com/ADPer0705/ADB\_Data\_Fetcher}}{2025}
 \begin{itemize}
-  \item Developed a Windows Forms desktop application using C\# (.NET 8.0) to automate the extraction of SMS, contacts, and logs from Android devices via the Android Debug Bridge (ADB).
-  \item Integrated Entity Framework Core with SQL Server to provide persistence and management of device data.
+  \item A C\# (.NET 8.0) Windows Forms desktop application with Entity Framework Core and SQL Server persistence for automating SMS, contact, and log extraction from Android devices via Android Debug Bridge (ADB).
   \item \textbf{Tech Stack:} C\#, Windows Forms, Entity Framework Core, SQL Server, ADB
 \end{itemize}
 
 \cventry{Inquiro -- Local RAG System}{\href{https://github.com/CY-N4P5E/Inquiro}{github.com/CY-N4P5E/Inquiro}}{2024}
 \begin{itemize}
-  \item Built a RAG system transforming documents into a queryable knowledge base using LangChain and FAISS.
-  \item Implemented a local-first architecture with local LLMs and Embedding models via Ollama.
+  \item A local-first RAG system with LangChain and FAISS vector indexing for turning documents into a queryable knowledge base.
+  \item Offline LLM and embedding inference via Ollama for privacy-preserving document search and retrieval.
   \item \textbf{Tech Stack:} Python, LangChain, Ollama, FAISS
-\end{itemize}
-
-\cventry{OverPage -- AI Webpage Analyzer}{\href{https://github.com/ADPer0705/OverPage}{github.com/ADPer0705/OverPage}}{2025}
-\begin{itemize}
-  \item Developed a Chrome extension that scrapes active webpages and generates on-demand summaries via an integrated chat interface.
-  \item Engineered a PHP backend for text preprocessing that forwards client queries to the Google Gemini API.
-  \item \textbf{Tech Stack:} HTML, CSS, JavaScript (Chrome Extension), PHP, Google Gemini API
 \end{itemize}
 
 \cventry{Gloss -- Offline Tap-to-Translate Reader}{\href{https://github.com/ADPer0705/gloss}{github.com/ADPer0705/gloss}}{2026}
 \begin{itemize}
-  \item An Android translation app covering 59 languages via ML Kit, with per-word lookup by tapping any word in the translated text and instant language swapping.
-  \item Runs entirely on-device after a one-time model download per language pair, with no accounts and no cloud dependency.
+  \item An Android translation reader supporting 59 languages via ML Kit, with tap-to-lookup per-word inspection and instant language swapping.
+  \item Fully on-device translation after a one-time model download per language pair for private offline reading without accounts or cloud access.
   \item \textbf{Tech Stack:} Kotlin, Jetpack Compose, ML Kit, Android SDK
 \end{itemize}
 
 \cventry{TeleDM -- Telegram Download Manager}{\href{https://github.com/ADPer0705/TeleDM}{github.com/ADPer0705/TeleDM}}{2025}
 \begin{itemize}
-  \item Developed a desktop application for interrupt-tolerant file downloads from Telegram without keeping the client active.
-  \item Implemented a Tkinter GUI featuring queue management, progress tracking, auto-resume capabilities, and a SQLite database for persistent download history.
+  \item A standalone desktop download manager with Telegram API integration for interrupt-tolerant file downloads without keeping the Telegram client active.
+  \item A Tkinter GUI backed by a SQLite database for queue management, progress tracking, automatic resume, and persistent download history.
   \item \textbf{Tech Stack:} Python, Tkinter, SQLite, Telegram API
-\end{itemize}
-
-\cventry{AIML CTF Challenges}{\href{https://github.com/ADPer0705/AIML_CTF}{github.com/ADPer0705/AIML\_CTF}}{2024}
-\begin{itemize}
-  \item Designed and developed original Capture-the-Flag (CTF) challenges focusing on AI and Machine Learning (ML) and cryptography for the university club.
-  \item Created scenarios including machine learning model bias detection and Python reverse engineering to train students on practical security implementations.
-  \item \textbf{Tech Stack:} Python, Jupyter Notebook
 \end{itemize}
 
 %----------------------------------------
@@ -254,10 +216,9 @@ CGPA (CPI): 8.66 / 10.0\enspace\textbar\enspace Current semester: 7
 \section{Leadership \& Activities}
 \cventry{Co-Founder / Technical Lead -- AI/ML Club}{National Forensic Sciences University}{2024--Present}
 \begin{itemize}
-  \item Initiated the creation of the AI/ML Club and brought in DataCamp classroom for the university community.
-  \item Organized workshops, lectures, and hands-on sessions on AI implementation and its real-world applications.
-  \item Designed and conducted a Capture-the-Flag (CTF) challenge, including creating original problems for participants.
-  \item Delivered live demonstrations and interactive programming sessions, educating students on AI/ML project development.
+  \item Co-founded the AI/ML Club and introduced DataCamp Classroom for the university community to expand hands-on AI learning.
+  \item Organized workshops, lectures, and interactive programming demonstrations to guide students through practical AI/ML project development.
+  \item Designed and hosted an original Capture-the-Flag (CTF) competition (\href{https://github.com/ADPer0705/AIML_CTF}{AIML\_CTF}) featuring ML model bias detection, cryptography, and Python reverse engineering challenges.
 \end{itemize}
 
 %----------------------------------------

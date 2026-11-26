@@ -128,14 +128,14 @@ Gandhinagar, Gujarat, India\par\vspace{1.5pt}
 
 %------------------------------------------------------------------------
 \section{Summary}
-Computer Science student working at the intersection of AI and cybersecurity, with experience in AI engineering, local-first intelligence systems, deterministic deepfake detection, digital forensics pipelines, on-device Android security, and systems tooling.
+Cybersecurity engineering student who builds deterministic, offline-first security and forensics tooling for air-gapped and privacy-sensitive environments. Seeking security engineering, digital forensics, and AI security roles.
 
 %------------------------------------------------------------------------
 \section{Education}
 \cventry{National Forensic Sciences University}{Gandhinagar, Gujarat}%
-  {Integrated Bachelor of Technology (B.Tech) and Master of Technology (M.Tech)}{2023 -- 2028}
+  {Integrated Bachelor of Technology (B.Tech) and Master of Technology (M.Tech)}{2023 -- Expected 2028}
 Computer Science and Engineering (Cybersecurity)\par
-CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
+CGPA (CPI): 8.66 / 10.0\par
 
 %------------------------------------------------------------------------
 \section{Experience}
@@ -143,33 +143,39 @@ CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
 \cventry{National Forensic Sciences University (NFSU)}{Gandhinagar}%
   {Intern -- Deepfake Detection \& Forensics}{Jul 2026 -- Present}
 \begin{itemize}
-  \item Automated deterministic, explainable deepfake detection pipelines for air-gapped investigative environments, enabling reproducible forensic analysis and traceable evidence without cloud exposure.
-  \item Evaluated detection model generalization across benchmark datasets, identifying representation gaps affecting accuracy on Indian demographics to guide more reliable model evaluation.
+  % TODO: quantify -- e.g. number of detectors/pipelines automated, analysis time before vs after, number of cases or samples processed.
+  \item Automated deterministic, explainable deepfake detection pipelines for air-gapped investigative environments, producing identical verdicts on every re-run with traceable evidence and zero cloud exposure.
+  % TODO: quantify -- e.g. "across N benchmark datasets", "an X-point accuracy drop on Indian-demographic samples".
+  \item Evaluated detection model generalization across benchmark datasets, identifying representation gaps that reduce accuracy on Indian demographics and informing dataset selection and evaluation criteria.
 \end{itemize}
 
 \cventry{Department of Telecommunications (DoT), NFSU}{Gandhinagar}%
   {Research Intern}{May 2025 -- Jul 2025}
 \begin{itemize}
   \item Analyzed the security posture of 5G network architectures to identify subscriber information security vulnerabilities and support threat assessment.
-  \item Engineered a Retrieval-Augmented Generation (RAG) system over dense 3GPP 5G technical specifications, turning complex standards documentation into an interactive query interface that accelerates protocol lookup and vulnerability research.
+  % TODO: quantify -- e.g. "over N 3GPP specification documents (~X pages)", "cutting lookup from ~X minutes of manual search to seconds".
+  \item Engineered a Retrieval-Augmented Generation (RAG) system over dense 3GPP 5G technical specifications, replacing manual search of standards documents with a natural-language query interface for protocol lookup and vulnerability research.
 \end{itemize}
 
 \cventry{Centre for Development of Advanced Computing (C-DAC)}{Remote}%
   {Cybersecurity Intern}{May 2024 -- Jul 2024}
 \begin{itemize}
-  \item Completed foundational cybersecurity training and advanced labs in network security, digital forensics, vulnerability assessment, and system hardening using Wireshark, FTK Imager, Nmap, Volatility, Nuclei, and phishing protection mechanisms.
-  \item Designed and implemented a GNS3-based network with Windows hosts and Cisco router images, integrating Cisco's Security Checklist to strengthen network hardening, configuration security, and secure infrastructure deployment.
+  \item Designed and hardened a GNS3-based network of Windows hosts and Cisco routers, applying Cisco's Security Checklist to secure device configurations and infrastructure deployment.
+  \item Applied Wireshark, Nmap, FTK Imager, Volatility, and Nuclei in hands-on labs covering network security, digital forensics, vulnerability assessment, system hardening, and phishing defense.
 \end{itemize}
 
 %------------------------------------------------------------------------
 \section{Projects}
+% TODO: replace each project's "2026" with a month range (e.g. "Feb 2026 -- Apr 2026") so the dates show sustained effort.
 
 \cvproject{Verity -- Multi-Detector Deepfake Forensics}%
   {\href{https://github.com/ADPer0705/verity}{github.com/ADPer0705/verity}\sep\href{https://verity.dearanayji.rocks}{verity.dearanayji.rocks}}%
   {2026}
 \begin{itemize}
-  \item A deterministic multi-modal deepfake examination platform for image, video, and audio that ports 58 detector architectures (39 evidence-grade) in isolated, version-pinned \texttt{uv} environments alongside 5 model-free forensic analyzers, preserving per-detector verdicts, reasoning, and explainability artifacts.
-  \item Ships as a standalone air-gapped Linux executable with an embedded FastAPI/React console, USB air-gap export/import kits, and deterministic chain-of-custody \texttt{.zip} evidence bundles (\texttt{MANIFEST.json} and \texttt{SHA256SUMS.txt}).
+  \item Built a deterministic multi-modal deepfake examination platform for image, video, and audio that preserves every detector's verdict, reasoning, and explainability artifacts instead of collapsing disagreement into a single score, giving examiners auditable evidence.
+  \item Ported 58 detector architectures (39 evidence-grade) into isolated, version-pinned \texttt{uv} environments and paired them with 5 model-free forensic analyzers.
+  \item Packaged the platform as a standalone air-gapped Linux executable with an embedded FastAPI/React console and USB air-gap export/import kits.
+  \item Generated deterministic chain-of-custody \texttt{.zip} evidence bundles with \texttt{MANIFEST.json} and \texttt{SHA256SUMS.txt} for tamper-evident reporting.
 \end{itemize}
 \cvstack{Python, PyTorch, FastAPI, React, uv}
 
@@ -177,8 +183,11 @@ CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
   {\href{https://github.com/ADPer0705/droidscanner}{github.com/ADPer0705/droidscanner}\sep\href{https://droidscanner.dearanayji.rocks}{droidscanner.dearanayji.rocks}}%
   {2026}
 \begin{itemize}
-  \item A 100\% offline Android security auditor with zero \texttt{INTERNET} permission enforced at the OS sandbox level, featuring Scoring Engine v3 (\textasciitilde380 permissions across 9 domains, 19 combination rules), streaming low-RAM Deep APK/DEX inspection, and a bounded on-device MediaPipe Sentence Encoder.
-  \item Includes a Pre-Install APK Scanner with signing-certificate mismatch detection, 16 rootless device posture checks, a WorkManager Background Guard, an auto-invalidating Reviewed \& Trusted workflow, and shareable PDF/JSON audit reports.
+  \item Built a 100\% offline Android security auditor with zero \texttt{INTERNET} permission enforced at the OS sandbox level, letting users audit installed apps, APKs, and device posture without rooting the device or sending data off it.
+  \item Designed Scoring Engine, which rates \textasciitilde380 permissions across 9 domains with 19 combination rules to produce explainable risk scores.
+  \item Implemented streaming, low-RAM Deep APK/DEX inspection and a bounded on-device MediaPipe Sentence Encoder.
+  \item Developed a Pre-Install APK Scanner with signing-certificate mismatch detection, plus 16 rootless device posture checks.
+  \item Added a WorkManager Background Guard, an auto-invalidating Reviewed \& Trusted workflow, and shareable PDF/JSON audit reports.
 \end{itemize}
 \cvstack{Kotlin, Jetpack Compose, MediaPipe, Android SDK}
 
@@ -186,8 +195,10 @@ CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
   {\href{https://github.com/ADPer0705/sempropos}{github.com/ADPer0705/sempropos}\sep\href{https://sempropos.dearanayji.rocks}{sempropos.dearanayji.rocks}}%
   {2026}
 \begin{itemize}
-  \item An open-source, offline-first Linux CLI (PyPI: \texttt{sempropos}) that indexes locally installed commands from 4 sources (\texttt{man(7)}/\texttt{mdoc(7)} pages, \texttt{tldr-pages}, Fish/Zsh completions, and safe \texttt{-{}-help} probing) into a canonical \texttt{ToolSpec} SQLite v3 + FTS5 + FastEmbed index.
-  \item Synthesizes grounded shell commands via curated local GGUF models (\texttt{llama.cpp}), pure-HTTP Ollama/OpenAI providers, or Tier-0 deterministic matching, backed by a warm Unix-domain-socket daemon, \texttt{Ctrl+S} shell integration, and destructive-command safety warnings.
+  \item Built and published an open-source, offline-first Linux CLI (PyPI: \texttt{sempropos}) that replaces \texttt{man} and \texttt{apropos} with plain-English command discovery and synthesis, served by a warm Unix-domain-socket daemon in under 200\,ms.
+  \item Indexed locally installed commands from 4 sources (\texttt{man(7)}/\texttt{mdoc(7)} pages, \texttt{tldr-pages}, Fish/Zsh completions, and safe \texttt{-{}-help} probing) into a canonical \texttt{ToolSpec} SQLite v3 + FTS5 + FastEmbed index.
+  \item Synthesized grounded shell commands with curated local GGUF models (\texttt{llama.cpp}), pure-HTTP Ollama/OpenAI providers, or Tier-0 deterministic matching.
+  \item Added \texttt{Ctrl+S} shell integration and destructive-command safety warnings.
 \end{itemize}
 \cvstack{Python, SQLite (FTS5), FastEmbed, llama.cpp, Ollama}
 
@@ -195,17 +206,21 @@ CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
   {\href{https://github.com/GR4Y-SCALE/ChronoTrace}{github.com/GR4Y-SCALE/ChronoTrace}}%
   {2026}
 \begin{itemize}
-  \item A forensic analysis framework for uncovering timestamp manipulation and log evasion on Windows NTFS volumes via post-mortem EnCase \texttt{.E01} disk image inspection and real-time live monitoring.
-  \item Implements 15 deterministic anti-forensics detection rules correlating \texttt{\$MFT} (\texttt{\$SI}/\texttt{\$FN}), \texttt{\$UsnJrnl}, and \texttt{\$LogFile} structures, paired with WebSocket progress/alert streams, an interactive case timeline viewer, and exportable PDF reports.
+  % TODO: replace "Co-developed ... GR4Y-SCALE team" detail with what YOU personally built (e.g. "Built the $MFT/$UsnJrnl correlation engine and 15-rule detection layer").
+  \item A forensic analysis framework that uncovers timestamp manipulation and log evasion on Windows NTFS volumes through post-mortem EnCase \texttt{.E01} disk image inspection and real-time live monitoring.
+  \item Implemented 15 deterministic anti-forensics detection rules correlating \texttt{\$MFT} (\texttt{\$SI}/\texttt{\$FN}), \texttt{\$UsnJrnl}, and \texttt{\$LogFile} structures to flag backdating, LSN sequence breaks, USN gaps, and stripped Mark-of-the-Web streams.
+  \item Delivered WebSocket progress/alert streams, an interactive case timeline viewer, and exportable PDF reports.
 \end{itemize}
-\cvstack{Python, FastAPI, React 19, WebSockets, libewf}
+\cvstack{Python, FastAPI, React, WebSockets, libewf}
 
 \cvproject{ADBSight -- Rust TUI Android Deep Inspector}%
   {\href{https://github.com/ADPer0705/adbsight}{github.com/ADPer0705/adbsight}\sep\href{https://adbsight.dearanayji.rocks}{adbsight.dearanayji.rocks}}%
   {2026}
 \begin{itemize}
-  \item A cross-platform Rust and Ratatui terminal inspector for Android devices over USB and Wi-Fi ADB, featuring first-class Wireless Debugging (Android 11+ terminal QR pairing, mDNS auto-discovery, and one-key USB-to-Wi-Fi handoff).
-  \item Provides 8 deep inspector modules (live CPU/Wi-Fi telemetry, \texttt{dumpsys}, processes, packages, streaming logcat, dual-pane files, personal data, and shell), root-aware unlock, embedded WAL-mode SQLite snapshot history, and JSON/CSV/Markdown dossier exports.
+  \item A cross-platform Rust and Ratatui terminal inspector for Android devices over USB and Wi-Fi ADB.
+  \item Implemented first-class Wireless Debugging with Android 11+ terminal QR pairing, mDNS auto-discovery, and one-key USB-to-Wi-Fi handoff.
+  \item Developed 8 deep inspector modules (live CPU/Wi-Fi telemetry, \texttt{dumpsys}, processes, packages, streaming logcat, dual-pane files, personal data, and shell) with root-aware unlock.
+  \item Persisted device snapshot history in embedded WAL-mode SQLite and exported dossiers as JSON, CSV, or Markdown.
 \end{itemize}
 \cvstack{Rust, Ratatui, Tokio, SQLite, ADB}
 
@@ -213,25 +228,28 @@ CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
   {\href{https://github.com/ADPer0705/gloss}{github.com/ADPer0705/gloss}\sep\href{https://gloss.dearanayji.rocks}{gloss.dearanayji.rocks}}%
   {2026}
 \begin{itemize}
-  \item An everyday offline Android translation reader supporting 202 languages via quantized Meta AI \texttt{NLLB-200-distilled-600M} INT8 ONNX (\textasciitilde1.4 GB peak RAM) with bidirectional tap-a-word lookup across source and translated text.
-  \item Includes Quick Translate and Recent Phrases home screen widgets, offline Android TTS pronunciation, a searchable FLORES-200 language picker, a pinned Hugging Face model mirror, and in-app GitHub Releases / Obtainium updates.
+  \item Built an everyday offline Android translation reader for 202 languages that needs no mobile data, account, or cloud service, running quantized Meta AI \texttt{NLLB-200-distilled-600M} INT8 ONNX within \textasciitilde1.4 GB peak RAM.
+  \item Designed bidirectional tap-a-word lookup across source and translated text, plus Quick Translate and Recent Phrases home screen widgets.
+  \item Added offline Android TTS pronunciation, a searchable FLORES-200 language picker, a pinned Hugging Face model mirror, and in-app GitHub Releases / Obtainium updates.
 \end{itemize}
 \cvstack{Kotlin, Jetpack Compose, ONNX Runtime, NLLB-200, Android SDK}
 
 %------------------------------------------------------------------------
 \section{Technical Skills}
 \cvskill{Languages}{Python, Rust, Kotlin, C, C++, TypeScript, JavaScript, Bash, SQL}
-\cvskill{AI \& Machine Learning}{PyTorch, ONNX Runtime, MediaPipe, RAG Architectures, Agentic Workflows, Local Inference, Computer Vision}
+\cvskill{AI \& Machine Learning}{PyTorch, ONNX Runtime, MediaPipe, FastEmbed, llama.cpp, Ollama, NLLB-200}
+\cvskill{AI Concepts}{RAG Architectures, Agentic Workflows, Local Inference, Computer Vision}
+\cvskill{Security}{Digital Forensics, Network Security, Vulnerability Assessment, System Hardening, Deepfake Detection, Anti-Forensics Detection, Android Security}
+\cvskill{Security Tools}{Wireshark, Nmap, FTK Imager, Volatility, Nuclei, GNS3, libewf}
 \cvskill{Cloud \& Web}{FastAPI, React, WebSockets, AWS (Lambda, EventBridge, SAM), Boto3}
-\cvskill{Systems \& Tooling}{Linux (Fedora, Debian, Kali), Android SDK, Jetpack Compose, Ratatui, SQLite (FTS5), Docker, Git}
+\cvskill{Mobile}{Android SDK, Jetpack Compose, ADB}
+\cvskill{Systems \& Tooling}{Linux (Fedora, Debian, Kali), Ratatui, Tokio, SQLite (FTS5), uv, Docker, Git}
 
 %------------------------------------------------------------------------
 \section{Certifications}
+% TODO: add credential IDs or Credly/verification links, e.g. \certrow{...}{Fortinet \sep \href{https://...}{Verify}}{Mar 2026}
 \certrow{Fortinet Certified Fundamentals (FCF) in Cybersecurity}{Fortinet}{Mar 2026}
-\begin{itemize}
-  \item Technical Introduction to Cybersecurity 3.0 and Introduction to the Threat Landscape 3.0 (required coursework)
-\end{itemize}
-\certrow{(ISC)2 Certified in Cybersecurity (CC)}{ISC2}{Dec 2024}
+\certrow{Certified in Cybersecurity (CC)}{ISC2}{Dec 2024}
 
 %------------------------------------------------------------------------
 \section{Leadership and Extracurricular Activities}
@@ -245,8 +263,9 @@ CGPA (CPI): 8.66 / 10.0\sep Current semester: 7\par
 
 %------------------------------------------------------------------------
 \section{Interests}
+% NOTE: most ATS ignore this section. Drop it for conservative/corporate employers; keep it for startups.
 \cvskill{Professional}{Cybersecurity, Artificial Intelligence \& Machine Learning, Intelligent Security Systems, Linux Customization, Workflow Automation}
-\cvskill{Personal}{Tinkering with hardware and software, Gaming, Writing, Open-Source Contribution, Building towards a Stark-style personal workstation}
+\cvskill{Personal}{Tinkering with hardware and software, Gaming, Writing, Building an automation-driven personal workstation}
 
 %------------------------------------------------------------------------
 \end{document}

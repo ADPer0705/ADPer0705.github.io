@@ -44,10 +44,6 @@ export function HeroIdentity({ onOpenCommand }: HeroIdentityProps) {
         >
           {/* Availability telemetry badge */}
           <div className="inline-flex items-center gap-2.5 font-mono text-[11px] text-text-hi border border-border-hi bg-bg-2/80 backdrop-blur-md px-3.5 py-1.5 rounded-full mb-7 tracking-[0.14em] uppercase">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint opacity-60" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-mint" />
-            </span>
             <span>{aboutData.location}</span>
             <span className="text-border-hi">·</span>
             <span className="text-mint">available for opportunities</span>

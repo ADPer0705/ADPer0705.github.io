@@ -66,7 +66,6 @@ export function TopHudNav({
           }}
           className="font-mono text-xs md:text-[13px] text-cyan tracking-wider shrink-0 flex items-center gap-1.5 group"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan shadow-[0_0_8px_rgba(0,229,200,0.8)]" />
           <span>
             <span className="text-text-dim">debie</span>@adper
             <span className="text-text-dim">:</span>~

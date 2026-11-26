@@ -12,7 +12,7 @@ Here’s the link to my [bash script](https://github.com/ADPer0705/bash/blob/971
 
 Being a good security student, I have my disk encryption enabled in Fedora. But I didn’t want to enter the decryption password everytime I boot up, I have my login password for protection. So I had a Auto-Unlock setup with LUKS2 + TPM2, which no longer worked after the update.
 
-I already have a blog going through how to setup it up for yourself [here](https://adper.me/blog/encrypt-once-boot-forever).
+I already have a blog going through how to setup it up for yourself [here](https://dearanayji.rocks/blog/encrypt-once-boot-forever).
 
 So, we first wipe existing TPM2 slot if any are present. This makes sure we don’t clutter the LUKS header keyslots on your NVMe drive. 
 

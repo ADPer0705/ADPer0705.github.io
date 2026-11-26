@@ -1,0 +1,815 @@
+- generic [ref=f20e2]:
+  - dialog "Edit project" [ref=f20e463]:
+    - button "Dismiss" [ref=f20e464] [cursor=pointer]
+    - generic [ref=f20e468]:
+      - banner [ref=f20e469]:
+        - heading "Edit project" [level=2] [ref=f20e470]
+      - generic [ref=f20e474]:
+        - generic [ref=f20e475]:
+          - paragraph [ref=f20e477]: "* Indicates required"
+          - generic [ref=f20e479]:
+            - generic [ref=f20e480]: Project name*
+            - textbox "Project name*" [ref=f20e483]: Inquiro — Local RAG System
+            - paragraph [ref=f20e486]:
+              - text: 26/255
+              - generic [ref=f20e487]: 26 of 255 characters
+          - generic [ref=f20e489]:
+            - generic [ref=f20e490]: Description
+            - textbox "Description, maximum 2,000 characters" [ref=f20e492]: Local-first RAG system that transforms private document collections into a queryable knowledge base. Implements semantic retrieval using FAISS vector search and Nomic Embed Text embeddings, with Mistral running locally via Ollama as the inference backend. Designed for full offline operation with no data leaving the machine.
+            - paragraph [ref=f20e494]:
+              - text: 325/2,000
+              - generic [ref=f20e495]: 325 of 2,000 characters
+          - generic [ref=f20e497]:
+            - generic [ref=f20e498]:
+              - paragraph [ref=f20e499]: Skills
+              - paragraph [ref=f20e500]: We recommend adding your top 5 skills used in this project. They’ll also appear in your Skills section.
+            - list [ref=f20e501]:
+              - listitem [ref=f20e502]:
+                - listitem "Retrieval-Augmented Generation (RAG)" [ref=f20e503]:
+                  - button "Remove Retrieval-Augmented Generation (RAG) from list" [ref=f20e504] [cursor=pointer]
+                  - paragraph [ref=f20e508]: Retrieval-Augmented Generation (RAG)
+                - button "Reorder item 1 of 6" [ref=f20e509]
+              - listitem [ref=f20e513]:
+                - listitem "LangChain" [ref=f20e514]:
+                  - button "Remove LangChain from list" [ref=f20e515] [cursor=pointer]
+                  - paragraph [ref=f20e519]: LangChain
+                - button "Reorder item 2 of 6" [ref=f20e520]
+              - listitem [ref=f20e524]:
+                - listitem "Ollama" [ref=f20e525]:
+                  - button "Remove Ollama from list" [ref=f20e526] [cursor=pointer]
+                  - paragraph [ref=f20e530]: Ollama
+                - button "Reorder item 3 of 6" [ref=f20e531]
+              - listitem [ref=f20e535]:
+                - listitem "FAISS" [ref=f20e536]:
+                  - button "Remove FAISS from list" [ref=f20e537] [cursor=pointer]
+                  - paragraph [ref=f20e541]: FAISS
+                - button "Reorder item 4 of 6" [ref=f20e542]
+              - listitem [ref=f20e546]:
+                - listitem "Generative AI" [ref=f20e547]:
+                  - button "Remove Generative AI from list" [ref=f20e548] [cursor=pointer]
+                  - paragraph [ref=f20e552]: Generative AI
+                - button "Reorder item 5 of 6" [ref=f20e553]
+              - listitem [ref=f20e557]:
+                - listitem "Python (Programming Language)" [ref=f20e558]:
+                  - button "Remove Python (Programming Language) from list" [ref=f20e559] [cursor=pointer]
+                  - paragraph [ref=f20e563]: Python (Programming Language)
+                - button "Reorder item 6 of 6" [ref=f20e564]
+              - status [ref=f20e568]
+            - button "Add skill" [ref=f20e572] [cursor=pointer]
+          - generic [ref=f20e577]:
+            - generic [ref=f20e578]:
+              - paragraph [ref=f20e579]: Media
+              - paragraph [ref=f20e580]:
+                - text: Add media like images, documents, sites or presentations (up to 50). Learn more about
+                - link [ref=f20e582] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/help/linkedin/answer/a1516731/
+                  - strong [ref=f20e583]: media file types supported
+            - button "Add media" [ref=f20e584] [cursor=pointer]
+            - generic [ref=f20e590]:
+              - link "Edit media, GitHub - CY-N4P5E/Inquiro" [ref=f20e591] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427350435/
+                - figure [aria-hidden] [ref=f20e593]
+              - generic [ref=f20e596]:
+                - paragraph [ref=f20e598]: GitHub - CY-N4P5E/Inquiro
+                - generic:
+                  - paragraph
+          - paragraph [ref=f20e599]: Additional details
+          - generic [ref=f20e602]:
+            - generic [ref=f20e604]:
+              - checkbox "I am currently working on this project"
+            - paragraph [ref=f20e607]: I am currently working on this project
+          - generic [ref=f20e608]:
+            - generic [ref=f20e609]:
+              - paragraph [ref=f20e610]: Start date
+              - generic [ref=f20e611]:
+                - generic "Start date month" [ref=f20e612]:
+                  - generic [ref=f20e613]: Month
+                  - combobox "Month" [ref=f20e616] [cursor=pointer]:
+                    - option "Month" [selected]
+                    - option "January"
+                    - option "February"
+                    - option "March"
+                    - option "April"
+                    - option "May"
+                    - option "June"
+                    - option "July"
+                    - option "August"
+                    - option "September"
+                    - option "October"
+                    - option "November"
+                    - option "December"
+                - generic "Start date year" [ref=f20e617]:
+                  - generic [ref=f20e618]: Year
+                  - combobox "Year" [ref=f20e621] [cursor=pointer]:
+                    - option "Year" [selected]
+                    - option "2026"
+                    - option "2025"
+                    - option "2024"
+                    - option "2023"
+                    - option "2022"
+                    - option "2021"
+                    - option "2020"
+                    - option "2019"
+                    - option "2018"
+                    - option "2017"
+                    - option "2016"
+                    - option "2015"
+                    - option "2014"
+                    - option "2013"
+                    - option "2012"
+                    - option "2011"
+                    - option "2010"
+                    - option "2009"
+                    - option "2008"
+                    - option "2007"
+                    - option "2006"
+                    - option "2005"
+                    - option "2004"
+                    - option "2003"
+                    - option "2002"
+                    - option "2001"
+                    - option "2000"
+                    - option "1999"
+                    - option "1998"
+                    - option "1997"
+                    - option "1996"
+                    - option "1995"
+                    - option "1994"
+                    - option "1993"
+                    - option "1992"
+                    - option "1991"
+                    - option "1990"
+                    - option "1989"
+                    - option "1988"
+                    - option "1987"
+                    - option "1986"
+                    - option "1985"
+                    - option "1984"
+                    - option "1983"
+                    - option "1982"
+                    - option "1981"
+                    - option "1980"
+                    - option "1979"
+                    - option "1978"
+                    - option "1977"
+                    - option "1976"
+                    - option "1975"
+                    - option "1974"
+                    - option "1973"
+                    - option "1972"
+                    - option "1971"
+                    - option "1970"
+                    - option "1969"
+                    - option "1968"
+                    - option "1967"
+                    - option "1966"
+                    - option "1965"
+                    - option "1964"
+                    - option "1963"
+                    - option "1962"
+                    - option "1961"
+                    - option "1960"
+                    - option "1959"
+                    - option "1958"
+                    - option "1957"
+                    - option "1956"
+                    - option "1955"
+                    - option "1954"
+                    - option "1953"
+                    - option "1952"
+                    - option "1951"
+                    - option "1950"
+                    - option "1949"
+                    - option "1948"
+                    - option "1947"
+                    - option "1946"
+                    - option "1945"
+                    - option "1944"
+                    - option "1943"
+                    - option "1942"
+                    - option "1941"
+                    - option "1940"
+                    - option "1939"
+                    - option "1938"
+                    - option "1937"
+                    - option "1936"
+                    - option "1935"
+                    - option "1934"
+                    - option "1933"
+                    - option "1932"
+                    - option "1931"
+                    - option "1930"
+                    - option "1929"
+                    - option "1928"
+                    - option "1927"
+                    - option "1926"
+            - generic [ref=f20e622]:
+              - paragraph [ref=f20e623]: End date
+              - generic [ref=f20e624]:
+                - generic "End date month" [ref=f20e625]:
+                  - generic [ref=f20e626]: Month
+                  - combobox "Month" [ref=f20e629] [cursor=pointer]:
+                    - option "Month" [selected]
+                    - option "January"
+                    - option "February"
+                    - option "March"
+                    - option "April"
+                    - option "May"
+                    - option "June"
+                    - option "July"
+                    - option "August"
+                    - option "September"
+                    - option "October"
+                    - option "November"
+                    - option "December"
+                - generic "End date year" [ref=f20e630]:
+                  - generic [ref=f20e631]: Year
+                  - combobox "Year" [ref=f20e634] [cursor=pointer]:
+                    - option "Year" [selected]
+                    - option "2026"
+                    - option "2025"
+                    - option "2024"
+                    - option "2023"
+                    - option "2022"
+                    - option "2021"
+                    - option "2020"
+                    - option "2019"
+                    - option "2018"
+                    - option "2017"
+                    - option "2016"
+                    - option "2015"
+                    - option "2014"
+                    - option "2013"
+                    - option "2012"
+                    - option "2011"
+                    - option "2010"
+                    - option "2009"
+                    - option "2008"
+                    - option "2007"
+                    - option "2006"
+                    - option "2005"
+                    - option "2004"
+                    - option "2003"
+                    - option "2002"
+                    - option "2001"
+                    - option "2000"
+                    - option "1999"
+                    - option "1998"
+                    - option "1997"
+                    - option "1996"
+                    - option "1995"
+                    - option "1994"
+                    - option "1993"
+                    - option "1992"
+                    - option "1991"
+                    - option "1990"
+                    - option "1989"
+                    - option "1988"
+                    - option "1987"
+                    - option "1986"
+                    - option "1985"
+                    - option "1984"
+                    - option "1983"
+                    - option "1982"
+                    - option "1981"
+                    - option "1980"
+                    - option "1979"
+                    - option "1978"
+                    - option "1977"
+                    - option "1976"
+                    - option "1975"
+                    - option "1974"
+                    - option "1973"
+                    - option "1972"
+                    - option "1971"
+                    - option "1970"
+                    - option "1969"
+                    - option "1968"
+                    - option "1967"
+                    - option "1966"
+                    - option "1965"
+                    - option "1964"
+                    - option "1963"
+                    - option "1962"
+                    - option "1961"
+                    - option "1960"
+                    - option "1959"
+                    - option "1958"
+                    - option "1957"
+                    - option "1956"
+                    - option "1955"
+                    - option "1954"
+                    - option "1953"
+                    - option "1952"
+                    - option "1951"
+                    - option "1950"
+                    - option "1949"
+                    - option "1948"
+                    - option "1947"
+                    - option "1946"
+                    - option "1945"
+                    - option "1944"
+                    - option "1943"
+                    - option "1942"
+                    - option "1941"
+                    - option "1940"
+                    - option "1939"
+                    - option "1938"
+                    - option "1937"
+                    - option "1936"
+                    - option "1935"
+                    - option "1934"
+                    - option "1933"
+                    - option "1932"
+                    - option "1931"
+                    - option "1930"
+                    - option "1929"
+                    - option "1928"
+                    - option "1927"
+                    - option "1926"
+                    - option "1925"
+          - generic [ref=f20e635]:
+            - paragraph [ref=f20e636]: Contributors
+            - paragraph [ref=f20e637]: Tag connections who played a key role to strengthen your project. We’ll let them know you’ve recognized their contribution.
+            - button "Add contributor" [ref=f20e639] [cursor=pointer]
+          - generic [ref=f20e644]:
+            - generic [ref=f20e645]: Associated with
+            - combobox "Associated with" [ref=f20e648] [cursor=pointer]:
+              - option "Please select" [selected]
+              - option "Intern at National Forensic Sciences University (NFSU)"
+              - option "Technical Team at AI-ML Club NFSU"
+              - option "Research Assistant Intern at Department of Telecommunications, India"
+              - option "Cyber Security Intern at Centre for Development of Advanced Computing (C-DAC)"
+              - option "Student at National Forensic Sciences University (NFSU), Integrated B.TECH & M.TECH, COMPUTER SCIENCE & ENGINEERING (CYBERSECURITY)"
+        - generic [ref=f20e650]:
+          - button "Delete project" [ref=f20e651] [cursor=pointer]
+          - button "Save" [ref=f20e654] [cursor=pointer]
+  - dialog [active] [ref=f20e1260]:
+    - button "Dismiss" [ref=f20e1261] [cursor=pointer]
+    - generic [ref=f20e1267]:
+      - heading "Delete project" [level=2] [ref=f20e1268]
+      - paragraph [ref=f20e1269]: Delete Inquiro — Local RAG System? This action cannot be undone.
+      - generic [ref=f20e1270]:
+        - button "No thanks" [ref=f20e1271] [cursor=pointer]
+        - button "Delete" [ref=f20e1274] [cursor=pointer]
+    - heading "0 notifications" [level=2] [ref=f20e1277]
+  - generic [ref=f20e658]:
+    - generic:
+      - generic "Skip navigation menu":
+        - generic [ref=f20e659]:
+          - button "Skip to search" [ref=f20e660] [cursor=pointer]
+          - button "Skip to main content" [ref=f20e663] [cursor=pointer]
+          - button "Skip to primary content" [ref=f20e666] [cursor=pointer]
+          - button "Skip to aside" [ref=f20e669] [cursor=pointer]
+          - button "Skip to footer" [ref=f20e672] [cursor=pointer]
+          - button "Close jump menu" [ref=f20e676] [cursor=pointer]
+    - generic [ref=f20e680]:
+      - banner [ref=f20e682]:
+        - generic [ref=f20e685]:
+          - button [ref=f20e686] [cursor=pointer]:
+            - img "LinkedIn" [ref=f20e687]
+          - generic [ref=f20e689]:
+            - status [ref=f20e690]
+            - search [ref=f20e691]:
+              - textbox "Search" [ref=f20e696]
+          - generic [ref=f20e698]:
+            - navigation [ref=f20e702]:
+              - list [ref=f20e703]:
+                - listitem [ref=f20e704]:
+                  - button "Home, 1 new notification" [ref=f20e705] [cursor=pointer]:
+                    - generic: Home
+                - listitem [ref=f20e711]:
+                  - link "My Network, 1 new notification" [ref=f20e712] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/mynetwork
+                    - generic [ref=f20e713]: "1"
+                    - generic: My Network
+                - listitem [ref=f20e718]:
+                  - link "Jobs, 0 new notifications" [ref=f20e719] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/jobs/
+                    - generic: Jobs
+                - listitem [ref=f20e724]:
+                  - link "Messaging, 0 new notifications" [ref=f20e725] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/messaging/
+                    - generic: Messaging
+                - listitem [ref=f20e731]:
+                  - link "Notifications, 18 new notifications" [ref=f20e732] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/notifications/
+                    - generic [ref=f20e733]: "18"
+                    - generic: Notifications
+                - listitem [ref=f20e738]:
+                  - button [ref=f20e739] [cursor=pointer]:
+                    - figure [aria-hidden] [ref=f20e741]
+            - generic [ref=f20e746]:
+              - navigation [ref=f20e747]:
+                - list [ref=f20e748]:
+                  - listitem [ref=f20e749]:
+                    - button "For Business" [ref=f20e750] [cursor=pointer]
+              - link [ref=f20e759] [cursor=pointer]:
+                - /url: https://www.linkedin.com/premium/redeem/?_ed=0_bvLJH59RTSY-u5c6PMUa4IW0M54p9mxZpuVkfRvTl7r&upsellOrderOrigin=Tracking%3Av1%3Apremium_nav_upsell_text_winback%3ANav%3AIn-Product&referenceId=F3FjhBM2TiaskXLFhRjImQ%3D%3D&customKey=wb_c&redeemTypeV2=DISCOUNT
+                - paragraph [ref=f20e761]:
+                  - 'link "Reactivate Premium: 50% Off" [ref=f20e763]':
+                    - /url: https://www.linkedin.com/premium/redeem/?_ed=0_bvLJH59RTSY-u5c6PMUa4IW0M54p9mxZpuVkfRvTl7r&upsellOrderOrigin=Tracking%3Av1%3Apremium_nav_upsell_text_winback%3ANav%3AIn-Product&referenceId=F3FjhBM2TiaskXLFhRjImQ%3D%3D&customKey=wb_c&redeemTypeV2=DISCOUNT
+      - generic [ref=f20e765]:
+        - toolbar [ref=f20e766]:
+          - link "ANAY PANDYA" [ref=f20e775] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/dearanayji/
+            - generic [ref=f20e776]:
+              - figure [aria-hidden] [ref=f20e777]
+              - generic [ref=f20e778]:
+                - paragraph [ref=f20e779]: ANAY PANDYA
+                - paragraph [ref=f20e781]: Cybersecurity & AI Systems @ NATIONAL FORENSIC SCIENCES UNIVERSITY - Gandhinagar | Exploring Data Sovereignty, Local LLMs & Systems Engineering
+        - main [ref=f20e782]:
+          - generic [ref=f20e784]:
+            - region "Primary content" [ref=f20e785]:
+              - generic [ref=f20e789]:
+                - generic [ref=f20e790]:
+                  - generic [ref=f20e791]:
+                    - button "Navigate back to profile main screen" [ref=f20e793] [cursor=pointer]
+                    - paragraph [ref=f20e797]: Projects
+                  - link "Add a new project" [ref=f20e799] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/in/dearanayji/edit/forms/project/new/
+                - paragraph [ref=f20e807]: Projects from connected apps sync automatically and can’t be edited on LinkedIn.
+                - generic [ref=f20e808]:
+                  - generic [ref=f20e810]:
+                    - link "Thumbnail for GitHub - GR4Y-SCALE/ChronoTrace • 1 of 1" [ref=f20e813] [cursor=pointer]:
+                      - /url: https://github.com/GR4Y-SCALE/ChronoTrace
+                      - figure [aria-hidden] [ref=f20e815]
+                    - generic [ref=f20e820]:
+                      - generic [ref=f20e821]:
+                        - link "Edit project ChronoTrace — NTFS Anti-Forensics Detection Framework" [ref=f20e822] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697404740/
+                          - paragraph [ref=f20e824]:
+                            - generic [ref=f20e825]: ChronoTrace — NTFS Anti-Forensics Detection Framework
+                        - paragraph [ref=f20e826]:
+                          - generic [ref=f20e827]:
+                            - text: Advanced forensic analysis tool for detecting timestamp manipulations and log evasion on Windows systems. Implements custom deterministic anti-forensics rules that evaluate $MFT, USN Journal, and $LogFile NTFS structures — supporting both post-mortem disk image analysis and real-time live monitoring. Built as a full-stack application with a FastAPI backend and React 19 frontend communicating over WebSockets.
+                            - button [aria-hidden] [ref=f20e828] [cursor=pointer]:
+                              - generic [ref=f20e829]: … more
+                        - 'link "Contributors: Aarzoo, Kritika and 1 other" [ref=f20e831] [cursor=pointer]':
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/
+                          - generic [ref=f20e832]:
+                            - figure [aria-hidden] [ref=f20e833]
+                            - figure [aria-hidden] [ref=f20e834]
+                            - figure [aria-hidden] [ref=f20e835]
+                            - paragraph [ref=f20e837]: "Contributors: Aarzoo, Kritika and 1 other"
+                        - paragraph [ref=f20e839]:
+                          - link "Python (Programming Language), FastAPI and +3 skills" [ref=f20e841] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/697404740/skill-associations-details/?associationType=projects
+                      - link "Edit project ChronoTrace — NTFS Anti-Forensics Detection Framework" [ref=f20e846] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697404740/
+                  - generic [ref=f20e851]:
+                    - link "Thumbnail for GitHub - CY-N4P5E/Inquiro • 1 of 1" [ref=f20e854] [cursor=pointer]:
+                      - /url: https://github.com/CY-N4P5E/Inquiro
+                      - figure [aria-hidden] [ref=f20e856]
+                    - generic [ref=f20e861]:
+                      - generic [ref=f20e862]:
+                        - link "Edit project Inquiro — Local RAG System" [ref=f20e863] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427350435/
+                          - paragraph [ref=f20e865]:
+                            - generic [ref=f20e866]: Inquiro — Local RAG System
+                        - paragraph [ref=f20e867]:
+                          - generic [ref=f20e868]:
+                            - text: Local-first RAG system that transforms private document collections into a queryable knowledge base. Implements semantic retrieval using FAISS vector search and Nomic Embed Text embeddings, with Mistral running locally via Ollama as the inference backend. Designed for full offline operation with no data leaving the machine.
+                            - button [aria-hidden] [ref=f20e869] [cursor=pointer]:
+                              - generic [ref=f20e870]: … more
+                        - paragraph [ref=f20e873]:
+                          - link "Retrieval-Augmented Generation (RAG), LangChain and +4 skills" [ref=f20e875] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/427350435/skill-associations-details/?associationType=projects
+                      - link "Edit project Inquiro — Local RAG System" [ref=f20e880] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427350435/
+                  - generic [ref=f20e885]:
+                    - link "Thumbnail for GitHub - ADPer0705/MerkleWatch • 1 of 1" [ref=f20e888] [cursor=pointer]:
+                      - /url: https://github.com/ADPer0705/MerkleWatch
+                      - figure [aria-hidden] [ref=f20e890]
+                    - generic [ref=f20e895]:
+                      - generic [ref=f20e896]:
+                        - link "Edit project MerkleWatch — Cryptographic Integrity Tool" [ref=f20e897] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427957097/
+                          - paragraph [ref=f20e899]:
+                            - generic [ref=f20e900]: MerkleWatch — Cryptographic Integrity Tool
+                        - paragraph [ref=f20e901]:
+                          - generic [ref=f20e902]:
+                            - text: CLI-first utility for creating deterministic, tamper-evident directory snapshots using Merkle trees and SHA-256 hashing. Implements domain separation and 64KB chunked reading for memory-efficient processing of large files, with customizable ignore rules. Designed for forensic integrity verification and tamper detection in sensitive environments.
+                            - button [aria-hidden] [ref=f20e903] [cursor=pointer]:
+                              - generic [ref=f20e904]: … more
+                        - paragraph [ref=f20e907]:
+                          - link "Data Structures, Cryptography and +2 skills" [ref=f20e909] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/427957097/skill-associations-details/?associationType=projects
+                      - link "Edit project MerkleWatch — Cryptographic Integrity Tool" [ref=f20e914] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427957097/
+                  - generic [ref=f20e919]:
+                    - link "Thumbnail for GitHub - ADPer0705/OverPage • 1 of 1" [ref=f20e922] [cursor=pointer]:
+                      - /url: https://github.com/ADPer0705/OverPage
+                      - figure [aria-hidden] [ref=f20e924]
+                    - generic [ref=f20e929]:
+                      - generic [ref=f20e930]:
+                        - link "Edit project OverPage — AI Webpage Analyzer" [ref=f20e931] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427538903/
+                          - paragraph [ref=f20e933]:
+                            - generic [ref=f20e934]: OverPage — AI Webpage Analyzer
+                        - paragraph [ref=f20e935]:
+                          - generic [ref=f20e936]:
+                            - text: Chrome extension that scrapes active webpages and generates on-demand AI summaries via an integrated chat interface. A PHP backend handles text preprocessing and forwards queries to the Google Gemini API, keeping local resource consumption minimal. Built for rapid page comprehension during research and OSINT tasks.
+                            - button [aria-hidden] [ref=f20e937] [cursor=pointer]:
+                              - generic [ref=f20e938]: … more
+                        - paragraph [ref=f20e941]:
+                          - link "Generative AI, JavaScript and +1 skill" [ref=f20e943] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/427538903/skill-associations-details/?associationType=projects
+                      - link "Edit project OverPage — AI Webpage Analyzer" [ref=f20e948] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427538903/
+                  - generic [ref=f20e953]:
+                    - link "Thumbnail for GitHub - ADPer0705/praetor • 1 of 1" [ref=f20e956] [cursor=pointer]:
+                      - /url: https://github.com/ADPer0705/praetor
+                      - figure [aria-hidden] [ref=f20e958]
+                    - generic [ref=f20e963]:
+                      - generic [ref=f20e964]:
+                        - link "Edit project Praetor — Serverless AWS Security Automation" [ref=f20e965] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427591385/
+                          - paragraph [ref=f20e967]:
+                            - generic [ref=f20e968]: Praetor — Serverless AWS Security Automation
+                        - paragraph [ref=f20e969]:
+                          - generic [ref=f20e970]:
+                            - text: Serverless compliance auditing platform performing 170+ automated daily security checks across 11 AWS services using Lambda and EventBridge. Delivers zero-cost, enterprise-grade cloud security scanning with automated HTML dashboards and Slack integration for critical misconfiguration alerts. Built entirely on AWS SAM with no standing infrastructure.
+                            - button [aria-hidden] [ref=f20e971] [cursor=pointer]:
+                              - generic [ref=f20e972]: … more
+                        - paragraph [ref=f20e975]:
+                          - link "Amazon Web Services (AWS), Cloud Security and +2 skills" [ref=f20e977] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/427591385/skill-associations-details/?associationType=projects
+                      - link "Edit project Praetor — Serverless AWS Security Automation" [ref=f20e982] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/427591385/
+                  - generic [ref=f20e987]:
+                    - link "Thumbnail for GitHub - ADPer0705/RBIH-IITD-Tryst-Hackathon • 1 of 1" [ref=f20e990] [cursor=pointer]:
+                      - /url: https://github.com/ADPer0705/RBIH-IITD-Tryst-Hackathon
+                      - figure [aria-hidden] [ref=f20e992]
+                    - generic [ref=f20e997]:
+                      - generic [ref=f20e998]:
+                        - link "Edit project RBIH IITD Tryst Hackathon — National Fraud Prevention Challenge" [ref=f20e999] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697888574/
+                          - paragraph [ref=f20e1001]:
+                            - generic [ref=f20e1002]:
+                              - text: RBIH IITD Tryst Hackathon — National Fraud Prevention Challenge
+                              - button [aria-hidden] [ref=f20e1003]:
+                                - generic [ref=f20e1004]: … more
+                        - paragraph [ref=f20e1006]:
+                          - generic [ref=f20e1007]:
+                            - text: Comprehensive exploratory data analysis and fraud detection work built for the National Fraud Prevention Challenge at IIT Delhi's Tryst hackathon. Developed EDA notebooks and reports analyzing digital transaction datasets using statistical modelling techniques to surface fraud patterns.
+                            - button [aria-hidden] [ref=f20e1008] [cursor=pointer]:
+                              - generic [ref=f20e1009]: … more
+                        - 'link "Contributors: BHASKAR and Jayant" [ref=f20e1011] [cursor=pointer]':
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/
+                          - generic [ref=f20e1012]:
+                            - figure [aria-hidden] [ref=f20e1013]
+                            - figure [aria-hidden] [ref=f20e1014]
+                            - paragraph [ref=f20e1022]: "Contributors: BHASKAR and Jayant"
+                        - paragraph [ref=f20e1024]:
+                          - link "Pandas, Matplotlib and +3 skills" [ref=f20e1026] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/697888574/skill-associations-details/?associationType=projects
+                      - link "Edit project RBIH IITD Tryst Hackathon — National Fraud Prevention Challenge" [ref=f20e1031] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697888574/
+                  - generic [ref=f20e1036]:
+                    - link "Thumbnail for GitHub - ADPer0705/sempropos • 1 of 1" [ref=f20e1039] [cursor=pointer]:
+                      - /url: https://github.com/ADPer0705/sempropos
+                      - figure [aria-hidden] [ref=f20e1041]
+                    - generic [ref=f20e1046]:
+                      - generic [ref=f20e1047]:
+                        - link "Edit project Sempropos — Semantic Linux CLI" [ref=f20e1048] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697498048/
+                          - paragraph [ref=f20e1050]:
+                            - generic [ref=f20e1051]: Sempropos — Semantic Linux CLI
+                        - paragraph [ref=f20e1052]:
+                          - generic [ref=f20e1053]:
+                            - text: Linux CLI that converts natural-language tasks into exact shell commands using local man-page retrieval and local LLMs. Designed a hybrid retrieval pipeline combining BM25, embedding similarity, and reciprocal rank fusion over a SQLite-backed index of tools, flags, and examples. Supports pluggable synthesis backends including llama.cpp, Ollama, and API providers — with install workflows and index staleness checks built in.
+                            - button [aria-hidden] [ref=f20e1054] [cursor=pointer]:
+                              - generic [ref=f20e1055]: … more
+                        - paragraph [ref=f20e1058]:
+                          - link "Python (Programming Language), SQLite and +4 skills" [ref=f20e1060] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/697498048/skill-associations-details/?associationType=projects
+                      - link "Edit project Sempropos — Semantic Linux CLI" [ref=f20e1065] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697498048/
+                  - generic [ref=f20e1070]:
+                    - link "Thumbnail for ReconWordsmith — Contextual Wordlist Generator • 1 of 1" [ref=f20e1073] [cursor=pointer]:
+                      - /url: https://adper.me/wordsmith/
+                    - generic [ref=f20e1082]:
+                      - generic [ref=f20e1083]:
+                        - link "Edit project Wordsmith — AI Security Wordlist Generator" [ref=f20e1084] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697754912/
+                          - paragraph [ref=f20e1086]:
+                            - generic [ref=f20e1087]: Wordsmith — AI Security Wordlist Generator
+                        - paragraph [ref=f20e1088]:
+                          - generic [ref=f20e1089]:
+                            - text: AI-driven contextual dictionary and wordlist generator tailored for security professionals. Integrates multiple LLM providers (Groq, Gemini, OpenAI) to automatically extract relevant tokens and terminology from unstructured raw intelligence — useful for OSINT workflows, password list generation, and threat modelling. Available at adper.me/wordsmith.
+                            - button [aria-hidden] [ref=f20e1090] [cursor=pointer]:
+                              - generic [ref=f20e1091]: … more
+                        - paragraph [ref=f20e1094]:
+                          - link "JavaScript, LLM API and +1 skill" [ref=f20e1096] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dearanayji/overlay/697754912/skill-associations-details/?associationType=projects
+                      - link "Edit project Wordsmith — AI Security Wordlist Generator" [ref=f20e1101] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dearanayji/details/projects/edit/forms/697754912/
+            - complementary "Aside" [ref=f20e1105]:
+              - generic [ref=f20e1114]:
+                - generic [ref=f20e1116]:
+                  - heading "Who your viewers also viewed" [level=3] [ref=f20e1118]
+                  - paragraph [ref=f20e1119]: Private to you
+                - generic [ref=f20e1121]:
+                  - button [ref=f20e1122] [cursor=pointer]:
+                    - generic [ref=f20e1123]:
+                      - figure [aria-hidden] [ref=f20e1124]
+                      - generic [ref=f20e1125]:
+                        - paragraph [ref=f20e1128]: Business Strategist in the Education industry from Greater Ahmedabad Area
+                        - button "View" [ref=f20e1129]
+                  - button [ref=f20e1132] [cursor=pointer]:
+                    - generic [ref=f20e1133]:
+                      - figure [aria-hidden] [ref=f20e1134]
+                      - generic [ref=f20e1135]:
+                        - paragraph [ref=f20e1138]: Someone at National Forensic Sciences University (NFSU)
+                        - button "View" [ref=f20e1139]
+                  - button [ref=f20e1142] [cursor=pointer]:
+                    - generic [ref=f20e1143]:
+                      - figure [aria-hidden] [ref=f20e1144]
+                      - generic [ref=f20e1145]:
+                        - paragraph [ref=f20e1148]: Someone at National Forensic Sciences University (NFSU)
+                        - button "View" [ref=f20e1149]
+                  - button [ref=f20e1152] [cursor=pointer]:
+                    - generic [ref=f20e1153]:
+                      - figure [aria-hidden] [ref=f20e1154]
+                      - generic [ref=f20e1155]:
+                        - paragraph [ref=f20e1158]: Someone at National Forensic Sciences University (NFSU)
+                        - button "View" [ref=f20e1159]
+            - generic "Footer" [ref=f20e1162]:
+              - generic [ref=f20e1165]:
+                - generic [ref=f20e1166]:
+                  - navigation [ref=f20e1167]:
+                    - link [ref=f20e1168] [cursor=pointer]:
+                      - /url: https://about.linkedin.com/
+                      - paragraph [ref=f20e1169]: About
+                    - link [ref=f20e1170] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/accessibility/
+                      - paragraph [ref=f20e1171]: Accessibility
+                    - link [ref=f20e1172] [cursor=pointer]:
+                      - /url: https://business.linkedin.com/talent-solutions?trk=flagship_nav&veh=li-footer-lts-control&src=li-footer
+                      - paragraph [ref=f20e1173]: Talent Solutions
+                    - link [ref=f20e1174] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/legal/professional-community-policies/
+                      - paragraph [ref=f20e1175]: Community Guidelines
+                    - link [ref=f20e1176] [cursor=pointer]:
+                      - /url: https://careers.linkedin.com/
+                      - paragraph [ref=f20e1177]: Careers
+                    - link [ref=f20e1178] [cursor=pointer]:
+                      - /url: https://business.linkedin.com/advertise?trk=n_nav_lms_f&src=li-footer
+                      - paragraph [ref=f20e1179]: Marketing Solutions
+                    - button [ref=f20e1180] [cursor=pointer]:
+                      - paragraph [ref=f20e1182]: Privacy & Terms
+                    - link [ref=f20e1185] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/help/linkedin/answer/62931/
+                      - paragraph [ref=f20e1186]: Ad Choices
+                    - link [ref=f20e1187] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/ad/start/?trk=n_nav_ads_rr
+                      - paragraph [ref=f20e1188]: Advertising
+                    - link [ref=f20e1189] [cursor=pointer]:
+                      - /url: https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer
+                      - paragraph [ref=f20e1190]: Sales Solutions
+                    - link [ref=f20e1191] [cursor=pointer]:
+                      - /url: https://mobile.linkedin.com/
+                      - paragraph [ref=f20e1192]: Mobile
+                    - link [ref=f20e1193] [cursor=pointer]:
+                      - /url: https://business.linkedin.com/grow?src=li-footer
+                      - paragraph [ref=f20e1194]: Small Business
+                    - link [ref=f20e1195] [cursor=pointer]:
+                      - /url: https://safety.linkedin.com/
+                      - paragraph [ref=f20e1196]: Safety Center
+                  - paragraph [ref=f20e1198]: LinkedIn Corporation © 2026
+                - generic [ref=f20e1199]:
+                  - list [ref=f20e1200]:
+                    - listitem [ref=f20e1201]:
+                      - generic [ref=f20e1206]:
+                        - link [ref=f20e1207] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/help/linkedin/
+                          - paragraph [ref=f20e1208]: Questions?
+                        - paragraph [ref=f20e1209]: Visit our Help Center.
+                    - listitem [ref=f20e1210]:
+                      - generic [ref=f20e1215]:
+                        - link [ref=f20e1216] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/mypreferences/d/
+                          - paragraph [ref=f20e1217]: Manage your account and privacy
+                        - paragraph [ref=f20e1218]: Go to your Settings.
+                    - listitem [ref=f20e1219]:
+                      - generic [ref=f20e1223]:
+                        - link [ref=f20e1224] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/help/linkedin/answer/a1339724/
+                          - paragraph [ref=f20e1225]: Recommendation transparency
+                        - paragraph [ref=f20e1226]: Learn more about Recommended Content.
+                  - generic [ref=f20e1228]:
+                    - paragraph [ref=f20e1230]: Select language
+                    - combobox "Select language" [ref=f20e1232] [cursor=pointer]:
+                      - option "العربية (Arabic)"
+                      - option "বাংলা (Bangla)"
+                      - option "Čeština (Czech)"
+                      - option "Dansk (Danish)"
+                      - option "Deutsch (German)"
+                      - option "Ελληνικά (Greek)"
+                      - option "English (English)" [selected]
+                      - option "Español (Spanish)"
+                      - option "فارسی (Persian)"
+                      - option "Suomi (Finnish)"
+                      - option "Français (French)"
+                      - option "हिंदी (Hindi)"
+                      - option "Magyar (Hungarian)"
+                      - option "Bahasa Indonesia (Indonesian)"
+                      - option "Italiano (Italian)"
+                      - option "עברית (Hebrew)"
+                      - option "日本語 (Japanese)"
+                      - option "한국어 (Korean)"
+                      - option "मराठी (Marathi)"
+                      - option "Bahasa Malaysia (Malay)"
+                      - option "Nederlands (Dutch)"
+                      - option "Norsk (Norwegian)"
+                      - option "ਪੰਜਾਬੀ (Punjabi)"
+                      - option "Polski (Polish)"
+                      - option "Português (Portuguese)"
+                      - option "Română (Romanian)"
+                      - option "Русский (Russian)"
+                      - option "Svenska (Swedish)"
+                      - option "తెలుగు (Telugu)"
+                      - option "ภาษาไทย (Thai)"
+                      - option "Tagalog (Tagalog)"
+                      - option "Türkçe (Turkish)"
+                      - option "Українська (Ukrainian)"
+                      - option "Tiếng Việt (Vietnamese)"
+                      - option "简体中文 (Chinese (Simplified))"
+                      - option "正體中文 (Chinese (Traditional))"
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - complementary:
+            - generic [ref=f20e1234]:
+              - generic [ref=f20e1236] [cursor=pointer]:
+                - generic [ref=f20e1237]:
+                  - img "ANAY PANDYA" [ref=f20e1238]
+                  - generic [ref=f20e1239]: Status is online
+                - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=f20e1241]:
+                  - generic [ref=f20e1242]:
+                    - generic [aria-hidden] [ref=f20e1243]: Messaging
+                    - generic [ref=f20e1244]: You are on the messaging overlay. Press enter to open the list of conversations.
+              - generic [ref=f20e1245]:
+                - button [ref=f20e1247] [cursor=pointer]:
+                  - img "Open messenger dropdown menu" [ref=f20e1248]
+                - button "Compose message" [ref=f20e1251] [cursor=pointer]
+                - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=f20e1255] [cursor=pointer]
+          - complementary "AI-powered assistant to get help with your career, jobs etc"
+  - iframe [ref=f20e1259]:
+    - generic [ref=f21e1]:
+      - generic:
+        - region "Toast message":
+          - heading "0 notifications total" [level=2] [ref=f21e3]
+          - alert
+      - region [ref=f21e4]
+      - generic [ref=f21e5]:
+        - generic [ref=f21e7]:
+          - button "Skip to search" [ref=f21e8] [cursor=pointer]
+          - button "Skip to main content" [ref=f21e10] [cursor=pointer]
+          - button "Keyboard shortcuts" [ref=f21e12] [cursor=pointer]
+          - button "Close jump menu" [ref=f21e14] [cursor=pointer]
+        - banner "Global Navigation" [ref=f21e18]:
+          - generic [ref=f21e19]:
+            - link [ref=f21e20] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/foryou/
+              - img "LinkedIn" [ref=f21e23]
+            - button "Click to start a search" [ref=f21e28] [cursor=pointer]:
+              - generic [ref=f21e32]: Search
+            - navigation "Primary Navigation" [ref=f21e33]:
+              - list [ref=f21e34]:
+                - listitem [ref=f21e35]:
+                  - link "new feed updates notifications Home" [ref=f21e36] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/feed/foryou/
+                    - generic [ref=f21e37]: new feed updates notifications
+                    - generic "Home" [ref=f21e45]
+                - listitem [ref=f21e46]:
+                  - link "1 new network update notification My Network" [ref=f21e47] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/mynetwork/?
+                    - generic [ref=f21e49]:
+                      - generic [aria-hidden] [ref=f21e50]: "1"
+                      - generic [ref=f21e51]: 1 new network update notification
+                    - generic "My Network" [ref=f21e56]
+                - listitem [ref=f21e57]:
+                  - link "Jobs" [ref=f21e58] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/jobs/?
+                - listitem [ref=f21e64]:
+                  - link "Messaging" [ref=f21e65] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/messaging/?
+                - listitem [ref=f21e71]:
+                  - link "18 new notifications Notifications" [ref=f21e72] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/notifications/?
+                    - generic [ref=f21e74]:
+                      - generic [aria-hidden] [ref=f21e75]: "18"
+                      - generic [ref=f21e76]: 18 new notifications
+                    - generic "Notifications" [ref=f21e81]
+                - listitem [ref=f21e82]:
+                  - button [ref=f21e84] [cursor=pointer]:
+                    - img "ANAY PANDYA" [ref=f21e85]
+                    - generic [ref=f21e86]: Me
+                - listitem [ref=f21e89]:
+                  - button "For Business" [ref=f21e91] [cursor=pointer]
+                - listitem [ref=f21e99]:
+                  - 'link "Reactivate Premium: 50% Off" [ref=f21e101] [cursor=pointer]':
+                    - /url: http://www.linkedin.com/premium/redeem/?_ed=0_bvLJH59RTSY-u5c6PMUa4IW0M54p9mxZpuVkfRvTl7r&upsellOrderOrigin=Tracking%3Av1%3Apremium_nav_upsell_text_winback%3ANav%3AIn-Product&referenceId=seRhL%2FKWSYKKH1WZpJCu7w%3D%3D&customKey=wb_c&redeemTypeV2=DISCOUNT&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdearanayji%2Fdetails%2Fprojects%2F

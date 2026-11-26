@@ -33,4 +33,4 @@ npm run build
 
 - Legacy static site files were replaced by the Vite app at repository root.
 - Core portfolio content was mapped into `src/data/*.json`.
-- Domain metadata and crawl files were updated for `https://adper.me`.
+- Domain metadata and crawl files were updated for `https://dearanayji.rocks`.

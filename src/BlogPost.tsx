@@ -192,7 +192,7 @@ export default function BlogPost({ onOpenCommand }: BlogPostProps) {
   useEffect(() => {
     if (!meta) return;
 
-    const canonicalUrl = `https://adper.me/blog/${meta.slug}`;
+    const canonicalUrl = `https://dearanayji.rocks/blog/${meta.slug}`;
     const pageTitle = `${meta.title} — adper`;
 
     const prevTitle = document.title;
@@ -237,7 +237,7 @@ export default function BlogPost({ onOpenCommand }: BlogPostProps) {
 
     return () => {
       document.title = prevTitle;
-      if (canonical) canonical.href = prevCanonicalHref || "https://adper.me/";
+      if (canonical) canonical.href = prevCanonicalHref || "https://dearanayji.rocks/";
       injected.forEach((el) => el.remove());
       document
         .querySelectorAll<HTMLMetaElement>("meta[data-prev]")
@@ -397,7 +397,7 @@ export default function BlogPost({ onOpenCommand }: BlogPostProps) {
 
       <StatusBar
         currentSection={`log/${meta.slug}`}
-        rightMeta={`canonical → adper.me/blog/${meta.slug}`}
+        rightMeta={`canonical → dearanayji.rocks/blog/${meta.slug}`}
       />
     </div>
   );
